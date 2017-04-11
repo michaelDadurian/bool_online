@@ -2,16 +2,157 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="272b5aa0-756e-459c-b63e-b2968cfddfb3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bool/HomeController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/hey.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/appengine-generated/datastore-indexes-auto.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/attribute-editor/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/attribute-editor/delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/attribute-editor/rotate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/attribute-editor/save.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/and.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/cross.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/l.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/minus-alt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/minus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/not.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/on.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/or.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/print.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/t.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/var.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon-active/xor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/and.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/cross.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/l.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/minus-alt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/minus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/not.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/on.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/or.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/print.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/t.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/var.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/c-icon/xor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-and.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-l.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-minus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-nand.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-nor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-not.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-onbox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-or.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-plus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-printbox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-t.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-varbox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/img/cmenu-xor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/attribute-editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/canvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/components.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/console.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/evaluator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/grid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/images.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/jquery-3.2.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/jquery-ui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/kinetic-v5.1.0/kinetic-v5.1.0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/kinetic-v5.1.0/kinetic-v5.1.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/selection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/script/toolbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/splash/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/splash/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/splash/bool.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/splash/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/style/attribute-editor.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/style/components.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/style/console.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/style/toolbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/style/workspace.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/test.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/pages/splash.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/test.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/Thumbs.db" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/Thumbs.db" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/attribute-editor/Thumbs.db" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/attribute-editor/Thumbs.db" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/attribute-editor/delete.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/attribute-editor/delete.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/attribute-editor/rotate.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/attribute-editor/rotate.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/attribute-editor/save.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/attribute-editor/save.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/Thumbs.db" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/Thumbs.db" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/and.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/and.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/cross.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/cross.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/l.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/l.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/minus-alt.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/minus-alt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/minus.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/minus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/not.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/not.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/on.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/or.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/or.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/print.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/print.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/t.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/t.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/var.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/var.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon-active/xor.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon-active/xor.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/Thumbs.db" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/Thumbs.db" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/and.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/and.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/cross.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/cross.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/l.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/l.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/minus-alt.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/minus-alt.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/minus.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/minus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/not.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/not.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/on.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/on.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/or.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/or.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/print.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/print.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/t.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/t.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/var.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/var.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/c-icon/xor.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/c-icon/xor.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-and.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-and.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-l.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-l.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-minus.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-minus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-nand.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-nand.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-nor.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-nor.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-not.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-not.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-onbox.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-onbox.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-or.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-or.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-plus.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-plus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-printbox.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-printbox.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-t.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-t.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-varbox.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-varbox.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/img/cmenu-xor.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace-img/cmenu-xor.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/attribute-editor.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/attribute-editor.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/canvas.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/canvas.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/components.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/components.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/console.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/console.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/evaluator.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/evaluator.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/grid.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/grid.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/images.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/images.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/jquery-3.2.0.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/jquery-3.2.0.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/jquery-ui.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/jquery-ui.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/kinetic-v5.1.0/._kinetic-v5.1.0.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/kinetic-v5.1.0/._kinetic-v5.1.0.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/kinetic-v5.1.0/._kinetic-v5.1.0.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/kinetic-v5.1.0/._kinetic-v5.1.0.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/kinetic-v5.1.0/kinetic-v5.1.0.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/kinetic-v5.1.0/kinetic-v5.1.0.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/kinetic-v5.1.0/kinetic-v5.1.0.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/kinetic-v5.1.0/kinetic-v5.1.0.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/selection.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/selection.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/script/toolbar.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/workspace/toolbar.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/style/attribute-editor.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/attribute-editor.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/style/components.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/components.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/style/console.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/console.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/style/toolbar.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/toolbar.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/style/workspace.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/stylesheets/workspace.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/splash/vendor/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/splash/vendor/font-awesome/fonts/FontAwesome.otf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/classes/com/bool/HomeController.class" afterPath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/classes/com/bool/HomeController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bool.iml" afterPath="$PROJECT_DIR$/bool.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/HomeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config/application-context.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config/application-context.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/splash/splash_screen.jsp" afterPath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/bool/splash/splash_screen.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/spring-config/application-context.xml" afterPath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/spring-config/application-context.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/bool-1.0-SNAPSHOT/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,51 +169,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="163" column="35" lean-forward="false" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bool.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bool.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="appengine-web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/appengine-web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-context.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application-context.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config/application-context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+            <state relative-caret-position="380">
+              <caret line="27" column="142" lean-forward="false" selection-start-line="27" selection-start-column="142" selection-end-line="27" selection-end-column="142" />
               <folding />
             </state>
           </provider>
@@ -81,38 +182,32 @@
       <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+            <state relative-caret-position="600">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#883#884#0" expanded="true" />
+                <element signature="e#919#920#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="splash_screen.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.jsp">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="92" column="49" lean-forward="false" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="splash_screen.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
+            <state relative-caret-position="3470">
+              <caret line="176" column="29" lean-forward="false" selection-start-line="176" selection-start-column="29" selection-end-line="176" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -133,6 +228,7 @@
       <find>archive</find>
       <find>web-inf</find>
       <find>com.google</find>
+      <find>img</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,19 +250,19 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/test.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/test.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bool/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config/application-context.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bool/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/index.jsp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="229" />
+    <option name="width" value="1699" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -183,109 +279,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
+              <option name="myItemId" value="bool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bool" />
@@ -294,11 +295,51 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
+              <option name="myItemId" value="bool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
+              <option name="myItemId" value="bool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -318,21 +359,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="splash" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
+              <option name="myItemId" value="bool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
+              <option name="myItemId" value="bool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -352,23 +411,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool_online" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eclipse-launch-profiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -382,17 +426,20 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/ToDoList" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/CSE308/ToDoList" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Nelson\Desktop\bool_online\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\Nelson\Desktop\bool_online\src\main\webapp\WEB-INF\bool" />
+      <recent name="C:\Users\Michael\IdeaProjects\bool online\bool\src\main" />
+      <recent name="C:\Users\Michael\IdeaProjects\bool online\bool\src\main\webapp\resources" />
+      <recent name="C:\Users\Michael\IdeaProjects\bool online\bool\src\main\webapp\stylesheets" />
+      <recent name="C:\Users\Michael\IdeaProjects\bool online\bool\src\main\webapp\scripts" />
+      <recent name="C:\Users\Michael\IdeaProjects\bool online\bool\src\main\webapp\WEB-INF\pages" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Google App Engine Deployment.Google App Engine Deployment">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -603,15 +650,20 @@
     <configuration default="true" type="gcp-app-engine-deploy" factoryName="Google App Engine Deployment">
       <method />
     </configuration>
+    <configuration default="false" name="Google App Engine Deployment" type="gcp-app-engine-deploy" factoryName="Google App Engine Deployment" server-name="Google App Engine">
+      <deployment type="maven-build-source" name="bool" project="bool-163515" version="auto">
+        <settings appYamlPath="" cloudProjectName="bool-163515" dockerFilePath="" environment="APP_ENGINE_STANDARD" googleUsername="cse308.dadurian.michael@gmail.com" promote="true" stopPreviousVersion="true" userSpecifiedArtifactPath="" />
+      </deployment>
+      <method>
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
+      </method>
+    </configuration>
     <configuration default="false" name="Google Stackdriver Debug" type="GCPDebug" factoryName="Google Stackdriver Debug" CloudProjectName="">
       <method />
     </configuration>
-    <configuration default="false" name="Google App Engine Deployment" type="gcp-app-engine-deploy" factoryName="Google App Engine Deployment" server-name="Google App Engine">
-      <method />
-    </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Google Stackdriver Debug.Google Stackdriver Debug" />
-      <item index="1" class="java.lang.String" itemvalue="Google App Engine Deployment.Google App Engine Deployment" />
+      <item index="0" class="java.lang.String" itemvalue="Google App Engine Deployment.Google App Engine Deployment" />
+      <item index="1" class="java.lang.String" itemvalue="Google Stackdriver Debug.Google Stackdriver Debug" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -628,17 +680,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="229" y="0" width="1699" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38717067" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -646,8 +699,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2125" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17969231" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -659,6 +711,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -673,6 +726,82 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2580">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bool.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/appengine-web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config/application-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1840">
+          <caret line="92" column="49" lean-forward="false" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -693,19 +822,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/test.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="36" column="57" lean-forward="false" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
@@ -713,30 +834,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4335">
-          <caret line="255" column="0" lean-forward="true" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="163" column="35" lean-forward="false" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/test.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.html" />
     <entry file="file://$PROJECT_DIR$/nbactions.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -745,42 +844,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/bool.iml" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="32" column="88" lean-forward="true" selection-start-line="32" selection-start-column="88" selection-end-line="32" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5049">
-          <caret line="297" column="0" lean-forward="true" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/bool.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bool.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="13" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -793,34 +875,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config/application-context.xml">
+    <entry file="file://$PROJECT_DIR$/bool.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1820">
+          <caret line="172" column="49" lean-forward="false" selection-start-line="172" selection-start-column="49" selection-end-line="172" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3470">
+          <caret line="176" column="29" lean-forward="false" selection-start-line="176" selection-start-column="29" selection-end-line="176" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        <state relative-caret-position="600">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/splash/splash_screen.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config/application-context.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="92" column="49" lean-forward="false" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bool/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        <state relative-caret-position="380">
+          <caret line="27" column="142" lean-forward="false" selection-start-line="27" selection-start-column="142" selection-end-line="27" selection-end-column="142" />
           <folding />
         </state>
       </provider>

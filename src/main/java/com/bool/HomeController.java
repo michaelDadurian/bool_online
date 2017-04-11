@@ -24,7 +24,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home() {
-        return "bool/splash/splash_screen";
+        return "pages/index";
     }
 
 }
