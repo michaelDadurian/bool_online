@@ -6,13 +6,15 @@
 <head>
 	<title>bool: The Online Circuit Builder</title>
 
+	<script>var pageContext = "${pageContext.request.contextPath}";</script>
+
 	<spring:url value = "resources/stylesheets/attribute-editor.css" var = "attributeCSS" />
     <spring:url value = "resources/stylesheets/workspace.css" var = "workspaceCSS"/>
     <spring:url value = "resources/stylesheets/toolbar.css" var = "toolbarCSS"/>
     <spring:url value = "resources/stylesheets/console.css" var = "consoleCSS"/>
 
-    <spring:url value = "resources/scripts/workspace/wojquery-3.2.0.min.js" var = "wojqueryJS"/>
-    <spring:url value = "resources/scripts/workspace/jquery-ui.min.js" var = "jqueryJS"/>
+    <spring:url value = "resources/scripts/workspace/jquery-3.2.0.min.js" var = "jqueryJS"/>
+    <spring:url value = "resources/scripts/workspace/jquery-ui.min.js" var = "jqueryUI"/>
     <spring:url value = "resources/scripts/workspace/kinetic-v5.1.0/kinetic-v5.1.0.js" var = "kineticJS" />
     <spring:url value = "resources/scripts/workspace/kinetic-v5.1.0/kinetic-v5.1.0.min.js" var = "kineticMinJS" />
 
@@ -28,7 +30,7 @@
     <link href = "${consoleCSS}" rel = "stylesheet" />
 
     <script src="${jqueryJS}"></script>
-    <script src="${wojqueryJS}"></script>
+    <script src="${jqueryUI}"></script>
     <script src="${kineticJS}"></script>
     <script src="${kineticMinJS}"></script>
     <script src="${consoleJS}"></script>
@@ -168,14 +170,17 @@
 			</div>
 	</div>
 
-	<script src = "resources/scripts/workspace/canvas.js"></script>
-	<script src = "resources/scripts/workspace/attribute-editor.js"></script>
-	<script src = "resources/scripts/workspace/selection.js"></script>
+    <spring:url value = "resources/scripts/workspace/canvas.js" var = "canvas" />
+    <spring:url value = "resources/scripts/workspace/attribute-editor.js" var = "attributeEditor" />
+    <spring:url value = "resources/scripts/workspace/selection.js" var = "selection" />
+    <spring:url value = "resources/scripts/workspace/evaluator.js" var = "evaluator" />
+    <spring:url value = "resources/scripts/workspace/toolbar.js" var = "toolbar" />
 
-	<script src = "resources/scripts/workspace/evaluator.js"></script> <!-- Circuit Evaluator -->
-
-	<script src = "resources/scripts/workspace/toolbar.js"></script>
-
+    <script src="${canvas}"></script>
+    <script src="${attributeEditor}"></script>
+    <script src="${selection}"></script>
+    <script src="${evaluator}"></script>
+    <script src="${toolbar}"></script>
 </body>
 
 </html> 
