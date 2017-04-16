@@ -24,5 +24,9 @@
         </property>
     </bean>
 
-
+    <!-- Take these two lines out and workspace.jsp is displayed with no errors, but javascript doesn't work. These lines result in bean creation error-->
+    <!-- Without these two lines, index is displayed but the error we get is "No mapping for HTTP Request ...". Check the stackoverflow post-->
+    <!--' http://stackoverflow.com/questions/19748980/spring-mvc-css-and-javascript-is-not-working-properly -->
+    <!--<mvc:resources mapping="/resources/**" location="/resources" />
+    <mvc:annotation-driven />-->
 </beans>

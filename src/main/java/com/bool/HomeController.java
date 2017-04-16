@@ -23,8 +23,13 @@ import javax.servlet.http.HttpServletRequest;
 public class HomeController {
 
     @RequestMapping("/")
-    public String home() {
-        return "pages/index";
+    public String splash() {
+        return "pages/splash_screen";
+    }
+
+    @RequestMapping("/workspace")
+    public String workspace(){
+        return "pages/workspace";
     }
 
 }
