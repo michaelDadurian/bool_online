@@ -49,7 +49,7 @@
 				<a href="#" class="dropbtn">Authenticate</a>
 				<div class="dropdown-content">
 		  			<a href="#">Login/Logout</span>
-		  			<a href="splash/splash_screen.jsp">Exit</a>
+		  			<a href="/">Exit</a>
 				</div>
 			</li>
 			<li class="dropdown">
