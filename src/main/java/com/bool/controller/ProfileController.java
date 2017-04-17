@@ -4,6 +4,7 @@ package com.bool.controller;
  * Created by Nelson on 4/16/2017.
  */
 
+import com.bool.data.Circuit;
 import com.bool.data.Datastore;
 
 import com.google.appengine.api.datastore.*;
@@ -30,10 +31,10 @@ public class ProfileController {
 
     Datastore datastore = new Datastore();
 
-    @RequestMapping("/profile")
+    @RequestMapping("/profile/login")
     public ModelAndView profile(){
 
-        datastore.loadTestData();
+        //datastore.loadTestData();
 
         /*
         List<String> toDisplay = new ArrayList<>();
@@ -43,12 +44,46 @@ public class ProfileController {
         }
 
         toDisplay.add("hello world");
-        */
+
+
+
 
         ModelAndView mv = new ModelAndView("pages/profile");
         //mv.addObject("Strings", toDisplay);
 
         return mv;
+
+        */
+
+        ModelAndView mv = new ModelAndView("pages/profile");
+        List<Entity> toDisplay = datastore.loadYourCircuits("Mike");
+        List<String> circuitNames = new ArrayList<>();
+
+        for (Entity td:toDisplay) {
+            circuitNames.add((String)td.getProperty("name"));
+        }
+
+
+        mv.addObject("circuitNames", circuitNames);
+        //model.addAttribute("circuitNames", circuitNames);
+
+
+        return mv;
     }
+
+    @RequestMapping("/profile")
+    public ModelAndView profileLogin(ModelMap model){
+
+        UserService userService = UserServiceFactory.getUserService();
+        //User currUser = userService.getCurrentUser();
+
+        return new ModelAndView("redirect:" + userService.createLoginURL("/profile/login"));
+
+
+
+
+    }
+
+
 
 }

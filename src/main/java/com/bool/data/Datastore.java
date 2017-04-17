@@ -5,6 +5,8 @@ package com.bool.data;
  */
 
 import com.google.appengine.api.datastore.*;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +14,14 @@ import java.util.List;
 public class Datastore {
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        UserService userService = UserServiceFactory.getUserService();
 
         public void loadTestData(){
             List<Circuit> testCircuits = new ArrayList<>();
 
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
-                        "Nelson",
+                        "Mike",
                         "",
                         "Mike's Circuit "+i,
                         "",
@@ -28,9 +31,9 @@ public class Datastore {
 
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
-                        "Mike",
+                        "Nelson",
                         "",
-                        "Mike's Circuit "+i,
+                        "Nelson's Circuit "+i,
                         "",
                         ""
                 ));
@@ -59,6 +62,8 @@ public class Datastore {
             }
         }
 
+
+
         public void pushData(Circuit circuit){
 
             Key circuitKey = KeyFactory.createKey("Circuit", circuit.getName());
@@ -72,5 +77,19 @@ public class Datastore {
 
             datastore.put(toPush);
         }
+
+        public List<Entity> loadYourCircuits(String owner){
+
+            List<Entity> toLoad = new ArrayList<>();
+            Query query = new Query("Circuit");
+            query.addFilter("owner", Query.FilterOperator.EQUAL, owner);
+            toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(50));
+
+            return toLoad;
+
+
+        }
+
+
 
 }

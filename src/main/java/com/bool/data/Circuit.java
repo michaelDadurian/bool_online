@@ -1,5 +1,7 @@
 package com.bool.data;
 
+import com.google.appengine.api.users.User;
+
 /**
  * Created by Nelson on 4/16/2017.
  */
