@@ -84,6 +84,26 @@ public class ProfileController {
         return mv;
     }
 
+    @RequestMapping("profile/shared")
+    public ModelAndView profileSharedCircuits(){
+
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
+
+        ModelAndView mv = new ModelAndView("pages/profile");
+        List<Entity> toDisplay = datastore.loadSharedCircuits(currUser.getEmail());
+        List<String> circuitNames = new ArrayList<>();
+
+        for (Entity td:toDisplay){
+            circuitNames.add((String)td.getProperty("name"));
+        }
+
+        mv.addObject("circuitNames", circuitNames);
+
+        return mv;
+
+    }
+
 
 
 }

@@ -22,7 +22,7 @@ public class Datastore {
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "mdadurian@example.com",
-                        "nelson@gmail.com;reef@gmail.com",
+                        "nelson@example.com;reef@example.com",
                         "Mike's Circuit "+i,
                         "",
                         "",
@@ -33,7 +33,7 @@ public class Datastore {
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "nelson@example.com",
-                        "",
+                        "mdadurian@example.com;reef@example.com",
                         "Nelson's Circuit "+i,
                         "",
                         "",
@@ -43,7 +43,7 @@ public class Datastore {
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "reef@example.com",
-                        "",
+                        "mdadurian@example.com;kenny@example.com",
                         "Reef's Circuit "+i,
                         "",
                         "",
@@ -119,6 +119,32 @@ public class Datastore {
             }
 
             return publicCircuits;
+
+        }
+
+        public List<Entity> loadSharedCircuits(String sharedWith){
+
+            List<Entity> toLoad;
+            List<Entity> sharedCircuits = new ArrayList<>();
+
+            Query query = new Query("Circuit");
+            query.addFilter("shared", Query.FilterOperator.NOT_EQUAL, "");
+            toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(50));
+
+            for (Entity td:toLoad){
+
+                String shared = (String)td.getProperty("shared");
+                String[] splitShared = shared.split(";");
+
+                for (String user: splitShared){
+                    if (user.equals(sharedWith)){
+                        sharedCircuits.add(td);
+                        break;
+                    }
+                }
+            }
+
+            return sharedCircuits;
 
         }
 
