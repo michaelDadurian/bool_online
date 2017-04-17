@@ -148,6 +148,22 @@ public class Datastore {
 
         }
 
+        public List<Entity> loadAllCircuits(String owner){
+            List<Entity> allCircuits = new ArrayList<>();
+            List<Entity> sharedCircuits = loadSharedCircuits(owner);
+            List<Entity> publicCircuits = loadPublicCircuits();
+            List<Entity> yourCircuits = loadYourCircuits(owner);
+
+            allCircuits.addAll(sharedCircuits);
+            allCircuits.addAll(publicCircuits);
+            allCircuits.addAll(yourCircuits);
+
+            return allCircuits;
+
+
+
+        }
+
 
 
 }

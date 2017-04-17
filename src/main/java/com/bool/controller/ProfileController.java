@@ -32,60 +32,66 @@ public class ProfileController {
     Datastore datastore = new Datastore();
 
     @RequestMapping("/loadtestdata")
-    public String pcloadTestData(){
+    public String pcloadTestData() {
         datastore.loadTestData();
         return "pages/profile";
     }
 
     @RequestMapping("/profile")
-    public ModelAndView profileLogin(){
+    public ModelAndView profileLogin() {
 
         UserService userService = UserServiceFactory.getUserService();
         User currUser = userService.getCurrentUser();
 
 
-        System.out.println("currUser "+currUser);
+        System.out.println("currUser " + currUser);
 
-        if(userService.isUserLoggedIn()){ //signed in
+        if (userService.isUserLoggedIn()) { //signed in
             ModelAndView mv = new ModelAndView("pages/profile");
-            List<Entity> toDisplay = datastore.loadYourCircuits(currUser.getEmail());
+            List<Entity> toDisplay = datastore.loadAllCircuits(currUser.getEmail());
             List<String> circuitNames = new ArrayList<>();
+            List<String> circuitOwners = new ArrayList<>();
 
-            for (Entity td:toDisplay) {
-                circuitNames.add((String)td.getProperty("name"));
+            for (Entity td : toDisplay) {
+                circuitNames.add((String) td.getProperty("name"));
+                circuitOwners.add((String) td.getProperty("owner"));
             }
 
 
             mv.addObject("circuitNames", circuitNames);
+            mv.addObject("circuitOwners", circuitOwners);
             mv.addObject("currUser", currUser);
 
 
-
             return mv;
-        }
-        else{ //not signed in
+        } else { //not signed in
             return new ModelAndView("redirect:" + userService.createLoginURL("/profile"));
         }
     }
 
     @RequestMapping("profile/public")
-    public ModelAndView profilePublicCircuits(){
+    public ModelAndView profilePublicCircuits() {
 
         ModelAndView mv = new ModelAndView("pages/profile");
         List<Entity> toDisplay = datastore.loadPublicCircuits();
         List<String> circuitNames = new ArrayList<>();
+        List<String> circuitOwners = new ArrayList<>();
 
-        for (Entity td:toDisplay){
-            circuitNames.add((String)td.getProperty("name"));
+
+        for (Entity td : toDisplay) {
+            circuitNames.add((String) td.getProperty("name"));
+            circuitOwners.add((String) td.getProperty("owner"));
         }
 
-       mv.addObject("circuitNames", circuitNames);
+        mv.addObject("circuitNames", circuitNames);
+        mv.addObject("circuitOwners", circuitOwners);
+        mv.addObject("circuitObjects", toDisplay);
 
         return mv;
     }
 
     @RequestMapping("profile/shared")
-    public ModelAndView profileSharedCircuits(){
+    public ModelAndView profileSharedCircuits() {
 
         UserService userService = UserServiceFactory.getUserService();
         User currUser = userService.getCurrentUser();
@@ -93,17 +99,44 @@ public class ProfileController {
         ModelAndView mv = new ModelAndView("pages/profile");
         List<Entity> toDisplay = datastore.loadSharedCircuits(currUser.getEmail());
         List<String> circuitNames = new ArrayList<>();
+        List<String> circuitOwners = new ArrayList<>();
 
-        for (Entity td:toDisplay){
-            circuitNames.add((String)td.getProperty("name"));
+        for (Entity td : toDisplay) {
+            circuitNames.add((String) td.getProperty("name"));
+            circuitOwners.add((String) td.getProperty("owner"));
         }
 
         mv.addObject("circuitNames", circuitNames);
+        mv.addObject("circuitOwners", circuitOwners);
 
         return mv;
 
     }
 
+    @RequestMapping("profile/profile")
+    public ModelAndView profileYourCircuits() {
+
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
+
+        ModelAndView mv = new ModelAndView("pages/profile");
+        List<Entity> toDisplay = datastore.loadYourCircuits(currUser.getEmail());
+        List<String> circuitNames = new ArrayList<>();
+        List<String> circuitOwners = new ArrayList<>();
+
+        for (Entity td : toDisplay) {
+            circuitNames.add((String) td.getProperty("name"));
+            circuitOwners.add((String) td.getProperty("owner"));
+
+        }
+
+        mv.addObject("circuitNames", circuitNames);
+        mv.addObject("circuitOwners", circuitOwners);
+
+        return mv;
+
+
+    }
 
 
 }
