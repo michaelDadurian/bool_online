@@ -31,7 +31,7 @@ public class Datastore {
 
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
-                        "Nelson",
+                        "nelson@gmail.com",
                         "",
                         "Nelson's Circuit "+i,
                         "",

@@ -31,57 +31,41 @@ public class ProfileController {
 
     Datastore datastore = new Datastore();
 
-    @RequestMapping("/profile/login")
-    public ModelAndView profile(){
-
-        //datastore.loadTestData();
-
-        /*
-        List<String> toDisplay = new ArrayList<>();
-
-        for(int i=0;i<10;i++){
-            toDisplay.add("entry "+i);
-        }
-
-        toDisplay.add("hello world");
-
-
-
-
-        ModelAndView mv = new ModelAndView("pages/profile");
-        //mv.addObject("Strings", toDisplay);
-
-        return mv;
-
-        */
-
-        ModelAndView mv = new ModelAndView("pages/profile");
-        List<Entity> toDisplay = datastore.loadYourCircuits("Mike");
-        List<String> circuitNames = new ArrayList<>();
-
-        for (Entity td:toDisplay) {
-            circuitNames.add((String)td.getProperty("name"));
-        }
-
-
-        mv.addObject("circuitNames", circuitNames);
-        //model.addAttribute("circuitNames", circuitNames);
-
-
-        return mv;
+    @RequestMapping("/loadtestdata")
+    public String pcloadTestData(){
+        datastore.loadTestData();
+        return "profile.jsp";
     }
 
     @RequestMapping("/profile")
     public ModelAndView profileLogin(ModelMap model){
 
         UserService userService = UserServiceFactory.getUserService();
-        //User currUser = userService.getCurrentUser();
-
-        return new ModelAndView("redirect:" + userService.createLoginURL("/profile/login"));
+        User currUser = userService.getCurrentUser();
 
 
+        System.out.println("currUser "+currUser);
+
+        if(userService.isUserLoggedIn()){ //signed in
+            ModelAndView mv = new ModelAndView("pages/profile");
+            List<Entity> toDisplay = datastore.loadYourCircuits(currUser.getEmail());
+            List<String> circuitNames = new ArrayList<>();
+
+            for (Entity td:toDisplay) {
+                circuitNames.add((String)td.getProperty("name"));
+            }
 
 
+            mv.addObject("circuitNames", circuitNames);
+            mv.addObject("currUser", currUser);
+            //model.addAttribute("circuitNames", circuitNames);
+
+
+            return mv;
+        }
+        else{ //not signed in
+            return new ModelAndView("redirect:" + userService.createLoginURL("/profile"));
+        }
     }
 
 

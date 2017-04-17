@@ -6,10 +6,14 @@
 <!DOCTYPE HTML>
 <html>
 
-    <h1>Your Circuits:
-        <a href="profile/login" > </a>
+    <h1><c:out value="${currUser}"/> Circuits:
+        <a href="profile"> </a>
     </h1>
 
+    <a href = "profile/all">All Circuits</a>
+    <a href = "profile/profile">All Circuits</a>
+    <a href = "profile/shared">All Circuits</a>
+    <a href = "profile/public">All Circuits</a>
 
     <table>
         <c:forEach items="${circuitNames}" var="circuitName">
