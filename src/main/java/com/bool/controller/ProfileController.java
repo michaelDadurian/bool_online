@@ -34,11 +34,11 @@ public class ProfileController {
     @RequestMapping("/loadtestdata")
     public String pcloadTestData(){
         datastore.loadTestData();
-        return "profile.jsp";
+        return "pages/profile";
     }
 
     @RequestMapping("/profile")
-    public ModelAndView profileLogin(ModelMap model){
+    public ModelAndView profileLogin(){
 
         UserService userService = UserServiceFactory.getUserService();
         User currUser = userService.getCurrentUser();
@@ -58,7 +58,7 @@ public class ProfileController {
 
             mv.addObject("circuitNames", circuitNames);
             mv.addObject("currUser", currUser);
-            //model.addAttribute("circuitNames", circuitNames);
+
 
 
             return mv;
@@ -66,6 +66,22 @@ public class ProfileController {
         else{ //not signed in
             return new ModelAndView("redirect:" + userService.createLoginURL("/profile"));
         }
+    }
+
+    @RequestMapping("profile/public")
+    public ModelAndView profilePublicCircuits(){
+
+        ModelAndView mv = new ModelAndView("pages/profile");
+        List<Entity> toDisplay = datastore.loadPublicCircuits();
+        List<String> circuitNames = new ArrayList<>();
+
+        for (Entity td:toDisplay){
+            circuitNames.add((String)td.getProperty("name"));
+        }
+
+       mv.addObject("circuitNames", circuitNames);
+
+        return mv;
     }
 
 

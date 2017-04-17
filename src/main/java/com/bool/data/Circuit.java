@@ -1,7 +1,5 @@
 package com.bool.data;
 
-import com.google.appengine.api.users.User;
-
 /**
  * Created by Nelson on 4/16/2017.
  */
@@ -12,6 +10,7 @@ public class Circuit {
     private String name;
     private String circuitContent;
     private String quizletConstraints;
+    private String tags;
 
 
     public Circuit(
@@ -19,7 +18,8 @@ public class Circuit {
             String shared,
             String name,
             String circuitContent,
-            String quizletConstraints
+            String quizletConstraints,
+            String tags
     ){
 
         this.owner = owner;
@@ -27,6 +27,7 @@ public class Circuit {
         this.name = name;
         this.circuitContent = circuitContent;
         this.quizletConstraints = quizletConstraints;
+        this.tags = tags;
     }
 
     public String getOwner() {
@@ -67,5 +68,13 @@ public class Circuit {
 
     public void setQuizletConstraints(String quizletConstraints) {
         this.quizletConstraints = quizletConstraints;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 }

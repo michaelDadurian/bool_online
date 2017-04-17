@@ -11,9 +11,9 @@
     </h1>
 
     <a href = "profile/all">All Circuits</a>
-    <a href = "profile/profile">All Circuits</a>
-    <a href = "profile/shared">All Circuits</a>
-    <a href = "profile/public">All Circuits</a>
+    <a href = "profile/profile">Your Circuits</a>
+    <a href = "profile/shared">Shared Circuits</a>
+    <a href = "profile/public">Public Circuits</a>
 
     <table>
         <c:forEach items="${circuitNames}" var="circuitName">

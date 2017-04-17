@@ -21,37 +21,41 @@ public class Datastore {
 
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
-                        "Mike",
-                        "",
+                        "mdadurian@example.com",
+                        "nelson@gmail.com;reef@gmail.com",
                         "Mike's Circuit "+i,
                         "",
-                        ""
+                        "",
+                        "#public;#test;#sdfs"
                 ));
             }
 
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
-                        "nelson@gmail.com",
+                        "nelson@example.com",
                         "",
                         "Nelson's Circuit "+i,
                         "",
-                        ""
+                        "",
+                        "#public;#test"
                 ));
             }
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
-                        "Reef",
+                        "reef@example.com",
                         "",
                         "Reef's Circuit "+i,
                         "",
-                        ""
+                        "",
+                        "#public"
                 ));
             }
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
-                        "Kenny",
+                        "kenny@example.com",
                         "",
                         "Kenny's Circuit "+i,
+                        "",
                         "",
                         ""
                 ));
@@ -74,19 +78,47 @@ public class Datastore {
             toPush.setProperty("name", circuit.getName());
             toPush.setProperty("circuitContent", circuit.getCircuitContent());
             toPush.setProperty("quizletConstraints", circuit.getQuizletConstraints());
+            toPush.setProperty("tags", circuit.getTags());
 
             datastore.put(toPush);
         }
 
         public List<Entity> loadYourCircuits(String owner){
 
-            List<Entity> toLoad = new ArrayList<>();
+            List<Entity> toLoad;
             Query query = new Query("Circuit");
             query.addFilter("owner", Query.FilterOperator.EQUAL, owner);
             toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(50));
 
             return toLoad;
 
+
+        }
+
+        public List<Entity> loadPublicCircuits(){
+            List<Entity> toLoad;
+            List<Entity> publicCircuits = new ArrayList<>();
+
+            Query query = new Query("Circuit");
+            query.addFilter("tags", Query.FilterOperator.NOT_EQUAL, "");
+            toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(50));
+
+
+            for (Entity td:toLoad) {
+
+                String tags = (String)td.getProperty("tags");
+                String[] splitTags = tags.split(";");
+
+                for (String tag: splitTags){
+                    if (tag.equals("#public")){
+                        publicCircuits.add(td);
+                        break;
+                    }
+
+                }
+            }
+
+            return publicCircuits;
 
         }
 
