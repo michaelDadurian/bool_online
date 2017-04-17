@@ -4,6 +4,8 @@ package com.bool.controller;
  * Created by Nelson on 4/16/2017.
  */
 
+import com.bool.data.Datastore;
+
 import com.google.appengine.api.datastore.*;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -26,8 +28,14 @@ import java.util.List;
 @Controller
 public class ProfileController {
 
+    Datastore datastore = new Datastore();
+
     @RequestMapping("/profile")
     public ModelAndView profile(){
+
+        datastore.loadTestData();
+
+        /*
         List<String> toDisplay = new ArrayList<>();
 
         for(int i=0;i<10;i++){
@@ -35,9 +43,10 @@ public class ProfileController {
         }
 
         toDisplay.add("hello world");
+        */
 
         ModelAndView mv = new ModelAndView("pages/profile");
-        mv.addObject("Strings", toDisplay);
+        //mv.addObject("Strings", toDisplay);
 
         return mv;
     }
