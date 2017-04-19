@@ -13,8 +13,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
   <spring:url value = "resources/profile/css/simple-sidebar.css" var = "sidebarCSS" />
-      <link href = "<c:url value="/resources/profile/css/simple-sidebar.css" />" rel = stylesheet/>
+  <link href = "${sidebarCSS}" rel = "stylesheet" />
 
 </head>
 <body>
@@ -50,13 +51,13 @@
             <div id="all_circuit_div"><a href="profile">All Circuit</a></div>
           </li>
           <li style="list-style-type: none">
-            <div id="profile_circuit_div"><a href="profile/profile">Profile - Owned By Me</a></div>
+            <div id="profile_circuit_div"><a href="/profile/profile">Profile - Owned By Me</a></div>
           </li>
           <li style="list-style-type: none">
-            <div id="shared_circuit_div"><a href="profile/shared">Shared with Me</a></div>
+            <div id="shared_circuit_div"><a href="/profile/shared">Shared with Me</a></div>
           </li>
           <li style="list-style-type: none">
-            <div id="public_circuit_div"><a href="profile/public">Public</a></div>
+            <div id="public_circuit_div"><a href="/profile/public">Public</a></div>
           </li>
         </ul>
       </div>
@@ -166,8 +167,7 @@
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                   </a>
                 </td>
-                <td>Reef's Circuit</td>
-                <td>Me</td>
+
               </tr>
               <tr>
                 <td align="center">
@@ -181,8 +181,7 @@
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                   </a>
                 </td>
-                <td>Reef's Circuit 2</td>
-                <td>Me</td>
+
               </tr>
               </tbody>
             </table>
@@ -353,8 +352,7 @@
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                   </a>
                 </td>
-                <td>Reef's Circuit 2</td>
-                <td>Me</td>
+               
               </tr>
               </tbody>
             </table>
