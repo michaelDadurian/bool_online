@@ -15,15 +15,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-  <spring:url value = "resources/profile/css/simple-sidebar.css" var = "sidebarCSS" />
-<<<<<<< HEAD
-  <link href = "${sidebarCSS}" rel = "stylesheet" />
-=======
+  <spring:url value = "/resources/profile/css/simple-sidebar.css" var = "sidebarCSS" />
   <link href = "${sidebarCSS}" rel = "stylesheet">
 
-  <spring:url value = "resources/profile/img/bool_logo.png" var = "boolLogo" />
+  <spring:url value = "/resources/profile/img/bool_logo.png" var = "boolLogo" />
   <spring:url value = "/resources/profile/img/bell1.png" var = "bell" />
->>>>>>> 7fc0891caaf5fb58841adc0ff081d5009412f502
+
 
 </head>
 <body>
@@ -59,7 +56,6 @@
             <div id="all_circuit_div"><a href="profile">All Circuit</a></div>
           </li>
           <li style="list-style-type: none">
-<<<<<<< HEAD
             <div id="profile_circuit_div"><a href="/profile/profile">Profile - Owned By Me</a></div>
           </li>
           <li style="list-style-type: none">
@@ -67,15 +63,6 @@
           </li>
           <li style="list-style-type: none">
             <div id="public_circuit_div"><a href="/profile/public">Public</a></div>
-=======
-            <div id="profile_circuit_div"><a href="profile">Profile - Owned By Me</a></div>
-          </li>
-          <li style="list-style-type: none">
-            <div id="shared_circuit_div"><a href="shared">Shared with Me</a></div>
-          </li>
-          <li style="list-style-type: none">
-            <div id="public_circuit_div"><a href="public">Public</a></div>
->>>>>>> 7fc0891caaf5fb58841adc0ff081d5009412f502
           </li>
         </ul>
       </div>
