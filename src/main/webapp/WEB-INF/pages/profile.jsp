@@ -56,7 +56,7 @@
             <div id="all_circuit_div"><a href="profile">All Circuit</a></div>
           </li>
           <li style="list-style-type: none">
-            <div id="profile_circuit_div"><a href="/profile/profile">Profile - Owned By Me</a></div>
+            <div id="profile_circuit_div"><a href="/profile/profile">Owned By Me</a></div>
           </li>
           <li style="list-style-type: none">
             <div id="shared_circuit_div"><a href="/profile/shared">Shared with Me</a></div>
