@@ -1,6 +1,6 @@
-var path = pageContext+"resources/workspace/stylesheets/img/c-icon/";
+var path = "resources/workspace/img/c-icon/";
 
-var active_path = pageContext+"resources/workspace/stylesheets/img/c-icon-active/";
+var active_path = "resources/workspace/img/c-icon-active/";
 
 // Logic Gates
 var AND_IMAGE = loadImage(path + "and.png"); 

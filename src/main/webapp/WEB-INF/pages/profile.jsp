@@ -1,4 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page import="com.google.appengine.api.users.User" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
@@ -15,7 +16,14 @@
 
 
   <spring:url value = "resources/profile/css/simple-sidebar.css" var = "sidebarCSS" />
+<<<<<<< HEAD
   <link href = "${sidebarCSS}" rel = "stylesheet" />
+=======
+  <link href = "${sidebarCSS}" rel = "stylesheet">
+
+  <spring:url value = "resources/profile/img/bool_logo.png" var = "boolLogo" />
+  <spring:url value = "/resources/profile/img/bell1.png" var = "bell" />
+>>>>>>> 7fc0891caaf5fb58841adc0ff081d5009412f502
 
 </head>
 <body>
@@ -24,8 +32,8 @@
 <div class="container" style="background-color: #FDFFFF">
   <div class="row">
     <div class="col-sm-2">
-        <a href="resources/profile/img/bool_logo.png" >
-            <img src="<c:url value="/resources/profile/img/bool_logo.png" />" class="img-rounded" alt="bool_logo" height="75%" width="75%">
+        <a href="/" >
+            <img src="${boolLogo}" class="img-rounded" alt="bool_logo" height="75%" width="75%">
     </div>
     <div class="col-sm-8">
       <div id="custom-search-input">
@@ -40,7 +48,7 @@
       <button type="button" class="btn btn-warning btn-xs btn-custom">Upload</button>
     </div>
     <div class="col-sm-2">
-      <img id="notifications" src="<c:url value="/resources/profile/img/bell1.png" />">
+      <img id="notifications" src="${bell}">
     </div>
   </div>
   <div class="row">
@@ -51,6 +59,7 @@
             <div id="all_circuit_div"><a href="profile">All Circuit</a></div>
           </li>
           <li style="list-style-type: none">
+<<<<<<< HEAD
             <div id="profile_circuit_div"><a href="/profile/profile">Profile - Owned By Me</a></div>
           </li>
           <li style="list-style-type: none">
@@ -58,6 +67,15 @@
           </li>
           <li style="list-style-type: none">
             <div id="public_circuit_div"><a href="/profile/public">Public</a></div>
+=======
+            <div id="profile_circuit_div"><a href="profile">Profile - Owned By Me</a></div>
+          </li>
+          <li style="list-style-type: none">
+            <div id="shared_circuit_div"><a href="shared">Shared with Me</a></div>
+          </li>
+          <li style="list-style-type: none">
+            <div id="public_circuit_div"><a href="public">Public</a></div>
+>>>>>>> 7fc0891caaf5fb58841adc0ff081d5009412f502
           </li>
         </ul>
       </div>
