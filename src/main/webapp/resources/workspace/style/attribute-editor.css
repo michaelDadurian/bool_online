@@ -15,7 +15,6 @@
 	visibility: visible;
 }
 
-
 .attribute-editor .ae-text-box{
 
 }
@@ -51,16 +50,16 @@
 }
 
 .attribute-editor #rotate{
-	background-image: url(img/attribute-editor/rotate.png);
+	background-image: url(../img/attribute-editor/rotate.png);
 }
 
 .attribute-editor #delete{
-	background-image: url(img/attribute-editor/delete.png);
+	background-image: url(../img/attribute-editor/delete.png);
 
 }
 
 .attribute-editor #save{
-	background-image: url(img/attribute-editor/save.png);
+	background-image: url(../img/attribute-editor/save.png);
 
 }
 

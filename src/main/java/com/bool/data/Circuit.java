@@ -77,4 +77,11 @@ public class Circuit {
     public void setTags(String tags) {
         this.tags = tags;
     }
+
+    @Override
+    public String toString(){
+        String ret = owner + " " + shared + " " + name + " " + circuitContent + " " + quizletConstraints + " " + tags;
+
+        return ret;
+    }
 }

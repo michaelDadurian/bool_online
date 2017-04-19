@@ -27,9 +27,4 @@ public class HomeController {
         return "pages/splash_screen";
     }
 
-    @RequestMapping("/workspace")
-    public String workspace(){
-        return "pages/workspace";
-    }
-
 }
