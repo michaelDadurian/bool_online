@@ -2,88 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="272b5aa0-756e-459c-b63e-b2968cfddfb3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/profile/img/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/attribute-editor/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/bool-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/global.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/saving.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/submit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/toolbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/style/components.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/style/submit.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/style/user-menu.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/grid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/toolbar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/Thumbs.db" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/attribute-editor.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/attribute-editor.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/canvas.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/canvas.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/components.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/components.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/console.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/console.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/evaluator.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/evaluator.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/images.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/images.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/jquery-3.2.0.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/jquery-3.2.0.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/jquery-ui.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/jquery-ui.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/kinetic-v5.1.0/._kinetic-v5.1.0.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/kinetic-v5.1.0/._kinetic-v5.1.0.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/kinetic-v5.1.0/._kinetic-v5.1.0.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/kinetic-v5.1.0/._kinetic-v5.1.0.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/kinetic-v5.1.0/kinetic-v5.1.0.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/kinetic-v5.1.0/kinetic-v5.1.0.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/kinetic-v5.1.0/kinetic-v5.1.0.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/kinetic-v5.1.0/kinetic-v5.1.0.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/scripts/selection.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/selection.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/attribute-editor.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/style/attribute-editor.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/console.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/style/console.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/attribute-editor/delete.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/attribute-editor/delete.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/attribute-editor/rotate.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/attribute-editor/rotate.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/attribute-editor/save.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/attribute-editor/save.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/Thumbs.db" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/Thumbs.db" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/and.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/and.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/cross.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/cross.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/l.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/l.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/minus-alt.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/minus-alt.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/minus.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/minus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/not.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/not.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/on.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/or.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/or.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/print.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/print.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/t.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/t.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/var.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/var.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon-active/xor.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon-active/xor.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/Thumbs.db" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/Thumbs.db" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/and.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/and.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/cross.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/cross.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/l.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/l.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/minus-alt.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/minus-alt.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/minus.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/minus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/not.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/not.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/on.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/or.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/or.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/print.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/print.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/t.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/t.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/var.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/var.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/c-icon/xor.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/c-icon/xor.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-and.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-and.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-l.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-l.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-minus.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-minus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-nand.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-nand.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-nor.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-nor.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-not.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-not.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-onbox.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-onbox.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-or.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-or.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-plus.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-plus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-printbox.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-printbox.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-t.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-t.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-varbox.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-varbox.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/img/cmenu-xor.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/img/cmenu-xor.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/toolbar.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/style/toolbar.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/stylesheets/workspace.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/style/workspace.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/data/Circuit.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/data/Circuit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/data/Datastore.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/data/Datastore.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,8 +52,8 @@
       <file leaf-file-name="profile.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="354" column="15" lean-forward="false" selection-start-line="354" selection-start-column="15" selection-end-line="354" selection-end-column="15" />
+            <state relative-caret-position="1640">
+              <caret line="157" column="18" lean-forward="true" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -214,9 +134,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="952" />
-    <option name="width" value="976" />
-    <option name="height" value="1038" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -285,36 +206,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -720,7 +611,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="952" y="0" width="976" height="1038" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -729,7 +620,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17019027" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -738,7 +629,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.03880266" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29399142" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1008,8 +899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="354" column="15" lean-forward="false" selection-start-line="354" selection-start-column="15" selection-end-line="354" selection-end-column="15" />
+        <state relative-caret-position="1640">
+          <caret line="157" column="18" lean-forward="true" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
           <folding />
         </state>
       </provider>
