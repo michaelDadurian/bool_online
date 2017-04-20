@@ -1,34 +1,35 @@
-/*!
- * Start Bootstrap - Simple Sidebar (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
-/* <button type="button" class="btn btn-primary btn-md">New</button>
-        <button type="button" class="btn btn-warning">Upload</button>
+.col-sm-1 + .user_logo_dropdown{
+    position: relative;
+    right: 30px;
+}
 
-        <div id="sidebar-wrap">
-          <ul class="sidebar">
-            <li style="list-style-type: none">
-              <a href="#">ALL Circuit</a>
-            </li>
-            <li style="list-style-type: none">
-              <a href="#">Profile - Owned By Me</a>
-            </li>
-            <li style="list-style-type: none">
-              <a href="#">Shared With Me</a>
-            </li>
-            <li style="list-style-type: none">
-              <a href="#">Public</a>
-            </li>
-          </ul>
-        </div>
-        */
 
-.row2{
+.notifications_dropdown{
+    /*position:absolute;*/
+    /*top: 30px;*/
+}
+.span_filler{
+    height: 20px;
+    display: block;
+}
+.span_filler_1{
+    height: 5px;
+    display: block;
+}
+
+.dropdown_style{
+    /*font-size:smaller;*/
+    font-size: 1.4vmin;
+}
+.notifications_div{
+    top: 20%;
+}
+.notifications{
+    /*width:80%;*/
 
 }
-#notifications{
-    width:30%;
+.user_logo{
+    /*width: 130%;*/
 }
 .col-sm-2{
     padding-top: .5cm;
@@ -50,19 +51,39 @@
     width:30%;*/
 
 }
+/*#all_circuit_div{*/
+    /*margin: 5px 0;*/
+    /*font-size: 1.7vmin;*/
+/*}*/
+/*#profile_circuit_div{*/
+    /*margin: 5px 0;*/
+    /*font-size: 1.7vmin;*/
+/*}*/
+/*#shared_circuit_div{*/
+    /*margin: 5px 0;*/
+    /*font-size: 1.7vmin;*/
+/*}*/
+/*#public_circuit_div{*/
+    /*margin: 5px 0;*/
+    /*font-size: 1.7vmin;*/
+/*}*/
+
 #all_circuit_div{
     margin: 5px 0;
+    font-size: smaller;
 }
 #profile_circuit_div{
     margin: 5px 0;
+    font-size: smaller;
 }
 #shared_circuit_div{
     margin: 5px 0;
+    font-size: smaller;
 }
 #public_circuit_div{
     margin: 5px 0;
+    font-size: smaller;
 }
-
 .sidebar{
 
     padding-right: .5cm;
@@ -70,6 +91,7 @@
 }
 #sidebar-wrap{
     height:200px;
+    /*width:80%;*/
     padding-top: .5cm;
     padding-right: .5cm;
     /*position: relative;*/
@@ -77,6 +99,9 @@
     background-color: #F5F5F5;
     border-radius: 8px;
     border: 1px solid black;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-sizing: border-box;
+
 }
 #custom-search-input {
     margin:0;
@@ -164,53 +189,53 @@
     margin-right: -250px;
 }
 
-/* Sidebar Styles */
+/*!* Sidebar Styles *!*/
 
-.sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+/*.sidebar-nav {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*width: 250px;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*list-style: none;*/
+/*}*/
 
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
+/*.sidebar-nav li {*/
+    /*text-indent: 20px;*/
+    /*line-height: 40px;*/
+/*}*/
 
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #000;
-}
+/*.sidebar-nav li a {*/
+    /*display: block;*/
+    /*text-decoration: none;*/
+    /*color: #000;*/
+/*}*/
 
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #000;
-    background: rgba(255,255,255,0.2);
-}
+/*.sidebar-nav li a:hover {*/
+    /*text-decoration: none;*/
+    /*color: #000;*/
+    /*background: rgba(255,255,255,0.2);*/
+/*}*/
 
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
+/*.sidebar-nav li a:active,*/
+/*.sidebar-nav li a:focus {*/
+    /*text-decoration: none;*/
+/*}*/
 
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}
+/*.sidebar-nav > .sidebar-brand {*/
+    /*height: 65px;*/
+    /*font-size: 18px;*/
+    /*line-height: 60px;*/
+/*}*/
 
-.sidebar-nav > .sidebar-brand a {
-    color: #000;
-}
+/*.sidebar-nav > .sidebar-brand a {*/
+    /*color: #000;*/
+/*}*/
 
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
+/*.sidebar-nav > .sidebar-brand a:hover {*/
+    /*color: #fff;*/
+    /*background: none;*/
+/*}*/
 
 .panel-table .panel-body{
     padding:0;
