@@ -74,7 +74,7 @@
 			<li class="dropdown">
 				<a href="#" class="dropbtn">File</a>
 				<div class="dropdown-content">
-		  			<a href="#">New</a>
+		  			<a href="/workspace">New</a>
 		  			<a href="#" onclick = "writetofile()">Save</a>
 		  			<a href="#">
 		  				<label for = "loader" class = "loading">Load</label>
