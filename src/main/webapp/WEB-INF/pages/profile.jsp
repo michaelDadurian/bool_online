@@ -86,7 +86,7 @@
               </tr>
               </thead>
               <tbody>
-              <c:forEach items="${circuitOwners}" var="circuitOwner">
+              <c:forEach items="${circuitNames}" var="circuitName" varStatus = "status">
               <tr>
 
                 <td align="center">
@@ -102,7 +102,7 @@
                           </a>
                         </td>
                         <td>${circuitName}</td>
-                        <td>${circuitOwner}</td>
+                        <td>${circuitOwners[status.index]}</td>
 
 
                 </tr>

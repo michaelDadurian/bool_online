@@ -67,7 +67,7 @@ public class WorkspaceController {
         }
     }
 
-    @RequestMapping("/workspace/login")
+    @RequestMapping("/workspace/toggleLoginLogout")
     public ModelAndView workspaceLogin(){
 
         UserService userService = UserServiceFactory.getUserService();

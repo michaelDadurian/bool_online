@@ -67,7 +67,7 @@
 			<li class="dropdown">
 				<a href="#" class="dropbtn">Authenticate</a>
 				<div class="dropdown-content">
-		  			<a href="/workspace/login">Login/Logout | <c:out value = "${currEmail}"/></a>
+		  			<a href="/workspace/toggleLoginLogout">Login/Logout | <c:out value = "${currEmail}"/></a>
 		  			<a href="/profile">Exit</a>
 				</div>
 			</li>

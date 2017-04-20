@@ -27,4 +27,22 @@ public class HomeController {
         return "pages/splash_screen";
     }
 
+    @RequestMapping("/login")
+    public ModelAndView workspaceLogin(){
+
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
+
+        ModelAndView mv;
+
+        if (userService.isUserLoggedIn()) { //signed in
+            mv = new ModelAndView("redirect:/workspace");
+        } else { //not signed in
+            mv = new ModelAndView("redirect:" + userService.createLoginURL("/workspace"));
+        }
+
+        return mv;
+    }
+
+
 }

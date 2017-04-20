@@ -3,18 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="272b5aa0-756e-459c-b63e-b2968cfddfb3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/controller/HomeController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash_screen.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash_screen.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/grid.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/grid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/images.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/images.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/saving.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/saving.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/selection.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/selection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/submit.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/submit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/toolbar.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/toolbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/style/toolbar.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/style/toolbar.css" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,21 +24,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="527">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProfileController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="59" column="47" lean-forward="false" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
+            <state relative-caret-position="1046">
+              <caret line="81" column="64" lean-forward="false" selection-start-line="81" selection-start-column="64" selection-end-line="81" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,8 +49,8 @@
       <file leaf-file-name="WorkspaceController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="466">
+              <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,8 +61,8 @@
       <file leaf-file-name="workspace.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="70" column="37" lean-forward="false" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+            <state relative-caret-position="255">
+              <caret line="69" column="57" lean-forward="false" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -77,8 +71,8 @@
       <file leaf-file-name="splash_screen.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash_screen.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="76" column="16" lean-forward="false" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="16" />
+            <state relative-caret-position="527">
+              <caret line="100" column="38" lean-forward="false" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -87,8 +81,8 @@
       <file leaf-file-name="profile.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5967">
-              <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+            <state relative-caret-position="1768">
+              <caret line="104" column="58" lean-forward="false" selection-start-line="104" selection-start-column="58" selection-end-line="104" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -206,12 +200,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bool/data/Datastore.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/submit.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/images.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash_screen.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash_screen.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/HomeController.java" />
       </list>
     </option>
   </component>
@@ -991,10 +985,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/HomeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/workspace/script/images.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="85">
+          <caret line="5" column="45" lean-forward="true" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1007,55 +1001,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/workspace/script/images.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="45" lean-forward="true" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5967">
-          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        <state relative-caret-position="255">
+          <caret line="69" column="57" lean-forward="false" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="466">
+          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="70" column="37" lean-forward="false" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+        <state relative-caret-position="1046">
+          <caret line="81" column="64" lean-forward="false" selection-start-line="81" selection-start-column="64" selection-end-line="81" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" column="58" lean-forward="false" selection-start-line="104" selection-start-column="58" selection-end-line="104" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash_screen.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="16" lean-forward="false" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="16" />
+        <state relative-caret-position="527">
+          <caret line="100" column="38" lean-forward="false" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="59" column="47" lean-forward="false" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="527">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
