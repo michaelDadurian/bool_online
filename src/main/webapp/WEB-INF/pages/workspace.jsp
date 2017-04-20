@@ -1,4 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 
 <html>
@@ -6,31 +7,31 @@
 <head>
 	<title>bool: The Online Circuit Builder</title>
 
-	<link rel="icon"
+	<link rel="icon" 
 	type="favicon.ico" 
 	href="favicon.ico">
 
 	<script>var pageContext = "${pageContext.request.contextPath}";</script>
 
-    <spring:url value = "resources/workspace/style/submit.css" var = "submitCSS"/>
-    <spring:url value = "resources/workspace/style/user-menu.css" var = "userMenuCSS"/>
-    <spring:url value = "resources/workspace/style/attribute-editor.css" var = "attributeCSS" />
-    <spring:url value = "resources/workspace/style/workspace.css" var = "workspaceCSS"/>
-    <spring:url value = "resources/workspace/style/toolbar.css" var = "toolbarCSS"/>
-    <spring:url value = "resources/workspace/style/console.css" var = "consoleCSS"/>
+    <spring:url value = "/resources/workspace/style/submit.css" var = "submitCSS"/>
+    <spring:url value = "/resources/workspace/style/user-menu.css" var = "userMenuCSS"/>
+    <spring:url value = "/resources/workspace/style/attribute-editor.css" var = "attributeCSS" />
+    <spring:url value = "/resources/workspace/style/workspace.css" var = "workspaceCSS"/>
+    <spring:url value = "/resources/workspace/style/toolbar.css" var = "toolbarCSS"/>
+    <spring:url value = "/resources/workspace/style/console.css" var = "consoleCSS"/>
 
 
-    <spring:url value = "resources/workspace/script/jquery-3.2.0.min.js" var = "jqueryJS"/>
-    <spring:url value = "resources/workspace/script/jquery-ui.min.js" var = "jqueryUI"/>
-    <spring:url value = "resources/workspace/script/kinetic-v5.1.0/kinetic-v5.1.0.js" var = "kineticJS" />
-    <spring:url value = "resources/workspace/script/kinetic-v5.1.0/kinetic-v5.1.0.min.js" var = "kineticMinJS" />
+    <spring:url value = "/resources/workspace/script/jquery-3.2.0.min.js" var = "jqueryJS"/>
+    <spring:url value = "/resources/workspace/script/jquery-ui.min.js" var = "jqueryUI"/>
+    <spring:url value = "/resources/workspace/script/kinetic-v5.1.0/kinetic-v5.1.0.js" var = "kineticJS" />
+    <spring:url value = "/resources/workspace/script/kinetic-v5.1.0/kinetic-v5.1.0.min.js" var = "kineticMinJS" />
 
-    <spring:url value = "resources/workspace/script/global.js" var = "globalJS" />
-    <spring:url value = "resources/workspace/script/console.js" var = "consoleJS" />
-    <spring:url value = "resources/workspace/script/components.js" var = "componentsJS" />
-    <spring:url value = "resources/workspace/script/images.js" var = "imagesJS" />
-    <spring:url value = "resources/workspace/script/grid.js" var = "gridJS" />
-    <spring:url value = "resources/workspace/script/submit.js" var = "submitJS" />
+    <spring:url value = "/resources/workspace/script/global.js" var = "globalJS" />
+    <spring:url value = "/resources/workspace/script/console.js" var = "consoleJS" />
+    <spring:url value = "/resources/workspace/script/components.js" var = "componentsJS" />
+    <spring:url value = "/resources/workspace/script/images.js" var = "imagesJS" />
+    <spring:url value = "/resources/workspace/script/grid.js" var = "gridJS" />
+    <spring:url value = "/resources/workspace/script/submit.js" var = "submitJS" />
 
     <link href = "${attributeCSS}" rel = "stylesheet" />
     <link href = "${workspaceCSS}" rel = "stylesheet" />
@@ -66,16 +67,19 @@
 			<li class="dropdown">
 				<a href="#" class="dropbtn">Authenticate</a>
 				<div class="dropdown-content">
-		  			<a href="splash/splash_screen.html">Login/Logout</span>
-		  			<a href="splash/splash_screen.html">Exit</a>
+		  			<a href="/workspace/login">Login/Logout | <c:out value = "${currEmail}"/></a>
+		  			<a href="/profile">Exit</a>
 				</div>
 			</li>
 			<li class="dropdown">
 				<a href="#" class="dropbtn">File</a>
 				<div class="dropdown-content">
 		  			<a href="#">New</a>
-		  			<a href="#">Save</a>
-		  			<a href="#"><input id = "loader" type="file"></a>
+		  			<a href="#" onclick = "writetofile()">Save</a>
+		  			<a href="#">
+		  				<label for = "loader" class = "loading">Load</label>
+		  				<input id = "loader" type="file">
+		  			</a>
 		  			<a href = "#" onclick = "promptSubmitMenu()">Submit</a>
 		  			<a id="run">Run</a>
 		  			<a href="#">Toggle Dynamic Evaluator</a>
@@ -91,6 +95,7 @@
 		  			<a href="#" onclick = "pasteToWorkspace()">Paste ctrl-v</a>
 		  			<a href="#" onclick = "rotateAxis()">Rotate All</a>
 		  			<a href="#" onclick = "rotateSelected()">Rotate Indivually</a>
+		  			<a href="#" onclick = "deleteSelected()">Delete Selected</a>
 				</div>
 			</li>
 		</ul>
@@ -108,25 +113,25 @@
 			<div class = "title">Components</div>
 
 			<div class = "twobytwo">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-and.png" id = "AND">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-xor.png" id = "XOR">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-or.png" id = "OR">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-not.png" id = "NOT">
-				<!--<img class = "c-icon" src="resources/workspace/img/cmenu-nand.png" id = "NAND">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-nor.png" id = "NOR">-->
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-and.png" id = "AND">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-xor.png" id = "XOR">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-or.png" id = "OR">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-not.png" id = "NOT">
+				<!--<img class = "c-icon" src="/resources/workspace/img/cmenu-nand.png" id = "NAND">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-nor.png" id = "NOR">-->
 			</div>
 
 			<div class = "onebyone">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-plus.png" id = "CROSS">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-minus.png" id = "I">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-t.png" id = "T">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-l.png" id = "L">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-plus.png" id = "CROSS">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-minus.png" id = "I">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-t.png" id = "T">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-l.png" id = "L">
 			</div>
 
 			<div class = "twobytwo">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-onbox.png" id = "ON">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-printbox.png" id = "PRINT">
-				<img class = "c-icon" src="resources/workspace/img/cmenu-varbox.png" id = "VAR">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-onbox.png" id = "ON">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-printbox.png" id = "PRINT">
+				<img class = "c-icon" src="/resources/workspace/img/cmenu-varbox.png" id = "VAR">
 			</div>
 			
 		</div>
@@ -250,12 +255,12 @@
 	</div>
 
 
-    <spring:url value = "resources/workspace/script/canvas.js" var = "canvas" />
-    <spring:url value = "resources/workspace/script/attribute-editor.js" var = "attributeEditor" />
-    <spring:url value = "resources/workspace/script/selection.js" var = "selection" />
-    <spring:url value = "resources/workspace/script/evaluator.js" var = "evaluator" />
-    <spring:url value = "resources/workspace/script/saving.js" var = "saving" />
-    <spring:url value = "resources/workspace/script/toolbar.js" var = "toolbar" />
+    <spring:url value = "/resources/workspace/script/canvas.js" var = "canvas" />
+    <spring:url value = "/resources/workspace/script/attribute-editor.js" var = "attributeEditor" />
+    <spring:url value = "/resources/workspace/script/selection.js" var = "selection" />
+    <spring:url value = "/resources/workspace/script/evaluator.js" var = "evaluator" />
+    <spring:url value = "/resources/workspace/script/saving.js" var = "saving" />
+    <spring:url value = "/resources/workspace/script/toolbar.js" var = "toolbar" />
 
 
     <script src="${canvas}"></script>
@@ -264,6 +269,7 @@
     <script src="${evaluator}"></script>
     <script src="${saving}"></script>
     <script src="${toolbar}"></script>
+
 
 </body>
 

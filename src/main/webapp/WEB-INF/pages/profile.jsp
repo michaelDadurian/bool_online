@@ -48,7 +48,7 @@
       <div id="sidebar-wrap">
         <ul class="sidebar"style="font-style: normal">
           <li style="list-style-type: none">
-            <div id="all_circuit_div"><a href="profile">All Circuit</a></div>
+            <div id="all_circuit_div"><a href="/profile">All Circuit</a></div>
           </li>
           <li style="list-style-type: none">
             <div id="profile_circuit_div"><a href="/profile/profile">Owned By Me</a></div>
@@ -86,7 +86,7 @@
               </tr>
               </thead>
               <tbody>
-              <c:forEach items="${circuitNames}" var="circuitName">
+              <c:forEach items="${circuitOwners}" var="circuitOwner">
               <tr>
 
                 <td align="center">
@@ -102,6 +102,7 @@
                           </a>
                         </td>
                         <td>${circuitName}</td>
+                        <td>${circuitOwner}</td>
 
 
                 </tr>

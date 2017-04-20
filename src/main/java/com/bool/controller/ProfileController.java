@@ -57,7 +57,7 @@ public class ProfileController {
                 circuitOwners.add((String) td.getProperty("owner"));
             }
 
-
+            mv.addObject("circuitFileListing", toDisplay);
             mv.addObject("circuitNames", circuitNames);
             mv.addObject("circuitOwners", circuitOwners);
             mv.addObject("currUser", currUser);
