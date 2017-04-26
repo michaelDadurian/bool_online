@@ -98,7 +98,7 @@
                     <div class="col-md-4">
                         <img src="resources/splash/img/header.png" class="img-responsive" alt="">
                         <div class="span-login">
-                        <h2><a href="/workspace" class="btn btn-primary btn-block page-scroll">Login</a></h2>
+                        <h2><a href="/login" class="btn btn-primary btn-block page-scroll">Login</a></h2>
                         <h3><a href="/workspace" class="btn btn-primary btn-block page-scroll">Continue as Guest</a></h3>
                         </div>
                     </div>

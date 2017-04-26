@@ -55,7 +55,7 @@ function createCircuitFileObject(){
 
 function sendToDatastore(circuitFileObject){
 	$.ajax({
-		url: "workspace/submit",
+		url: "/workspace/submit",
 		method: "GET",
 		data: circuitFileObject,
 		contentType: "application/json",
@@ -64,8 +64,6 @@ function sendToDatastore(circuitFileObject){
 			return false;
 		}
 	});
-
-    console.log("HELLOOKOKOK");
 }
 
 function submitToDatastore(){
