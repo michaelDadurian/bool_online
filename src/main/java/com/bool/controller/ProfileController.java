@@ -51,14 +51,19 @@ public class ProfileController {
     @ModelAttribute("searchParams")
     public ModelAndView submitSearch(Model model, HttpServletRequest request){
 
-        ModelAndView modelAndView = new ModelAndView("pages/profile");
+
         String searchParams = new String();
         model.addAttribute("searchParams", searchParams);
 
         System.out.println(request.getParameter("searchParams"));
 
-        return modelAndView;
+        ModelAndView mv = new ModelAndView("redirect:/profile/");
+        mv.addObject("searchParams", request.getParameter("searchParams"));
+
+        return mv;
     }
+
+
 
 
     @RequestMapping("/")
