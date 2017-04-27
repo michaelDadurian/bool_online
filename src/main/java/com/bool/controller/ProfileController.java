@@ -6,16 +6,20 @@ package com.bool.controller;
 
 import com.bool.data.Circuit;
 import com.bool.data.Datastore;
+import com.bool.search.Search;
 
 import com.google.appengine.api.datastore.*;
+import com.google.appengine.api.search.SearchService;
+import com.google.appengine.repackaged.com.google.appengine.api.search.SearchServicePb;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.appengine.api.users.User;
@@ -27,7 +31,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping(value = "/profile")
 public class ProfileController {
+
+    SearchService searchService;
 
     Datastore datastore = new Datastore();
 
@@ -37,7 +44,24 @@ public class ProfileController {
         return "pages/profile";
     }
 
-    @RequestMapping("/profile")
+    //load entire string passed from form in profile.jsp
+    //psas over initial url and append the string
+    //parse string and query database
+    @RequestMapping(value = "submitSearch", method = RequestMethod.POST)
+    @ModelAttribute("searchParams")
+    public ModelAndView submitSearch(Model model, HttpServletRequest request){
+
+        ModelAndView modelAndView = new ModelAndView("pages/profile");
+        String searchParams = new String();
+        model.addAttribute("searchParams", searchParams);
+
+        System.out.println(request.getParameter("searchParams"));
+
+        return modelAndView;
+    }
+
+
+    @RequestMapping("/")
     public ModelAndView profileLogin() {
 
         UserService userService = UserServiceFactory.getUserService();

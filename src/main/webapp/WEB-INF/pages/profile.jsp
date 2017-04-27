@@ -1,4 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="com.google.appengine.api.users.User" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
@@ -28,14 +29,16 @@
             <img src= "/resources/profile/img/bool_logo.png" class="img-rounded" alt="bool_logo" height="75%" width="75%">
     </div>
     <div class="col-md-8 col-sm-8">
-      <div id="custom-search-input">
-        <div class="input-group col-md-12">
-          <input type="text" class="  search-query form-control" placeholder="Search" />
-          <span class="input-group-btn">
-              <button class="btn btn-danger" type="button"><span class=" glyphicon glyphicon-search"></span></button>
-            </span>
-        </div>
-      </div>
+        <form action="submitSearch" modelAttribute="searchParams" method="post" id="search_input">
+          <div id="custom-search-input">
+            <div class="input-group col-md-12">
+              <input type="text" class="search-query form-control" placeholder="Search" name="searchParams" />
+              <span class="input-group-btn">
+                  <button class="btn btn-danger" type="button"><span class=" glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+          </div>
+        </form>
       <button type="button" class="btn btn-primary btn-xs btn-custom">New</button>
       <button type="button" class="btn btn-warning btn-xs btn-custom">Upload</button>
     </div>
