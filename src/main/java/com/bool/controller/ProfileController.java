@@ -52,13 +52,14 @@ public class ProfileController {
     public ModelAndView submitSearch(Model model, HttpServletRequest request){
 
 
-        String searchParams = new String();
+        Search searchParams = new Search(request.getParameter("searchParams"));
         model.addAttribute("searchParams", searchParams);
-
-        System.out.println(request.getParameter("searchParams"));
 
         ModelAndView mv = new ModelAndView("redirect:/profile");
         mv.addObject("searchParams", request.getParameter("searchParams"));
+
+        System.out.println(searchParams.getQuery());
+
 
         return mv;
     }

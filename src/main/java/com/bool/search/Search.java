@@ -4,12 +4,14 @@ public class Search{
 
     private String query;
 
-    public Search(){}
+    public Search(String query){
+        this.query = query;
+    }
 
     public String getQuery(){
         return query;
     }
-    public void setQuery(){
+    public void setQuery(String query){
         this.query = query;
     }
 
