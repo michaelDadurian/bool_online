@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/profile")
+
 public class ProfileController {
 
     SearchService searchService;
@@ -57,7 +57,7 @@ public class ProfileController {
 
         System.out.println(request.getParameter("searchParams"));
 
-        ModelAndView mv = new ModelAndView("redirect:/profile/");
+        ModelAndView mv = new ModelAndView("redirect:/profile");
         mv.addObject("searchParams", request.getParameter("searchParams"));
 
         return mv;
@@ -66,7 +66,7 @@ public class ProfileController {
 
 
 
-    @RequestMapping("/")
+    @RequestMapping("/profile")
     public ModelAndView profileLogin() {
 
         UserService userService = UserServiceFactory.getUserService();
