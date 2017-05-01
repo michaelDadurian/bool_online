@@ -29,7 +29,7 @@
             <img src= "/resources/profile/img/bool_logo.png" class="img-rounded" alt="bool_logo" height="75%" width="75%">
     </div>
     <div class="col-md-8 col-sm-8">
-        <form action="submitSearch" modelAttribute="searchParams" method="post" id="search_input">
+        <form action="/profile/submitSearch" modelAttribute="searchParams" method="post" id="search_input">
           <div id="custom-search-input">
             <div class="input-group col-md-12">
               <input type="text" class="search-query form-control" placeholder="Search" name="searchParams" />

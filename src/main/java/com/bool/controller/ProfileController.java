@@ -45,7 +45,7 @@ public class ProfileController {
     //load entire string passed from form in profile.jsp
     //psas over initial url and append the string
     //parse string and query database
-    @RequestMapping(value = "submitSearch", method = RequestMethod.POST)
+    @RequestMapping(value = "profile/submitSearch", method = RequestMethod.POST)
     @ModelAttribute("searchParams")
     public ModelAndView submitSearch(Model model, HttpServletRequest request){
 
@@ -53,7 +53,7 @@ public class ProfileController {
         Search searchParams = new Search(request.getParameter("searchParams"));
         model.addAttribute("searchParams", searchParams);
 
-        ModelAndView mv = new ModelAndView("redirect:/profile");
+        ModelAndView mv = new ModelAndView("pages/profile");
         mv.addObject("searchParams", request.getParameter("searchParams"));
 
         System.out.println(searchParams.getQuery());
@@ -62,13 +62,13 @@ public class ProfileController {
         List<String> circuitOwners = new ArrayList<>();
 
         for (Entity searchResult: searchResults){
-            //System.out.println(searchResult.getProperty("name"));
+            System.out.println(searchResult.getProperty("name"));
             circuitNames.add((String)searchResult.getProperty("name"));
             circuitOwners.add((String)searchResult.getProperty("owner"));
         }
 
-        mv.addObject(circuitNames);
-        mv.addObject(circuitOwners);
+        mv.addObject("circuitNames", circuitNames);
+        mv.addObject("circuitOwners", circuitOwners);
 
 
         return mv;
