@@ -34,8 +34,6 @@ import java.util.List;
 
 public class ProfileController {
 
-    SearchService searchService;
-
     Datastore datastore = new Datastore();
 
     @RequestMapping("/loadtestdata")
@@ -59,6 +57,18 @@ public class ProfileController {
         mv.addObject("searchParams", request.getParameter("searchParams"));
 
         System.out.println(searchParams.getQuery());
+        List<Entity> searchResults = searchParams.parseQuery(searchParams.getQuery());
+        List<String> circuitNames = new ArrayList<>();
+        List<String> circuitOwners = new ArrayList<>();
+
+        for (Entity searchResult: searchResults){
+            //System.out.println(searchResult.getProperty("name"));
+            circuitNames.add((String)searchResult.getProperty("name"));
+            circuitOwners.add((String)searchResult.getProperty("owner"));
+        }
+
+        mv.addObject(circuitNames);
+        mv.addObject(circuitOwners);
 
 
         return mv;

@@ -13,6 +13,8 @@ import java.util.List;
 
 public class Datastore {
 
+        /*Default filter here*/
+
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         UserService userService = UserServiceFactory.getUserService();
 
@@ -88,7 +90,7 @@ public class Datastore {
             List<Entity> toLoad;
             Query query = new Query("Circuit");
             query.addFilter("owner", Query.FilterOperator.EQUAL, owner);
-            toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(50));
+            toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
 
             return toLoad;
 
@@ -101,7 +103,7 @@ public class Datastore {
 
             Query query = new Query("Circuit");
             query.addFilter("tags", Query.FilterOperator.NOT_EQUAL, "");
-            toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(50));
+            toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
 
 
             for (Entity td:toLoad) {
@@ -129,7 +131,7 @@ public class Datastore {
 
             Query query = new Query("Circuit");
             query.addFilter("shared", Query.FilterOperator.NOT_EQUAL, "");
-            toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(50));
+            toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
 
             for (Entity td:toLoad){
 
