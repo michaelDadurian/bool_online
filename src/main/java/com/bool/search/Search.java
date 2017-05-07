@@ -81,9 +81,76 @@ public class Search{
             String currName = (String)circuit.getProperty("name");
 
             //System.out.println("Curr entity: " + circuit.getProperty("name"));
-            if (checkProperty(currTags, tags) && checkProperty(currShared, sharedWith)){
-                searchResult.add(circuit);
+            /*Search by tag only*/
+            if (!tags.isEmpty() && sharedWith.isEmpty() && owners.isEmpty() && names.isEmpty()){
+                System.out.println("Search by tag");
+                if (checkProperty(currTags, tags)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
             }
+            /*Search by tag and shared with*/
+            else if (!tags.isEmpty() && !sharedWith.isEmpty() && owners.isEmpty() && names.isEmpty()){
+                System.out.println("Search by tag and shared");
+                if (checkProperty(currTags, tags) && checkProperty(currShared, sharedWith)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
+            /*Search by tag and shared with and owners*/
+            else if (!tags.isEmpty() && !sharedWith.isEmpty() && !owners.isEmpty() && names.isEmpty()){
+                System.out.println("Search by tag, shared, and owner");
+                if (checkProperty(currTags, tags) && checkProperty(currShared, sharedWith) && checkProperty(currOwner, owners)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
+            /*Search by tag and shared with and owners and name*/
+            else if (!tags.isEmpty() && !sharedWith.isEmpty() && !owners.isEmpty() && !names.isEmpty()){
+                System.out.println("Search by tag, shared, owner, and name");
+                
+                if (checkProperty(currTags, tags) && checkProperty(currShared, sharedWith) && checkProperty(currOwner, owners) && checkProperty(currName, names)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
+            else if (tags.isEmpty() && sharedWith.isEmpty() && !owners.isEmpty() && names.isEmpty()){
+                System.out.println("Search by owner");
+                if (checkProperty(currOwner, owners)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+
+            }
+            else if (tags.isEmpty() && sharedWith.isEmpty() && owners.isEmpty() && !names.isEmpty()){
+                System.out.println("Search by name");
+                if (checkProperty(currName, names)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+
+            }
+            else if (!tags.isEmpty() && sharedWith.isEmpty() && owners.isEmpty() && !names.isEmpty()){
+                System.out.println("Search by name and tags");
+                if (checkProperty(currName, names) && checkProperty(currTags, tags)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
+            else if (tags.isEmpty() && !sharedWith.isEmpty() && owners.isEmpty() && names.isEmpty()){
+                System.out.println("Search by shared");
+                if (checkProperty(currShared, sharedWith)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
+
+
 
         }
 
@@ -122,19 +189,21 @@ public class Search{
 
 
     public boolean checkProperty(String currProperty, List<String> searchTerms){
-        int fullMatch = 0;
+        int fullMatch = 1;
 
-        /*Check to see if the searched tags are contained within the current Circuit's tags*/
+        /*Check to see if the searched property is contained within the current Circuit
+        * searchTerms = ["#public", "#test", "#sdfs"]
+        * currProperty= "#public;#test;#sdfs"               */
+
+
         for(String term: searchTerms){
-            //System.out.println("searchTags size: " + searchTags.size() + " fullMatch: " + fullMatch + " searchTag: " + searchTag);
-            if (fullMatch == searchTerms.size() - 1)
-                return true;
-            if (currProperty.contains(term)){
-                fullMatch++;
+
+            if (!currProperty.contains(term)){
+                return false;
             }
         }
 
-        return false;
+        return true;
 
     }
 

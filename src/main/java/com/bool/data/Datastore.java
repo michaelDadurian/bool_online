@@ -141,6 +141,7 @@ public class Datastore {
                 for (String user: splitShared){
                     if (user.equals(sharedWith)){
                         sharedCircuits.add(td);
+
                         break;
                     }
                 }
@@ -156,9 +157,21 @@ public class Datastore {
             List<Entity> publicCircuits = loadPublicCircuits();
             List<Entity> yourCircuits = loadYourCircuits(owner);
 
+
             allCircuits.addAll(sharedCircuits);
-            allCircuits.addAll(publicCircuits);
-            allCircuits.addAll(yourCircuits);
+
+            /*Check for duplicates*/
+            for (Entity circuit: publicCircuits){
+                if (!allCircuits.contains(circuit))
+                    allCircuits.add(circuit);
+            }
+
+            /*Check for duplicates*/
+            for (Entity circuit: yourCircuits){
+                if (!allCircuits.contains(circuit))
+                    allCircuits.add(circuit);
+            }
+
 
             return allCircuits;
 

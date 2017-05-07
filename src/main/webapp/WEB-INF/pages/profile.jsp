@@ -29,7 +29,7 @@
             <img src= "/resources/profile/img/bool_logo.png" class="img-rounded" alt="bool_logo" height="75%" width="75%">
     </div>
     <div class="col-md-8 col-sm-8">
-        <form action="/profile/submitSearch" modelAttribute="searchParams" method="post" id="search_input">
+        <form action="/profile/submitSearch" modelAttribute="searchParams" method="get" id="search_input">
           <div id="custom-search-input">
             <div class="input-group col-md-12">
               <input type="text" class="search-query form-control" placeholder="Search" name="searchParams" />
@@ -78,16 +78,16 @@
       <div id="sidebar-wrap">
         <ul class="sidebar"style="font-style: normal">
           <li style="list-style-type: none">
-            <div id="all_circuit_div"><a href="profile">All Circuit</a></div>
+            <div id="all_circuit_div"><a href="/profile">All Circuit</a></div>
           </li>
           <li style="list-style-type: none">
-            <div id="profile_circuit_div"><a href="/profile/profile">Owned By Me</a></div>
+            <div id="profile_circuit_div"><a href="/profile/submitSearch?searchParams=owner%3A${currUser}">Owned By Me</a></div>
           </li>
           <li style="list-style-type: none">
-            <div id="shared_circuit_div"><a href="/profile/shared">Shared with Me</a></div>
+            <div id="shared_circuit_div"><a href="/profile/submitSearch?searchParams=shared%3A${currUser}">Shared with Me</a></div>
           </li>
           <li style="list-style-type: none">
-            <div id="public_circuit_div"><a href="/profile/public">Public</a></div>
+            <div id="public_circuit_div"><a href="/profile/submitSearch?searchParams=%23public">Public</a></div>
           </li>
         </ul>
       </div>

@@ -45,9 +45,12 @@ public class ProfileController {
     //load entire string passed from form in profile.jsp
     //psas over initial url and append the string
     //parse string and query database
-    @RequestMapping(value = "profile/submitSearch", method = RequestMethod.POST)
+    @RequestMapping(value = "profile/submitSearch", method = RequestMethod.GET)
     @ModelAttribute("searchParams")
     public ModelAndView submitSearch(Model model, HttpServletRequest request){
+
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
 
 
         Search searchParams = new Search(request.getParameter("searchParams"));
@@ -62,13 +65,13 @@ public class ProfileController {
         List<String> circuitOwners = new ArrayList<>();
 
         for (Entity searchResult: searchResults){
-            System.out.println(searchResult.getProperty("name"));
             circuitNames.add((String)searchResult.getProperty("name"));
             circuitOwners.add((String)searchResult.getProperty("owner"));
         }
 
         mv.addObject("circuitNames", circuitNames);
         mv.addObject("circuitOwners", circuitOwners);
+        mv.addObject("currUser", currUser);
 
 
         return mv;
@@ -93,6 +96,7 @@ public class ProfileController {
             List<String> circuitOwners = new ArrayList<>();
 
             for (Entity td : toDisplay) {
+
                 circuitNames.add((String) td.getProperty("name"));
                 circuitOwners.add((String) td.getProperty("owner"));
             }
@@ -108,75 +112,7 @@ public class ProfileController {
         }
     }
 
-    @RequestMapping("profile/public")
-    public ModelAndView profilePublicCircuits() {
 
-        ModelAndView mv = new ModelAndView("pages/profile");
-        List<Entity> toDisplay = datastore.loadPublicCircuits();
-        List<String> circuitNames = new ArrayList<>();
-        List<String> circuitOwners = new ArrayList<>();
-
-
-        for (Entity td : toDisplay) {
-            circuitNames.add((String) td.getProperty("name"));
-            circuitOwners.add((String) td.getProperty("owner"));
-        }
-
-
-        mv.addObject("circuitNames", circuitNames);
-        mv.addObject("circuitOwners", circuitOwners);
-        mv.addObject("circuitObjects", toDisplay);
-
-        return mv;
-    }
-
-    @RequestMapping("profile/shared")
-    public ModelAndView profileSharedCircuits() {
-
-        UserService userService = UserServiceFactory.getUserService();
-        User currUser = userService.getCurrentUser();
-
-        ModelAndView mv = new ModelAndView("pages/profile");
-        List<Entity> toDisplay = datastore.loadSharedCircuits(currUser.getEmail());
-        List<String> circuitNames = new ArrayList<>();
-        List<String> circuitOwners = new ArrayList<>();
-
-        for (Entity td : toDisplay) {
-            circuitNames.add((String) td.getProperty("name"));
-            circuitOwners.add((String) td.getProperty("owner"));
-        }
-
-        mv.addObject("circuitNames", circuitNames);
-        mv.addObject("circuitOwners", circuitOwners);
-
-        return mv;
-
-    }
-
-    @RequestMapping("profile/profile")
-    public ModelAndView profileYourCircuits() {
-
-        UserService userService = UserServiceFactory.getUserService();
-        User currUser = userService.getCurrentUser();
-
-        ModelAndView mv = new ModelAndView("pages/profile");
-        List<Entity> toDisplay = datastore.loadYourCircuits(currUser.getEmail());
-        List<String> circuitNames = new ArrayList<>();
-        List<String> circuitOwners = new ArrayList<>();
-
-        for (Entity td : toDisplay) {
-            circuitNames.add((String) td.getProperty("name"));
-            circuitOwners.add((String) td.getProperty("owner"));
-
-        }
-
-        mv.addObject("circuitNames", circuitNames);
-        mv.addObject("circuitOwners", circuitOwners);
-
-        return mv;
-
-
-    }
 
 
 }
