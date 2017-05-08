@@ -310,7 +310,7 @@ public class Search{
             if (!defaultFilter.contains(circuit))
                 defaultFilter.add(circuit);
         }
-      
+
 
         return defaultFilter;
 

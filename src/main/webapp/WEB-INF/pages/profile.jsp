@@ -26,7 +26,7 @@
 <div class="container" style="background-color: #FDFFFF">
   <div class="row">
     <div class=" col-md-2 col-sm-2">
-            <img src= "/resources/profile/img/bool_logo.png" class="img-rounded" alt="bool_logo" height="75%" width="75%">
+            <a href="/"><img src= "/resources/profile/img/bool_logo.png" class="img-rounded" alt="bool_logo" height="75%" width="75%"></a>
     </div>
     <div class="col-md-8 col-sm-8">
         <form action="/profile/submitSearch" modelAttribute="searchParams" method="get" id="search_input">
@@ -39,7 +39,7 @@
             </div>
           </div>
         </form>
-      <button type="button" class="btn btn-primary btn-xs btn-custom">New</button>
+      <a href="/workspace"><button type="button" class="btn btn-primary btn-xs btn-custom">New</button></a>
       <button type="button" class="btn btn-warning btn-xs btn-custom">Upload</button>
     </div>
     <div class="col-md-1 col-sm-1">
