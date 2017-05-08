@@ -46,9 +46,13 @@ public class Search{
         * "Nelson's Circuit" use contains filter to search for any name containing Nelson's and Circuit
         * */
 
+        List<Entity> defaultFilter = getDefaultCircuits();
+        if (query.length() == 0){
+            return defaultFilter;
+        }
         String[] splitQuery = query.split(" ");
 
-        List<Entity> defaultFilter = getDefaultCircuits();
+
 
         for (String term: splitQuery){
 
@@ -294,8 +298,19 @@ public class Search{
 
         List<Entity> defaultFilter = new ArrayList<>();
         defaultFilter.addAll(ownedCircuits);
-        defaultFilter.addAll(sharedCircuits);
-        defaultFilter.addAll(publicTags);
+
+            /*Check for duplicates*/
+        for (Entity circuit: publicTags){
+            if (!defaultFilter.contains(circuit))
+                defaultFilter.add(circuit);
+        }
+
+            /*Check for duplicates*/
+        for (Entity circuit: sharedCircuits){
+            if (!defaultFilter.contains(circuit))
+                defaultFilter.add(circuit);
+        }
+      
 
         return defaultFilter;
 
