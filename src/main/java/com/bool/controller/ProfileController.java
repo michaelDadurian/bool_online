@@ -93,50 +93,15 @@ public class ProfileController {
     @RequestMapping(value = "profile/delete", method = RequestMethod.GET)
     @ResponseBody
     public String deleteCircuit (@RequestParam(required = true, value ="circuitName") String circuitName,
-                                 @RequestParam(required = false, value = "circuitOwner") String circuitOwner,
+                                 @RequestParam(required = true, value = "circuitOwner") String circuitOwner,
                                  @RequestParam(required = false, value = "currRow") String currRow){
 
+        Entity circuitToDelete = datastore.queryCircuitName(circuitName, circuitOwner);
+        datastore.deleteCircuit(circuitToDelete);
 
-
-
-        /*
-         ModelAndView mv = new ModelAndView("redirect:/profile/submitSearch");
-        Search searchParams = new Search(request.getParameter("searchParams"));
-
-        mv.addObject("searchParams", request.getParameter("searchParams"));
-        model.addAttribute("searchParams", searchParams);
-
-
-        String currRow = request.getParameter("currRow");
-        String currCircuitName = request.getParameter("circuitName");
-
-        */
-        UserService userService = UserServiceFactory.getUserService();
-        User currUser = userService.getCurrentUser();
-
-
-
-        Query query = new Query("Circuit");
-        query.addFilter("name", Query.FilterOperator.EQUAL, circuitName);
-        query.addFilter("owner", Query.FilterOperator.EQUAL, currUser.getEmail());
-        System.out.println("circuitName: " + circuitName);
-
-        Entity circuitToDelete = datastore.queryCircuitName(circuitName);
-
-        if (!circuitToDelete.getProperty("owner").equals(currUser.getEmail())){
-            System.out.println("Can only delete your circuits");
-            return "FAILURE";
-        }else{
-            datastore.deleteCircuit(circuitToDelete);
-            return currRow;
-        }
-
-
-
-
+        return currRow;
 
     }
-
 
 
 

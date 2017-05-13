@@ -130,19 +130,17 @@
                       <a class="btn btn-default">
                         <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
                       </a>
+
+
                       <c:if test="${canShare[status.index] eq 'true'}">
 
-                          <a href = "#" class="btn btn-default share-button">
+                          <a href = "#" class="share-button" onclick="shareEditor(this)">
                             <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                           </a>
 
-                      <c:if>
+                      </c:if>
 
-                      <!--
-                      <a href= "/profile/delete?currCircuitName=${circuitName}&currCircuitOwner=${circuitOwners[status.index]}&searchParams=${searchParams}" class="btn btn-default" id="deleteButton">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                      </a>
-                      -->
+
                       <c:if test="${canDelete[status.index] eq 'true'}">
                           <a href= "#" class="delete-button" onclick="deleteProfileRow(this)">
                               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

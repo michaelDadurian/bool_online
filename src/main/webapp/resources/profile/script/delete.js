@@ -1,7 +1,3 @@
-function deleteConfirmation(){
-    confirm("Delete Circuit?");
-}
-
 function deleteProfileObject(pCircuitName, pCircuitOwner, pCurrRow){
 
     $.ajax({

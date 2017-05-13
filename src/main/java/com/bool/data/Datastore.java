@@ -102,9 +102,10 @@ public class Datastore {
 
         }
 
-        public Entity queryCircuitName(String name){
+        public Entity queryCircuitName(String name, String owner){
             Query query = new Query("Circuit");
             query.addFilter("name", Query.FilterOperator.EQUAL, name);
+            query.addFilter("owner", Query.FilterOperator.EQUAL, owner);
             PreparedQuery pq = datastore.prepare(query);
 
             Entity circuitToDelete = pq.asSingleEntity();
