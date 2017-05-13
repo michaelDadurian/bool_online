@@ -77,6 +77,34 @@ public class ProfileController {
         return mv;
     }
 
+    @RequestMapping(value = "profile/delete", method = RequestMethod.GET)
+    public ModelAndView deleteCircuit (Model model, HttpServletRequest request){
+
+        ModelAndView mv = new ModelAndView("redirect:/profile/submitSearch");
+        Search searchParams = new Search(request.getParameter("searchParams"));
+
+        mv.addObject("searchParams", request.getParameter("searchParams"));
+        model.addAttribute("searchParams", searchParams);
+
+        String currCircuitName = request.getParameter("currCircuitName");
+
+        System.out.println("circuit name? " + currCircuitName);
+        System.out.println("search params: " + searchParams.getQuery());
+
+        Query query = new Query("Circuit");
+        query.addFilter("name", Query.FilterOperator.EQUAL, currCircuitName);
+
+
+
+        Entity circuitToDelete = datastore.queryCircuitName(currCircuitName);
+
+        datastore.deleteCircuit(circuitToDelete);
+
+
+
+        return mv;
+    }
+
 
 
 

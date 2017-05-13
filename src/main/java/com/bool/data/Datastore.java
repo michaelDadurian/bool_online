@@ -85,6 +85,11 @@ public class Datastore {
             datastore.put(toPush);
         }
 
+        public void deleteCircuit(Entity circuit){
+            Key circuitKey = circuit.getKey();
+            datastore.delete(circuitKey);
+        }
+
         public List<Entity> loadYourCircuits(String owner){
 
             List<Entity> toLoad;
@@ -95,6 +100,16 @@ public class Datastore {
             return toLoad;
 
 
+        }
+
+        public Entity queryCircuitName(String name){
+            Query query = new Query("Circuit");
+            query.addFilter("name", Query.FilterOperator.EQUAL, name);
+            PreparedQuery pq = datastore.prepare(query);
+
+            Entity circuitToDelete = pq.asSingleEntity();
+
+            return circuitToDelete;
         }
 
         public List<Entity> loadPublicCircuits(){
