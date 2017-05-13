@@ -3,18 +3,21 @@ function deleteConfirmation(){
 }
 
 function deleteProfileObject(pCircuitName, pCircuitOwner, pCurrRow){
-	$.ajax({
-		url: "/profile/delete",
-		method: "GET",
-		data: profileObject(pCircuitName, pCircuitOwner, pCurrRow),
-		contentType: "application/json",
-		success: function(data){
-			console.log(data);
-			console.log("hello");
-			updateTable(data)
-			return false;
-		}
-	});
+
+    $.ajax({
+            url: "/profile/delete",
+            method: "GET",
+            data: profileObject(pCircuitName, pCircuitOwner, pCurrRow),
+            contentType: "application/json",
+            success: function(data){
+                console.log(data);
+                console.log("hello");
+                updateTable(data)
+                return false;
+            }
+        });
+
+
 }
 function updateTable(pCurrRow){
     if (pCurrRow == null || pCurrRow == ""){
@@ -28,6 +31,8 @@ function deleteProfileRow(currSelected){
 
     console.log(currSelected);
 
+
+
     var currRow = $(currSelected).closest("tr").attr("class");
     var currName = $("." + currRow).find(".circuitNames");
     var currOwner = $("." + currRow).find(".circuitOwners");
@@ -39,7 +44,13 @@ function deleteProfileRow(currSelected){
     console.log(currName.html());
     console.log(currOwner.html());
 
-    deleteProfileObject(currName.html(), currOwner.html(), currRow);
+    if (confirm("Delete Circuit?")){
+        deleteProfileObject(currName.html(), currOwner.html(), currRow);
+    }
+
+
+
+
 
 
 }

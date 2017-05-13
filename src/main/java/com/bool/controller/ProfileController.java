@@ -63,15 +63,23 @@ public class ProfileController {
         List<Entity> searchResults = searchParams.parseQuery(searchParams.getQuery());
         List<String> circuitNames = new ArrayList<>();
         List<String> circuitOwners = new ArrayList<>();
+        List<String> canDelete = new ArrayList<>();
 
         for (Entity searchResult: searchResults){
             circuitNames.add((String)searchResult.getProperty("name"));
             circuitOwners.add((String)searchResult.getProperty("owner"));
+            if(currUser.getEmail().equals(searchResult.getProperty("owner"))){
+                System.out.println("is it mine???");
+                canDelete.add("true");
+            }else{
+                canDelete.add("false");
+            }
         }
 
         mv.addObject("circuitNames", circuitNames);
         mv.addObject("circuitOwners", circuitOwners);
         mv.addObject("currUser", currUser);
+        mv.addObject("canDelete", canDelete);
 
 
         return mv;
@@ -98,21 +106,29 @@ public class ProfileController {
         String currCircuitName = request.getParameter("circuitName");
 
         */
-
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
 
 
 
         Query query = new Query("Circuit");
         query.addFilter("name", Query.FilterOperator.EQUAL, circuitName);
-
+        query.addFilter("owner", Query.FilterOperator.EQUAL, currUser.getEmail());
         System.out.println("circuitName: " + circuitName);
 
         Entity circuitToDelete = datastore.queryCircuitName(circuitName);
 
-        datastore.deleteCircuit(circuitToDelete);
+        if (!circuitToDelete.getProperty("owner").equals(currUser.getEmail())){
+            System.out.println("Can only delete your circuits");
+            return "FAILURE";
+        }else{
+            datastore.deleteCircuit(circuitToDelete);
+            return currRow;
+        }
 
 
-        return currRow;
+
+
 
     }
 
@@ -131,18 +147,27 @@ public class ProfileController {
         if (userService.isUserLoggedIn()) { //signed in
             ModelAndView mv = new ModelAndView("pages/profile");
             List<Entity> toDisplay = datastore.loadAllCircuits(currUser.getEmail());
+
             List<String> circuitNames = new ArrayList<>();
             List<String> circuitOwners = new ArrayList<>();
+            List<String> canDelete = new ArrayList<>();
 
             for (Entity td : toDisplay) {
 
                 circuitNames.add((String) td.getProperty("name"));
                 circuitOwners.add((String) td.getProperty("owner"));
+                if(currUser.getEmail().equals(td.getProperty("owner"))){
+                    System.out.println("is it mine???");
+                    canDelete.add("true");
+                }else{
+                    canDelete.add("false");
+                }
             }
 
             mv.addObject("circuitNames", circuitNames);
             mv.addObject("circuitOwners", circuitOwners);
             mv.addObject("currUser", currUser);
+            mv.addObject("canDelete", canDelete);
 
 
             return mv;

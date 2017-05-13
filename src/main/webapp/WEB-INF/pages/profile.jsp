@@ -136,9 +136,11 @@
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                       </a>
                       -->
-                      <a href= "#" class="delete-button" onclick="deleteProfileRow(this)">
-                          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                      </a>
+                      <c:if test="${canDelete[status.index] eq 'true'}">
+                          <a href= "#" class="delete-button" onclick="deleteProfileRow(this)">
+                              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                          </a>
+                      </c:if>
 
 
                     </td>
