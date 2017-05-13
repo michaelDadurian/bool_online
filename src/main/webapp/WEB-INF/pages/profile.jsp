@@ -15,6 +15,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <spring:url value = "/resources/profile/script/profile.js" var = "profileJS"/>
+  <script src="${profileJS}"></script>
 
   <spring:url value = "/resources/profile/css/profile_style.css" var = "profileStyle" />
   <link href = "${profileStyle}" rel = "stylesheet" />
@@ -129,8 +131,8 @@
                         <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                       </a>
 
-                      <a href= "/profile/delete?currCircuitName=${circuitName}&currCircuitOwner=${circuitOwners[status.index]}&searchParams=${searchParams}" class="btn btn-default">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                      <a href= "/profile/delete?currCircuitName=${circuitName}&currCircuitOwner=${circuitOwners[status.index]}&searchParams=${searchParams}" class="btn btn-default" onclick= "deleteConfirmation()">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true" onclick=></span>
                       </a>
 
 
