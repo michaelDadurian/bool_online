@@ -268,6 +268,14 @@ public class Search{
                 }
             }
 
+            /*Search by owner and name*/
+            else if (tags.isEmpty() && sharedWith.isEmpty() && !owners.isEmpty() && !names.isEmpty()){
+                if (checkProperty(currOwner, owners) && checkProperty(currName, names)){
+                    if(!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
 
 
 
