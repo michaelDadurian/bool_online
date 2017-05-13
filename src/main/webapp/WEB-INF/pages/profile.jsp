@@ -119,7 +119,7 @@
               </thead>
               <tbody>
               <c:forEach items="${circuitNames}" var="circuitName" varStatus="status">
-                  <tr>
+                  <tr class="profileRow${status.index}">
 
                     <td align="center">
 
@@ -131,14 +131,19 @@
                         <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                       </a>
 
-                      <a href= "/profile/delete?currCircuitName=${circuitName}&currCircuitOwner=${circuitOwners[status.index]}&searchParams=${searchParams}" class="btn btn-default" onclick= "deleteConfirmation()">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true" onclick=></span>
+                      <!--
+                      <a href= "/profile/delete?currCircuitName=${circuitName}&currCircuitOwner=${circuitOwners[status.index]}&searchParams=${searchParams}" class="btn btn-default" id="deleteButton">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                      </a>
+                      -->
+                      <a href= "#" class="delete-button" onclick="deleteProfileRow(this)">
+                          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                       </a>
 
 
                     </td>
-                    <td>${circuitName}</td>
-                    <td>${circuitOwners[status.index]}</td>
+                    <td class="circuitNames">${circuitName}</td>
+                    <td class="circuitOwners">${circuitOwners[status.index]}</td>
 
 
                   </tr>

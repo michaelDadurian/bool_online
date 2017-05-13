@@ -78,31 +78,41 @@ public class ProfileController {
     }
 
     @RequestMapping(value = "profile/delete", method = RequestMethod.GET)
-    public ModelAndView deleteCircuit (Model model, HttpServletRequest request){
+    @ResponseBody
+    public String deleteCircuit (@RequestParam(required = true, value ="circuitName") String circuitName,
+                                 @RequestParam(required = false, value = "circuitOwner") String circuitOwner,
+                                 @RequestParam(required = false, value = "currRow") String currRow){
 
-        ModelAndView mv = new ModelAndView("redirect:/profile/submitSearch");
+
+
+
+        /*
+         ModelAndView mv = new ModelAndView("redirect:/profile/submitSearch");
         Search searchParams = new Search(request.getParameter("searchParams"));
 
         mv.addObject("searchParams", request.getParameter("searchParams"));
         model.addAttribute("searchParams", searchParams);
 
-        String currCircuitName = request.getParameter("currCircuitName");
 
-        System.out.println("circuit name? " + currCircuitName);
-        System.out.println("search params: " + searchParams.getQuery());
+        String currRow = request.getParameter("currRow");
+        String currCircuitName = request.getParameter("circuitName");
+
+        */
+
+
 
         Query query = new Query("Circuit");
-        query.addFilter("name", Query.FilterOperator.EQUAL, currCircuitName);
+        query.addFilter("name", Query.FilterOperator.EQUAL, circuitName);
 
+        System.out.println("circuitName: " + circuitName);
 
-
-        Entity circuitToDelete = datastore.queryCircuitName(currCircuitName);
+        Entity circuitToDelete = datastore.queryCircuitName(circuitName);
 
         datastore.deleteCircuit(circuitToDelete);
 
 
+        return currRow;
 
-        return mv;
     }
 
 
