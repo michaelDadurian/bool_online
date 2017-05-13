@@ -15,8 +15,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <spring:url value = "/resources/profile/script/profile.js" var = "profileJS"/>
-  <script src="${profileJS}"></script>
+  <spring:url value = "/resources/profile/script/delete.js" var = "deleteJS"/>
+  <script src="${deleteJS}"></script>
+
+  <spring:url value = "/resources/profile/script/share.js" var = "shareJS"/>
+  <script src="${shareJS}"></script>
 
   <spring:url value = "/resources/profile/css/profile_style.css" var = "profileStyle" />
   <link href = "${profileStyle}" rel = "stylesheet" />
@@ -127,9 +130,13 @@
                       <a class="btn btn-default">
                         <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
                       </a>
-                      <a class="btn btn-default">
-                        <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
-                      </a>
+                      <c:if test="${canShare[status.index] eq 'true'}">
+
+                          <a href = "#" class="btn btn-default share-button">
+                            <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+                          </a>
+
+                      <c:if>
 
                       <!--
                       <a href= "/profile/delete?currCircuitName=${circuitName}&currCircuitOwner=${circuitOwners[status.index]}&searchParams=${searchParams}" class="btn btn-default" id="deleteButton">

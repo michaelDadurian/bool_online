@@ -63,16 +63,20 @@ public class ProfileController {
         List<Entity> searchResults = searchParams.parseQuery(searchParams.getQuery());
         List<String> circuitNames = new ArrayList<>();
         List<String> circuitOwners = new ArrayList<>();
+
         List<String> canDelete = new ArrayList<>();
+        List<String> canShare = new ArrayList<>();
 
         for (Entity searchResult: searchResults){
             circuitNames.add((String)searchResult.getProperty("name"));
             circuitOwners.add((String)searchResult.getProperty("owner"));
             if(currUser.getEmail().equals(searchResult.getProperty("owner"))){
-                System.out.println("is it mine???");
+                canShare.add("true");
                 canDelete.add("true");
             }else{
+                canShare.add("false");
                 canDelete.add("false");
+
             }
         }
 
@@ -80,6 +84,7 @@ public class ProfileController {
         mv.addObject("circuitOwners", circuitOwners);
         mv.addObject("currUser", currUser);
         mv.addObject("canDelete", canDelete);
+        mv.addObject("canShare", canShare);
 
 
         return mv;
