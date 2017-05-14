@@ -117,9 +117,38 @@ public class ProfileController {
                               @RequestParam(required = true, value = "circuitTags") String circuitTags,
                               @RequestParam(required = true, value = "circuitShared") String circuitShared){
 
-        System.out.println("name: " + circuitName + " shared with: " + circuitShared);
-        datastore.updateShared(circuitName, circuitOwner, circuitShared);
-        return "SUCCESS";
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
+
+        if (circuitOwner.equals(currUser.getEmail())){
+            System.out.println("name: " + circuitName + " shared with: " + circuitShared + " tags: " + circuitTags);
+
+            Entity circuit = datastore.queryCircuitName(circuitName,circuitOwner);
+            String currTags = (String)circuit.getProperty("tags");
+
+            /*If circuit is already public*/
+            if (currTags.contains("#public")){
+                /*If changing it to private, remove the public tag
+                * If not changing to private, do nothing*/
+                if (circuitTags.equals("private")){
+                    datastore.removePublic(circuit, currTags);
+                }
+
+            }
+            /*If circuit is not public*/
+            else{
+                /*If changing to public, add #public tag*/
+                if (circuitTags.equals("public")){
+                    datastore.addPublic(circuit, currTags);
+                }
+            }
+            
+            datastore.updateShared(circuitName, circuitOwner, circuitShared);
+
+            return "SUCCESS";
+        }
+
+        return "FAILURE";
 
     }
 

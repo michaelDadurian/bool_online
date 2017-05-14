@@ -3,7 +3,21 @@ function confirmEdit(){
     var sharedText = $('#shared-text').val();
     var circuitOwner = $('.circuit-owner').val();
     var circuitName = $('.circuit-name').val();
+
+    var checkBoxPublic = document.getElementById('public');
+    var checkBoxPrivate = document.getElementById('private');
+
+    if (checkBoxPublic.checked){
+        $('.circuit-tags').val("public");
+    }else if (checkBoxPrivate.checked){
+        $('.circuit-tags').val("private");
+        console.log("helloooo");
+    }
+
+
     var circuitTags = $('.circuit-tags').val();
+    console.log(circuitTags);
+
 
     $.ajax({
                 url: "/profile/submitEdit",

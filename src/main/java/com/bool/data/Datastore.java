@@ -90,6 +90,22 @@ public class Datastore {
             datastore.delete(circuitKey);
         }
 
+        public void removePublic(Entity circuit, String currTags){
+            String editedTags = currTags.replaceAll("#public;", "");
+            System.out.println("edited tags: " + editedTags);
+            circuit.setProperty("tags", editedTags);
+
+            datastore.put(circuit);
+        }
+
+        public void addPublic(Entity circuit, String currTags){
+            String editedTags = currTags.concat(";#public");
+            System.out.println("edited tags: " + editedTags);
+            circuit.setProperty("tags", editedTags);
+
+            datastore.put(circuit);
+        }
+
         public List<Entity> loadYourCircuits(String owner){
 
             List<Entity> toLoad;
