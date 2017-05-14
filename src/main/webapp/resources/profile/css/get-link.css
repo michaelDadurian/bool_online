@@ -1,0 +1,37 @@
+.get-link-menu{
+	visibility: hidden;
+	background-color: white;
+	padding: 10px 20px;
+	display: inline-block;
+
+	display: inline-block;
+	position: fixed;
+	text-align: center;
+
+	border-radius: 20px;
+
+	top:100px;
+	left:100px;
+}
+
+.get-link-menu p{
+	font-size: 20px;
+}
+
+.get-link-menu div{
+	padding: 5px;
+	text-align: center;
+}
+
+.get-link-menu #close-link-menu{
+	float:right;
+}
+
+.get-link-menu #link-display{
+    width: 40em;
+    height: 4em;
+}
+
+.get-link-menu.show{
+	visibility: visible;
+}

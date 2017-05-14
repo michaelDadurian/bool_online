@@ -21,11 +21,17 @@
   <spring:url value = "/resources/profile/script/share.js" var = "shareJS"/>
   <script src="${shareJS}"></script>
 
+  <spring:url value = "/resources/profile/script/get-link.js" var = "getLinkJS"/>
+  <script src="${getLinkJS}"></script>
+
   <spring:url value = "/resources/profile/css/profile_style.css" var = "profileStyle" />
   <link href = "${profileStyle}" rel = "stylesheet" />
 
   <spring:url value = "/resources/profile/css/share-menu.css" var = "shareMenuStyle" />
   <link href = "${shareMenuStyle}" rel = "stylesheet" />
+
+  <spring:url value = "/resources/profile/css/get-link.css" var = "linkMenuStyle" />
+  <link href = "${linkMenuStyle}" rel = "stylesheet" />
 
 </head>
 <body>
@@ -130,9 +136,11 @@
                     <td align="center">
 
 
-                      <a class="btn btn-default">
-                        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-                      </a>
+                      <c:if test="${canGetLink[status.index] eq 'true'}">
+                          <a href = "#" class="get-link-button" onclick="getLink(this)">
+                            <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                          </a>
+                      </c:if>
 
 
                       <c:if test="${canShare[status.index] eq 'true'}">
@@ -474,6 +482,22 @@
         <button type = "button" onclick = "confirmEdit()">Submit</button>
         <button type = "button" onclick = "hideShareMenu()">Cancel</button>
     </div>
+</div>
+
+<div class = "get-link-menu"
+    <p>Shareable Link</p>
+
+    <div id = "link-display">
+        <form>
+            <input type = "textarea" name = "link-text" id="shareable-link">
+
+        </form>
+    </div>
+
+    <div id = "close-link-menu">
+        <button type = "button" onclick = "hideLinkMenu()">Close</button>
+    </div>
+
 </div>
 
 

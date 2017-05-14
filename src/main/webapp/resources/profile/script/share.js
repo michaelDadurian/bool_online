@@ -11,7 +11,6 @@ function confirmEdit(){
         $('.circuit-tags').val("public");
     }else if (checkBoxPrivate.checked){
         $('.circuit-tags').val("private");
-        console.log("helloooo");
     }
 
 

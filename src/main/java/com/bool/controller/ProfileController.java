@@ -66,17 +66,27 @@ public class ProfileController {
 
         List<String> canDelete = new ArrayList<>();
         List<String> canShare = new ArrayList<>();
+        List<String> canGetLink = new ArrayList<>();
 
         for (Entity searchResult: searchResults){
             circuitNames.add((String)searchResult.getProperty("name"));
             circuitOwners.add((String)searchResult.getProperty("owner"));
+
             if(currUser.getEmail().equals(searchResult.getProperty("owner"))){
                 canShare.add("true");
                 canDelete.add("true");
             }else{
                 canShare.add("false");
                 canDelete.add("false");
+            }
 
+            String currShared = (String)searchResult.getProperty("shared");
+            String currTags = (String)searchResult.getProperty("tags");
+
+            if (currShared.contains(currUser.getEmail()) || currTags.contains("#public")){
+                canGetLink.add("true");
+            }else{
+                canGetLink.add("false");
             }
         }
 
@@ -85,6 +95,7 @@ public class ProfileController {
         mv.addObject("currUser", currUser);
         mv.addObject("canDelete", canDelete);
         mv.addObject("canShare", canShare);
+        mv.addObject("canGetLink", canGetLink);
 
 
         return mv;
@@ -142,7 +153,7 @@ public class ProfileController {
                     datastore.addPublic(circuit, currTags);
                 }
             }
-            
+
             datastore.updateShared(circuitName, circuitOwner, circuitShared);
 
             return "SUCCESS";
@@ -167,6 +178,22 @@ public class ProfileController {
 
     }
 
+    @RequestMapping(value = "profile/getLink", method = RequestMethod.GET)
+    @ResponseBody
+    public String getShareableLink (@RequestParam(required = true, value = "circuitName") String circuitName,
+                                    @RequestParam(required = true, value = "circuitOwner") String circuitOwner,
+                                    HttpServletRequest request){
+
+
+        String url = request.getRequestURL().toString();
+        String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
+
+        String editedName = circuitName.replaceAll(" ", "+");
+        System.out.println(baseURL + "workspace/" + circuitOwner + "+" + editedName);
+
+        return baseURL + "workspace/" + "owner=" + circuitOwner + "&" + "name=" + editedName;
+    }
+
 
 
     @RequestMapping("/profile")
@@ -184,16 +211,31 @@ public class ProfileController {
 
             List<String> circuitNames = new ArrayList<>();
             List<String> circuitOwners = new ArrayList<>();
+
             List<String> canDelete = new ArrayList<>();
+            List<String> canShare = new ArrayList<>();
+            List<String> canGetLink = new ArrayList<>();
 
             for (Entity td : toDisplay) {
 
                 circuitNames.add((String) td.getProperty("name"));
                 circuitOwners.add((String) td.getProperty("owner"));
+
                 if(currUser.getEmail().equals(td.getProperty("owner"))){
                     canDelete.add("true");
+                    canShare.add("true");
                 }else{
                     canDelete.add("false");
+                    canShare.add("false");
+                }
+
+                String currShared = (String)td.getProperty("shared");
+                String currTags = (String)td.getProperty("tags");
+
+                if (currShared.contains(currUser.getEmail()) || currTags.contains("#public")){
+                    canGetLink.add("true");
+                }else{
+                    canGetLink.add("false");
                 }
             }
 
@@ -201,6 +243,8 @@ public class ProfileController {
             mv.addObject("circuitOwners", circuitOwners);
             mv.addObject("currUser", currUser);
             mv.addObject("canDelete", canDelete);
+            mv.addObject("canShare", canShare);
+            mv.addObject("canGetLink", canGetLink);
 
 
             return mv;
