@@ -90,6 +90,41 @@ public class ProfileController {
         return mv;
     }
 
+    @RequestMapping(value = "profile/share", method = RequestMethod.GET)
+    @ResponseBody
+    public String shareCircuit(@RequestParam(required = true, value ="circuitName") String circuitName,
+                             @RequestParam(required = true, value = "circuitOwner") String circuitOwner
+                             ){
+
+        Entity currCircuit = datastore.queryCircuitName(circuitName, circuitOwner);
+
+        String currShared = (String)currCircuit.getProperty("shared");
+        String currName = (String)currCircuit.getProperty("name");
+        String currOwner = (String)currCircuit.getProperty("owner");
+        String currTags = (String)currCircuit.getProperty("tags");
+
+
+        return "{" +  "\"pCircuitName\":" + "\"" + currName + "\"" + "," + "\"pCircuitOwner\":" + "\"" + currOwner + "\"" +  "," + "\"pCircuitShared\":" + "\"" + currShared + "\"" +
+                "," + "\"pCircuitTags\":" + "\"" + currTags + "\"" + "}";
+
+
+    }
+
+    @RequestMapping(value = "profile/submitEdit", method = RequestMethod.GET)
+    @ResponseBody
+    public String confirmEdit(@RequestParam(required = true, value = "circuitName") String circuitName,
+                              @RequestParam(required = true, value = "circuitOwner") String circuitOwner,
+                              @RequestParam(required = true, value = "circuitTags") String circuitTags,
+                              @RequestParam(required = true, value = "circuitShared") String circuitShared){
+
+        System.out.println("name: " + circuitName + " shared with: " + circuitShared);
+        datastore.updateShared(circuitName, circuitOwner, circuitShared);
+        return "SUCCESS";
+
+    }
+
+
+
     @RequestMapping(value = "profile/delete", method = RequestMethod.GET)
     @ResponseBody
     public String deleteCircuit (@RequestParam(required = true, value ="circuitName") String circuitName,
@@ -127,7 +162,6 @@ public class ProfileController {
                 circuitNames.add((String) td.getProperty("name"));
                 circuitOwners.add((String) td.getProperty("owner"));
                 if(currUser.getEmail().equals(td.getProperty("owner"))){
-                    System.out.println("is it mine???");
                     canDelete.add("true");
                 }else{
                     canDelete.add("false");
@@ -145,6 +179,7 @@ public class ProfileController {
             return new ModelAndView("redirect:" + userService.createLoginURL("/profile"));
         }
     }
+
 
 
 

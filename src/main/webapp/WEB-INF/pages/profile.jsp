@@ -24,6 +24,9 @@
   <spring:url value = "/resources/profile/css/profile_style.css" var = "profileStyle" />
   <link href = "${profileStyle}" rel = "stylesheet" />
 
+  <spring:url value = "/resources/profile/css/share-menu.css" var = "shareMenuStyle" />
+  <link href = "${shareMenuStyle}" rel = "stylesheet" />
+
 </head>
 <body>
 
@@ -134,7 +137,7 @@
 
                       <c:if test="${canShare[status.index] eq 'true'}">
 
-                          <a href = "#" class="share-button" onclick="shareEditor(this)">
+                          <a href = "#" class="share-button" onclick="getCircuit(this)">
                             <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                           </a>
 
@@ -445,6 +448,32 @@
     <!--</div>-->
   <!--</div>-->
 
+</div>
+
+<div class = "share-menu">
+
+    <p>Edit Shared</p>
+
+    <div id = "edit-shared">
+        <p class="circuit-name"></p>
+        <p class="circuit-owner"></p>
+        <p class="circuit-tags"></p>
+        <form>
+            <span class = "desc">Public</span>
+            <input type = "radio" class = "privacy" name = "privacy" id = "public" checked = "checked">
+            <span class = "desc">Private</span>
+            <input type = "radio" class = "privacy" name = "privacy" id = "private">
+        </form>
+        <form action="/profile/share" modelAttribute="sharedAttribute" method="get" id="profile-share">
+            <input type = "text" name = "sharedAttribute" id="shared-text">
+        </form>
+    </div>
+
+
+    <div id = "submit-shared">
+        <button type = "button" onclick = "confirmEdit()">Submit</button>
+        <button type = "button" onclick = "hideShareMenu()">Cancel</button>
+    </div>
 </div>
 
 

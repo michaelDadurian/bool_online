@@ -108,9 +108,18 @@ public class Datastore {
             query.addFilter("owner", Query.FilterOperator.EQUAL, owner);
             PreparedQuery pq = datastore.prepare(query);
 
-            Entity circuitToDelete = pq.asSingleEntity();
+            Entity circuit = pq.asSingleEntity();
 
-            return circuitToDelete;
+            return circuit;
+        }
+
+        public void updateShared(String circuitName, String circuitOwner, String circuitShared){
+            Entity circuit = queryCircuitName(circuitName, circuitOwner);
+            circuit.setProperty("shared", circuitShared);
+
+            datastore.put(circuit);
+
+            System.out.println(circuit.getProperty("shared"));
         }
 
         public List<Entity> loadPublicCircuits(){
