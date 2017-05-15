@@ -205,7 +205,7 @@ public class ProfileController {
 
 
         Entity circuitToClone = datastore.queryCircuitName(circuitName,circuitOwner);
-        datastore.cloneCircuit(circuitToClone, circuitName, circuitOwner);
+        datastore.cloneCircuit(circuitToClone, circuitName);
 
 
         return "Successfuly cloned " + circuitName + " created by " + circuitOwner;

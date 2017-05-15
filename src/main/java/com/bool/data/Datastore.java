@@ -72,49 +72,8 @@ public class Datastore {
 
 
         public void pushData(Circuit circuit){
-            User currUser = userService.getCurrentUser();
 
-            /*Get list of owned circuits to check for identical name*/
-            List<Entity> ownedCircuits = new ArrayList<>();
-            Query query = new Query("Circuit");
-            query.addFilter("owner", Query.FilterOperator.EQUAL, currUser.getEmail());
-            ownedCircuits = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
-
-            boolean duplicate = false;
-            String nameToEdit = "";
-
-            for(Entity ownedCircuit: ownedCircuits){
-                if (ownedCircuit.getProperty("name").equals(circuit.getName())){
-                    duplicate = true;
-                    nameToEdit = circuit.getName();
-                }
-            }
-
-            if(duplicate){
-                int i = nameToEdit.length() - 1;
-                String valueInParen = "";
-                /*Check if name contains a number in parentheses
-                * mikes circuit(343)*/
-                System.out.println("duplicate name: " + nameToEdit);
-                System.out.println("last character: " + nameToEdit.charAt(nameToEdit.length() - 1));
-                if (nameToEdit.charAt(nameToEdit.length() - 1) == ')'){
-                    
-                    while(i >= 0){
-                        if (nameToEdit.charAt(i) == '('){
-                            valueInParen = nameToEdit.substring(i, nameToEdit.length());
-
-                        }
-                        i--;
-                    }
-                }
-                /*Default case: If no parentheses, append a (1)*/
-                else{
-                    circuit.setName(circuit.getName() + "(1)");
-
-                }
-
-            }
-
+            checkDuplicateName(circuit, circuit.getName());
 
             Key circuitKey = KeyFactory.createKey("Circuit", circuit.getName());
             Entity toPush = new Entity("Circuit", circuitKey);
@@ -126,26 +85,87 @@ public class Datastore {
             toPush.setProperty("quizletConstraints", circuit.getQuizletConstraints());
             toPush.setProperty("tags", circuit.getTags());
 
-            System.out.println("Final circuit name: " + toPush.getProperty("name"));
             datastore.put(toPush);
         }
 
-        public void cloneCircuit(Entity circuitToClone, String circuitName, String circuitOwner){
+        public void checkDuplicateName(Circuit circuit, String name){
+            User currUser = userService.getCurrentUser();
+
+            /*Get list of owned circuits to check for identical name*/
+            List<Entity> ownedCircuits;
+
+
+
+            while(true){
+                Query query = new Query("Circuit");
+                query.addFilter("owner", Query.FilterOperator.EQUAL, currUser.getEmail());
+                query.addFilter("name", Query.FilterOperator.EQUAL, name);
+
+                ownedCircuits = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
+
+                if (ownedCircuits.size() >= 1){
+
+                    name = fixDuplicateName(circuit, circuit.getName());
+                    circuit.setName(name);
+                }else{
+                    break;
+                }
+            }
+
+
+        }
+
+        public String fixDuplicateName (Circuit circuit, String nameToEdit){
+
+            int i = nameToEdit.length() - 1;
+            String valueInParen;
+            String nameNoNumbers;
+
+            /*Check if name contains a number in parentheses */
+
+            if (nameToEdit.charAt(nameToEdit.length() - 1) == ')'){
+
+                while(i >= 0){
+                    if (nameToEdit.charAt(i) == '('){
+                        valueInParen = nameToEdit.substring(i+1, nameToEdit.length()-1);
+                        nameNoNumbers = nameToEdit.substring(0, i);
+                        if (valueInParen.matches("[0-9]+")){
+                            int numericValue = Integer.parseInt(valueInParen);
+                            numericValue += 1;
+                            return nameNoNumbers + "(" + numericValue + ")";
+                        }
+                    }
+                    i--;
+                }
+            }
+
+            /*Default case: If no parentheses, append a (1)*/
+            return circuit.getName() + "(1)";
+
+        }
+
+        public void cloneCircuit(Entity circuitToClone, String circuitName){
 
             User currUser = userService.getCurrentUser();
 
-            Key circuitKey = KeyFactory.createKey("Circuit", circuitName);
+            Circuit circuit = new Circuit(currUser.getEmail(), "", circuitName,
+                    (String)circuitToClone.getProperty("circuitContent"),
+                    (String)circuitToClone.getProperty("quizletConstraints"), "");
+
+            checkDuplicateName(circuit, circuitName);
+
+            Key circuitKey = KeyFactory.createKey("Circuit", circuit.getName());
             Entity clonedCircuit = new Entity("Circuit", circuitKey);
 
-            clonedCircuit.setProperty("owner", currUser.getEmail());
-            clonedCircuit.setProperty("name", circuitName);
+            clonedCircuit.setProperty("owner", circuit.getOwner());
+            clonedCircuit.setProperty("name", circuit.getName());
 
-            clonedCircuit.setProperty("circuitContent", circuitToClone.getProperty("circuitContent"));
-            clonedCircuit.setProperty("quizletConstraints", circuitToClone.getProperty("quizletConstraints"));
+            clonedCircuit.setProperty("circuitContent", circuit.getCircuitContent());
+            clonedCircuit.setProperty("quizletConstraints", circuit.getQuizletConstraints());
 
             /*Reset shared and tags*/
-            clonedCircuit.setProperty("shared", "");
-            clonedCircuit.setProperty("tags", "");
+            clonedCircuit.setProperty("shared", circuit.getShared());
+            clonedCircuit.setProperty("tags", circuit.getTags());
 
 
 
@@ -159,7 +179,15 @@ public class Datastore {
         }
 
         public void removePublic(Entity circuit, String currTags){
-            String editedTags = currTags.replaceAll("#public;", "");
+            System.out.println("current tags (removePublic): " + currTags);
+            String editedTags = "";
+
+            if (currTags.contains("#public;")){
+                editedTags = currTags.replaceAll("#public;", "");
+            }else if (currTags.contains("#public")){
+                editedTags = currTags.replaceAll("#public", "");
+            }
+
             System.out.println("edited tags: " + editedTags);
             circuit.setProperty("tags", editedTags);
 
@@ -167,7 +195,15 @@ public class Datastore {
         }
 
         public void addPublic(Entity circuit, String currTags){
-            String editedTags = currTags.concat(";#public");
+            String editedTags;
+            if (currTags.equals("")) {
+                editedTags = "#public";
+            }
+            else {
+                editedTags = currTags.concat(";#public");
+            }
+
+
             System.out.println("edited tags: " + editedTags);
             circuit.setProperty("tags", editedTags);
 
