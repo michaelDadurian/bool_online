@@ -80,11 +80,15 @@ public class NotificationDatastore {
             String[] splitShared = shared.split(";");
 
             for (String user: splitShared){
+
                 if (user.equals(sharedWith)){
                     sharedNotifications.add(td);
 
                     break;
                 }
+
+
+
             }
         }
 

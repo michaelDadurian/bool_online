@@ -6,6 +6,7 @@ package com.bool.controller;
 
 import com.bool.data.Circuit;
 import com.bool.data.Datastore;
+import com.bool.data.Notification;
 import com.bool.data.NotificationDatastore;
 import com.bool.search.Search;
 
@@ -115,7 +116,6 @@ public class ProfileController {
             notificationNames.add((String) notification.getProperty("name"));
             notificationOwners.add((String) notification.getProperty("owner"));
 
-
         }
         mv.addObject("notificationNames",notificationNames);
         mv.addObject("notificationOwners",notificationOwners);
@@ -142,6 +142,8 @@ public class ProfileController {
     public String shareCircuit(@RequestParam(required = true, value ="circuitName") String circuitName,
                              @RequestParam(required = true, value = "circuitOwner") String circuitOwner
                              ){
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
 
         Entity currCircuit = datastore.queryCircuitName(circuitName, circuitOwner);
 
@@ -149,6 +151,8 @@ public class ProfileController {
         String currName = (String)currCircuit.getProperty("name");
         String currOwner = (String)currCircuit.getProperty("owner");
         String currTags = (String)currCircuit.getProperty("tags");
+
+        System.out.println("shared with: " + currShared);
 
 
         return "{" +  "\"pCircuitName\":" + "\"" + currName + "\"" + "," + "\"pCircuitOwner\":" + "\"" + currOwner + "\"" +  "," + "\"pCircuitShared\":" + "\"" + currShared + "\"" +
@@ -191,6 +195,10 @@ public class ProfileController {
             }
 
             datastore.updateShared(circuitName, circuitOwner, circuitShared);
+
+
+            Notification notification = new Notification(currUser.getEmail(), circuitShared, circuitName);
+            notificationData.pushData(notification);
 
             return "SUCCESS";
         }

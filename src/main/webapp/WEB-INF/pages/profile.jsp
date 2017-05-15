@@ -95,7 +95,7 @@
           <!--###added span class here-->
       </span>
 
-      
+
       <div class="profile_logout">
         <a href="/profile/logout">Log Out</a>
       </div>

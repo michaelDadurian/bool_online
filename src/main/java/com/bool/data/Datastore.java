@@ -239,7 +239,7 @@ public class Datastore {
 
             datastore.put(circuit);
 
-            System.out.println(circuit.getProperty("shared"));
+            System.out.println("update shared: " + circuit.getProperty("shared"));
         }
 
         public List<Entity> loadPublicCircuits(){

@@ -3,6 +3,8 @@ package com.bool.controller;
 
 import com.bool.data.Circuit;
 import com.bool.data.Datastore;
+import com.bool.data.Notification;
+import com.bool.data.NotificationDatastore;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
@@ -25,6 +27,7 @@ import java.util.*;
 public class WorkspaceController {
 
     Datastore datastore = new Datastore();
+    NotificationDatastore notificationData = new NotificationDatastore();
 
     @RequestMapping("/workspace")
     public ModelAndView workspace(){
@@ -60,6 +63,9 @@ public class WorkspaceController {
         if(currUser != null) {
             circuitFile.setOwner(currUser.getEmail());
             datastore.pushData(circuitFile);
+
+            Notification notification = new Notification(currUser.getEmail(), shared, name);
+            notificationData.pushData(notification);
             return "Successfully submitted circuitFile to datastore!";
         }
         else {
