@@ -26,7 +26,7 @@ public class Datastore {
                 testCircuits.add(new Circuit(
                         "mdadurian@example.com",
                         "nelson@example.com;reef@example.com",
-                        "Mike's Circuit "+i+"(1)",
+                        "Mike's Circuit "+i,
                         "",
                         "",
                         "#public;#test;#sdfs"

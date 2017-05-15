@@ -1,0 +1,9 @@
+input[type="file"] {
+    display: none;
+}
+.loading {
+    display: inline-block;
+}
+
+
+

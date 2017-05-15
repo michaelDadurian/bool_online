@@ -27,6 +27,12 @@
   <spring:url value = "/resources/profile/script/clone.js" var = "cloneJS"/>
   <script src="${cloneJS}"></script>
 
+  <spring:url value = "/resources/profile/script/upload-local.js" var = "uploadJS" />
+  <script src="${uploadJS}"></script>
+
+  <spring:url value = "/resources/profile/css/upload.css" var = "uploadStyle" />
+  <link href = "${uploadStyle}" rel = "stylesheet" />
+
   <spring:url value = "/resources/profile/css/profile_style.css" var = "profileStyle" />
   <link href = "${profileStyle}" rel = "stylesheet" />
 
@@ -35,6 +41,8 @@
 
   <spring:url value = "/resources/profile/css/get-link.css" var = "linkMenuStyle" />
   <link href = "${linkMenuStyle}" rel = "stylesheet" />
+
+
 
 </head>
 <body>
@@ -57,7 +65,11 @@
           </div>
         </form>
       <a href="/workspace"><button type="button" class="btn btn-primary btn-xs btn-custom">New</button></a>
-      <button type="button" class="btn btn-warning btn-xs btn-custom">Upload</button>
+
+      <a href="#">
+        <label for = "loader" class = "btn btn-warning btn-xs btn-custom loading">Upload</label>
+        <input id = "loader" type="file">
+      </a>
     </div>
     <div class="col-md-1 col-sm-1">
       <span class="span_filler">
@@ -480,7 +492,7 @@
         <p class="circuit-tags"></p>
         <form>
             <span class = "desc">Public</span>
-            <input type = "radio" class = "privacy" name = "privacy" id = "public" checked = "checked">
+            <input type = "radio" class = "privacy" name = "privacy" id = "public">
             <span class = "desc">Private</span>
             <input type = "radio" class = "privacy" name = "privacy" id = "private">
         </form>
@@ -511,6 +523,7 @@
     </div>
 
 </div>
+
 
 
 </body>
