@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@ page import="com.google.appengine.api.users.User" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
@@ -93,13 +94,10 @@
       <span class="span_filler_1">
           <!--###added span class here-->
       </span>
-      <div class="user_logo_dropdown"> <!--###maybe change here?-->
-        <img class="user_logo dropdown-toggle" type="button" data-toggle="dropdown" src="/resources/profile/img/bool_user_logo1.png">
-        <%--<span class="user_logo dropdown-toggle float-left" type="button" data-toggle="dropdown">Nel</span> <!--###added span class here-->--%>
-        <ul class="dropdown-menu">
-          <li class="dropdown-header">"${currUser}"</li>
-          <li class="dropdown_style"><a href="/profile/logout">Log Out</a></li>
-        </ul>
+
+      
+      <div class="profile_logout">
+        <a href="/profile/logout">Log Out</a>
       </div>
     </div>
   </div>
