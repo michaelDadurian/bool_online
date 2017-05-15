@@ -38,6 +38,7 @@ public class ProfileController {
     Datastore datastore = new Datastore();
     NotificationDatastore notificationData = new NotificationDatastore();
 
+    /*Loads test data*/
     @RequestMapping("/loadtestdata")
     public String pcloadTestData() {
         datastore.loadTestData();
@@ -45,24 +46,24 @@ public class ProfileController {
         return "pages/profile";
     }
 
-    //load entire string passed from form in profile.jsp
-    //psas over initial url and append the string
-    //parse string and query database
+
+    /*Receives search query from jsp, parses it, and displays the search results*/
     @RequestMapping(value = "profile/submitSearch", method = RequestMethod.GET)
     @ModelAttribute("searchParams")
     public ModelAndView submitSearch(Model model, HttpServletRequest request){
 
+        /*Get current user*/
         UserService userService = UserServiceFactory.getUserService();
         User currUser = userService.getCurrentUser();
 
-
+        /*Create Search object and add it to the model as an attribute*/
         Search searchParams = new Search(request.getParameter("searchParams"));
         model.addAttribute("searchParams", searchParams);
 
+        /*Add search query as an object*/
         ModelAndView mv = new ModelAndView("pages/profile");
         mv.addObject("searchParams", request.getParameter("searchParams"));
 
-        System.out.println(searchParams.getQuery());
         List<Entity> searchResults = searchParams.parseQuery(searchParams.getQuery());
         List<String> circuitNames = new ArrayList<>();
         List<String> circuitOwners = new ArrayList<>();
@@ -73,11 +74,17 @@ public class ProfileController {
         List<String> canClone = new ArrayList<>();
         List<String> canOpen = new ArrayList<>();
 
+        /*For each entity in list of search results, get the name and owner of the circuit.
+
+        * Also determine whether the currently logged in user can share, get a link, delete, clone, or open the circuit
+        * Users can share, delete, and open a circuit file if they are the owner of the circuit.
+        * If the circuit has been shared or has the #public tag, the user can get a shareable link to it or clone it.*/
         for (Entity searchResult: searchResults){
 
             circuitNames.add((String)searchResult.getProperty("name"));
             circuitOwners.add((String)searchResult.getProperty("owner"));
 
+            /*Determine if currently logged in user owns the circuit*/
             if(currUser.getEmail().equals(searchResult.getProperty("owner"))){
                 canShare.add("true");
                 canDelete.add("true");
@@ -343,6 +350,23 @@ public class ProfileController {
         }
     }
 
+    @RequestMapping(value = "/profile/logout")
+    public ModelAndView profileLogout(){
+
+        UserService userService = UserServiceFactory.getUserService();
+
+        ModelAndView mv;
+
+        mv = new ModelAndView("redirect:" + userService.createLogoutURL("/"));
+
+        return mv;
+
+    }
+
+
+
+
+
 
     @RequestMapping(value = "profile/loadCircuitFromNotification", method = RequestMethod.GET)
     @ModelAttribute("searchParams")
@@ -452,8 +476,8 @@ public class ProfileController {
 
     public void deleteNotification (String notificationName, String notificationOwner){
 
-        Entity circuitToDelete = notificationData.queryNotificationName(notificationName,notificationOwner);
-        notificationData.deleteNotification(circuitToDelete);
+        Entity notificationToDelete = notificationData.queryNotificationName(notificationName,notificationOwner);
+        notificationData.deleteNotification(notificationToDelete);
 
     }
 

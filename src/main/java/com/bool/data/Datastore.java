@@ -22,7 +22,7 @@ public class Datastore {
         public void loadTestData(){
             List<Circuit> testCircuits = new ArrayList<>();
 
-            for(int i=0;i<10; i++){
+            for(int i=0;i<6; i++){
                 testCircuits.add(new Circuit(
                         "mdadurian@example.com",
                         "nelson@example.com;reef@example.com",
@@ -33,7 +33,7 @@ public class Datastore {
                 ));
             }
 
-            for(int i=0;i<10; i++){
+            for(int i=0;i<16; i++){
                 testCircuits.add(new Circuit(
                         "nelson@example.com",
                         "mdadurian@example.com;reef@example.com",
@@ -43,7 +43,7 @@ public class Datastore {
                         "#public;#test"
                 ));
             }
-            for(int i=0;i<10; i++){
+            for(int i=0;i<11; i++){
                 testCircuits.add(new Circuit(
                         "reef@example.com",
                         "mdadurian@example.com;kenny@example.com",
@@ -53,7 +53,7 @@ public class Datastore {
                         "#public"
                 ));
             }
-            for(int i=0;i<10; i++){
+            for(int i=0;i<5; i++){
                 testCircuits.add(new Circuit(
                         "kenny@example.com",
                         "",
