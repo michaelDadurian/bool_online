@@ -15,31 +15,34 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+
+  <spring:url value = "/resources/workspace/script/jquery-3.2.0.min.js" var = "jqueryJS"/>
+  <spring:url value = "/resources/workspace/script/jquery-ui.min.js" var = "jqueryUI"/>
+
   <spring:url value = "/resources/profile/script/delete.js" var = "deleteJS"/>
-  <script src="${deleteJS}"></script>
-
   <spring:url value = "/resources/profile/script/share.js" var = "shareJS"/>
-  <script src="${shareJS}"></script>
-
   <spring:url value = "/resources/profile/script/get-link.js" var = "getLinkJS"/>
-  <script src="${getLinkJS}"></script>
-
   <spring:url value = "/resources/profile/script/clone.js" var = "cloneJS"/>
-  <script src="${cloneJS}"></script>
-
   <spring:url value = "/resources/profile/script/upload-local.js" var = "uploadJS" />
-  <script src="${uploadJS}"></script>
 
   <spring:url value = "/resources/profile/css/upload.css" var = "uploadStyle" />
-  <link href = "${uploadStyle}" rel = "stylesheet" />
-
   <spring:url value = "/resources/profile/css/profile_style.css" var = "profileStyle" />
-  <link href = "${profileStyle}" rel = "stylesheet" />
-
   <spring:url value = "/resources/profile/css/share-menu.css" var = "shareMenuStyle" />
-  <link href = "${shareMenuStyle}" rel = "stylesheet" />
-
   <spring:url value = "/resources/profile/css/get-link.css" var = "linkMenuStyle" />
+
+  <script src="${jqueryJS}"></script>
+  <script src="${jqueryUI}"></script>
+
+  <script src="${deleteJS}"></script>
+  <script src="${shareJS}"></script>
+  <script src="${getLinkJS}"></script>
+  <script src="${cloneJS}"></script>
+  <script src="${uploadJS}"></script>
+
+  <link href = "${uploadStyle}" rel = "stylesheet" />
+  <link href = "${profileStyle}" rel = "stylesheet" />
+  <link href = "${shareMenuStyle}" rel = "stylesheet" />
   <link href = "${linkMenuStyle}" rel = "stylesheet" />
 
 

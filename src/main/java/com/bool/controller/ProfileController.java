@@ -211,6 +211,28 @@ public class ProfileController {
         return "Successfuly cloned " + circuitName + " created by " + circuitOwner;
     }
 
+    @RequestMapping(value = "profile/uploadLocal", method = RequestMethod.GET)
+    @ResponseBody
+    public String upload(@RequestParam(required = false, value = "owner") String owner,
+                       @RequestParam(required = false, value = "shared") String shared,
+                       @RequestParam(required = false, value = "name") String name,
+                       @RequestParam(required = false, value = "circuitContent") String circuitContent,
+                       @RequestParam(required = false, value = "quizletConstraints") String constraints,
+                       @RequestParam(required = false, value = "tags") String tags
+                       ){
+
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
+
+        System.out.println(owner + shared + name + circuitContent + constraints + tags);
+
+        Circuit circuitToUpload = new Circuit(currUser.getEmail(), "", name, circuitContent, constraints, tags);
+        datastore.pushData(circuitToUpload);
+
+        return "SUCCESS";
+
+    }
+
 
 
     @RequestMapping("/profile")
