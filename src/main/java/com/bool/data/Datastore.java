@@ -22,7 +22,7 @@ public class Datastore {
         public void loadTestData(){
             List<Circuit> testCircuits = new ArrayList<>();
 
-            for(int i=0;i<6; i++){
+            for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "mdadurian@example.com",
                         "nelson@example.com;reef@example.com",
@@ -33,7 +33,7 @@ public class Datastore {
                 ));
             }
 
-            for(int i=0;i<16; i++){
+            for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "nelson@example.com",
                         "mdadurian@example.com;reef@example.com",
@@ -43,7 +43,7 @@ public class Datastore {
                         "#public;#test"
                 ));
             }
-            for(int i=0;i<11; i++){
+            for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "reef@example.com",
                         "mdadurian@example.com;kenny@example.com",
@@ -53,7 +53,7 @@ public class Datastore {
                         "#public"
                 ));
             }
-            for(int i=0;i<5; i++){
+            for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "kenny@example.com",
                         "",
@@ -179,7 +179,6 @@ public class Datastore {
         }
 
         public void removePublic(Entity circuit, String currTags){
-            System.out.println("current tags (removePublic): " + currTags);
             String editedTags = "";
 
             if (currTags.contains("#public;")){
@@ -188,7 +187,6 @@ public class Datastore {
                 editedTags = currTags.replaceAll("#public", "");
             }
 
-            System.out.println("edited tags: " + editedTags);
             circuit.setProperty("tags", editedTags);
 
             datastore.put(circuit);
@@ -203,8 +201,6 @@ public class Datastore {
                 editedTags = currTags.concat(";#public");
             }
 
-
-            System.out.println("edited tags: " + editedTags);
             circuit.setProperty("tags", editedTags);
 
             datastore.put(circuit);
@@ -239,7 +235,6 @@ public class Datastore {
 
             datastore.put(circuit);
 
-            System.out.println("update shared: " + circuit.getProperty("shared"));
         }
 
         public List<Entity> loadPublicCircuits(){

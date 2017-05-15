@@ -152,7 +152,6 @@ public class ProfileController {
         String currOwner = (String)currCircuit.getProperty("owner");
         String currTags = (String)currCircuit.getProperty("tags");
 
-        System.out.println("shared with: " + currShared);
 
 
         return "{" +  "\"pCircuitName\":" + "\"" + currName + "\"" + "," + "\"pCircuitOwner\":" + "\"" + currOwner + "\"" +  "," + "\"pCircuitShared\":" + "\"" + currShared + "\"" +
@@ -172,7 +171,7 @@ public class ProfileController {
         User currUser = userService.getCurrentUser();
 
         if (circuitOwner.equals(currUser.getEmail())){
-            System.out.println("name: " + circuitName + " shared with: " + circuitShared + " tags: " + circuitTags);
+
 
             Entity circuit = datastore.queryCircuitName(circuitName,circuitOwner);
             String currTags = (String)circuit.getProperty("tags");
@@ -233,7 +232,7 @@ public class ProfileController {
         String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
 
         String editedName = circuitName.replaceAll(" ", "+");
-        System.out.println(baseURL + "workspace/" + circuitOwner + "+" + editedName);
+
 
         return baseURL + "workspace/" + circuitOwner + "&"  + editedName;
     }
@@ -264,7 +263,6 @@ public class ProfileController {
         UserService userService = UserServiceFactory.getUserService();
         User currUser = userService.getCurrentUser();
 
-        System.out.println(owner + shared + name + circuitContent + constraints + tags);
 
         Circuit circuitToUpload = new Circuit(currUser.getEmail(), "", name, circuitContent, constraints, tags);
         datastore.pushData(circuitToUpload);
@@ -281,8 +279,6 @@ public class ProfileController {
         UserService userService = UserServiceFactory.getUserService();
         User currUser = userService.getCurrentUser();
 
-
-        System.out.println("currUser " + currUser);
 
         if (userService.isUserLoggedIn()) { //signed in
             ModelAndView mv = new ModelAndView("pages/profile");
@@ -390,7 +386,6 @@ public class ProfileController {
         ModelAndView mv = new ModelAndView("pages/profile");
         mv.addObject("searchParams", request.getParameter("searchParams"));
 
-        System.out.println(searchParams.getQuery());
         List<Entity> searchResults = searchParams.parseQuery(searchParams.getQuery());
         List<String> circuitNames = new ArrayList<>();
         List<String> circuitOwners = new ArrayList<>();
@@ -438,7 +433,7 @@ public class ProfileController {
         }
         String circuitName = circuitBuild.toString();
         circuitName = circuitName.substring(0, circuitName.length() - (" ").length());
-        System.out.println(circuitName);
+
 
         StringBuilder ownerBuild = new StringBuilder();
         for (String a : circuitOwners) {
@@ -447,7 +442,7 @@ public class ProfileController {
         }
         String ownerName = ownerBuild.toString();
         ownerName = ownerName.substring(0, ownerName.length() - (" ").length());
-        System.out.println(ownerName);
+
 
 
         deleteNotification(circuitName, ownerName);
