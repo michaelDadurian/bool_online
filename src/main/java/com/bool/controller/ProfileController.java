@@ -6,6 +6,7 @@ package com.bool.controller;
 
 import com.bool.data.Circuit;
 import com.bool.data.Datastore;
+import com.bool.data.NotificationDatastore;
 import com.bool.search.Search;
 
 import com.google.appengine.api.datastore.*;
@@ -35,10 +36,12 @@ import java.util.List;
 public class ProfileController {
 
     Datastore datastore = new Datastore();
+    NotificationDatastore notificationData = new NotificationDatastore();
 
     @RequestMapping("/loadtestdata")
     public String pcloadTestData() {
         datastore.loadTestData();
+        notificationData.loadTestData();
         return "pages/profile";
     }
 
@@ -93,6 +96,21 @@ public class ProfileController {
             }
         }
 
+        List<Entity> notifications = notificationData.loadSharedNotification(currUser.getEmail());
+        List<String> notification_Names = new ArrayList<>();
+        List<String> notification_Owners = new ArrayList<>();
+
+        for (Entity notification: notifications){
+            notification_Names.add((String) notification.getProperty("name"));
+            notification_Owners.add((String) notification.getProperty("owner"));
+
+
+        }
+        mv.addObject("notification_Names",notification_Names);
+        mv.addObject("notification_Owners",notification_Owners);
+
+
+
         mv.addObject("circuitNames", circuitNames);
         mv.addObject("circuitOwners", circuitOwners);
         mv.addObject("currUser", currUser);
@@ -103,6 +121,107 @@ public class ProfileController {
 
 
         return mv;
+    }
+
+    @RequestMapping(value = "profile/loadCircuitFromNotification", method = RequestMethod.GET)
+    @ModelAttribute("searchParams")
+    public ModelAndView loadCircuitFromNotification(Model model, HttpServletRequest request) {
+
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
+
+
+        Search searchParams = new Search(request.getParameter("searchParams"));
+        model.addAttribute("searchParams", searchParams);
+
+        ModelAndView mv = new ModelAndView("pages/profile");
+        mv.addObject("searchParams", request.getParameter("searchParams"));
+
+        System.out.println(searchParams.getQuery());
+        List<Entity> searchResults = searchParams.parseQuery(searchParams.getQuery());
+        List<String> circuitNames = new ArrayList<>();
+        List<String> circuitOwners = new ArrayList<>();
+
+
+        for (Entity searchResult : searchResults) {
+            circuitNames.add((String) searchResult.getProperty("name"));
+            circuitOwners.add((String) searchResult.getProperty("owner"));
+
+        }
+
+
+        StringBuilder circuitBuild = new StringBuilder();
+        for (String a : circuitNames) {
+            circuitBuild.append(a);
+            circuitBuild.append(" ");
+        }
+        String circuitName = circuitBuild.toString();
+        circuitName = circuitName.substring(0, circuitName.length() - (" ").length());
+        System.out.println(circuitName);
+
+        StringBuilder ownerBuild = new StringBuilder();
+        for (String a : circuitOwners) {
+            ownerBuild.append(a);
+            ownerBuild.append(" ");
+        }
+        String ownerName = ownerBuild.toString();
+        ownerName = ownerName.substring(0, ownerName.length() - (" ").length());
+        System.out.println(ownerName);
+
+
+        deleteNotification(circuitName, ownerName);
+
+
+        List<Entity> notifications = notificationData.loadSharedNotification(currUser.getEmail());
+        List<String> notificationNames = new ArrayList<>();
+        List<String> notificationOwners = new ArrayList<>();
+
+        for (Entity notification : notifications) {
+            notificationNames.add((String) notification.getProperty("name"));
+            notificationOwners.add((String) notification.getProperty("owner"));
+
+
+        }
+
+        mv.addObject("notificationNames", notificationNames);
+        mv.addObject("notificationOwners", notificationOwners);
+
+        mv.addObject("circuitNames", circuitNames);
+        mv.addObject("circuitOwners", circuitOwners);
+        mv.addObject("currUser", currUser);
+
+
+        return mv;
+    }
+
+    public void deleteNotification (String notificationName, String notificationOwner){
+
+        Entity circuitToDelete = notificationData.queryNotificationName(notificationName,notificationOwner);
+        notificationData.deleteNotification(circuitToDelete);
+
+    }
+
+    @RequestMapping("/profile/notifications")
+    public ModelAndView profileNotifications() {
+
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
+
+        ModelAndView mv = new ModelAndView("pages/profile");
+        List<Entity> toDisplay = notificationData.loadSharedNotification(currUser.getEmail());
+        List<String> notificationNames = new ArrayList<>();
+        List<String> notificationOwners = new ArrayList<>();
+
+        for (Entity td : toDisplay) {
+            notificationNames.add((String) td.getProperty("name"));
+            notificationOwners.add((String) td.getProperty("owner"));
+        }
+
+        mv.addObject("notificationNames", notificationNames);
+        mv.addObject("notificationOwners", notificationOwners);
+
+        return mv;
+
     }
 
     @RequestMapping(value = "profile/share", method = RequestMethod.GET)

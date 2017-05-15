@@ -81,10 +81,10 @@
       <div class ="notifications_dropdown">
         <img src="/resources/profile/img/bell1.png" class="dropdown-toggle" type="button" data-toggle="dropdown">
         <ul class="dropdown-menu">
-          <li class="dropdown-header">Notifications</li>
-          <li class="dropdown_style"><a href="#">Circuit 1 has been made public</a></li>
-          <li class="dropdown_style"><a href="#">Alert: Login from unusual location</a></li>
-          <li class="dropdown_style"><a href="#">Kenny has shared "circuit_DeMorgans"</a></li>
+          <li class="dropdown-header"><a href="/profile/notifications">Notifications</a></li>
+            <c:forEach items="${notificationNames}" var="notificationName" varStatus="status">
+              <li class="dropdown_style"><a href="/profile/loadCircuitFromNotification?searchParams=owner%3A${notificationOwners[status.index]}+${notificationName}"> ${notificationOwners[status.index]} has shared ${notificationName} with you! </a></li>
+            </c:forEach>
         </ul>
       </div>
   </div>
