@@ -212,6 +212,15 @@ public class Search{
                 }
             }
 
+            /*Search by tag, shared, name*/
+            else if (!tags.isEmpty() && !sharedWith.isEmpty() && owners.isEmpty() && !names.isEmpty()){
+
+                if (checkProperty(currTags, tags) && checkProperty(currShared, sharedWith) && checkProperty(currName, names)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
             /*Search by tag and shared with and owners and name*/
             else if (!tags.isEmpty() && !sharedWith.isEmpty() && !owners.isEmpty() && !names.isEmpty()){
 
@@ -230,6 +239,46 @@ public class Search{
                         searchResult.add(circuit);
                 }
 
+            }
+
+            /*Search by owner and tag*/
+            else if (!tags.isEmpty() && sharedWith.isEmpty() && !owners.isEmpty() && names.isEmpty()){
+                if (checkProperty(currTags, tags) && checkProperty(currOwner, owners)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
+            /*Search by owner and name*/
+            else if (tags.isEmpty() && sharedWith.isEmpty() && !owners.isEmpty() && !names.isEmpty()){
+                if (checkProperty(currOwner, owners) && checkProperty(currName, names)){
+                    if(!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
+            /*Search by owner and shared*/
+            else if (tags.isEmpty() && !sharedWith.isEmpty() && !owners.isEmpty() && names.isEmpty()){
+                if (checkProperty(currOwner, owners) && checkProperty(currShared, sharedWith)){
+                    if(!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
+            /*Search by owner, shared, name*/
+            else if (tags.isEmpty() && !sharedWith.isEmpty() && !owners.isEmpty() && !names.isEmpty()){
+                if (checkProperty(currOwner, owners) && checkProperty(currName, names) && checkProperty(currShared, sharedWith)){
+                    if(!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
+            /*Search by owner, name, tag*/
+            else if (!tags.isEmpty() && sharedWith.isEmpty() && !owners.isEmpty() && !names.isEmpty()){
+                if (checkProperty(currOwner, owners) && checkProperty(currName, names) && checkProperty(currTags, tags)){
+                    if(!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
             }
 
             /*Search by name*/
@@ -251,6 +300,15 @@ public class Search{
                 }
             }
 
+            /*Search by name and shared*/
+            else if (tags.isEmpty() && !sharedWith.isEmpty() && owners.isEmpty() && !names.isEmpty()){
+
+                if (checkProperty(currShared, sharedWith) && checkProperty(currName, names)){
+                    if (!searchResult.contains(circuit))
+                        searchResult.add(circuit);
+                }
+            }
+
             /*Search by shared*/
             else if (tags.isEmpty() && !sharedWith.isEmpty() && owners.isEmpty() && names.isEmpty()){
 
@@ -260,21 +318,7 @@ public class Search{
                 }
             }
 
-            /*Search by owner and tag*/
-            else if (!tags.isEmpty() && sharedWith.isEmpty() && !owners.isEmpty() && names.isEmpty()){
-                if (checkProperty(currTags, tags) && checkProperty(currOwner, owners)){
-                    if (!searchResult.contains(circuit))
-                        searchResult.add(circuit);
-                }
-            }
 
-            /*Search by owner and name*/
-            else if (tags.isEmpty() && sharedWith.isEmpty() && !owners.isEmpty() && !names.isEmpty()){
-                if (checkProperty(currOwner, owners) && checkProperty(currName, names)){
-                    if(!searchResult.contains(circuit))
-                        searchResult.add(circuit);
-                }
-            }
 
 
 

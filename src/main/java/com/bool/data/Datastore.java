@@ -296,6 +296,39 @@ public class Datastore {
 
         }
 
+        public List<Entity> loadNumCircuits(int num, String owner){
+            List<Entity> allCircuits = new ArrayList<>();
+            List<Entity> sharedCircuits = loadSharedCircuits(owner);
+            List<Entity> publicCircuits = loadPublicCircuits();
+            List<Entity> yourCircuits = loadYourCircuits(owner);
+
+
+            allCircuits.addAll(sharedCircuits);
+
+            int i = 0;
+            /*Check for duplicates*/
+            for (Entity circuit: publicCircuits){
+                while (i < num){
+                    if (!allCircuits.contains(circuit))
+                        allCircuits.add(circuit);
+                    i++;
+                }
+            }
+
+            /*Check for duplicates*/
+            for (Entity circuit: yourCircuits){
+                while (i < num){
+                    if (!allCircuits.contains(circuit))
+                        allCircuits.add(circuit);
+                    i++;
+                }
+
+            }
+
+            return allCircuits;
+
+        }
+
         public List<Entity> loadAllCircuits(String owner){
             List<Entity> allCircuits = new ArrayList<>();
             List<Entity> sharedCircuits = loadSharedCircuits(owner);

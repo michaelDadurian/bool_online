@@ -153,6 +153,11 @@
 
                     <td align="center">
 
+                      <c:if test="${canOpen[status.index] eq 'true'}">
+                          <a href = "#" class="open-button">
+                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                          </a>
+                      </c:if>
 
                       <c:if test="${canGetLink[status.index] eq 'true'}">
                           <a href = "#" class="get-link-button" onclick="getLink(this)">
@@ -179,11 +184,14 @@
                       <c:if test="${canClone[status.index] eq 'true'}">
 
                           <a href="#" class="clone-button" onclick="cloneCircuit(this)" >
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
                           </a>
 
-
                       </c:if>
+
+
+
+
 
 
                     </td>
