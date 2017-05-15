@@ -67,6 +67,7 @@ public class ProfileController {
         List<String> canDelete = new ArrayList<>();
         List<String> canShare = new ArrayList<>();
         List<String> canGetLink = new ArrayList<>();
+        List<String> canClone = new ArrayList<>();
 
         for (Entity searchResult: searchResults){
             circuitNames.add((String)searchResult.getProperty("name"));
@@ -75,9 +76,11 @@ public class ProfileController {
             if(currUser.getEmail().equals(searchResult.getProperty("owner"))){
                 canShare.add("true");
                 canDelete.add("true");
+                canClone.add("false");
             }else{
                 canShare.add("false");
                 canDelete.add("false");
+                canClone.add("true");
             }
 
             String currShared = (String)searchResult.getProperty("shared");
@@ -96,6 +99,7 @@ public class ProfileController {
         mv.addObject("canDelete", canDelete);
         mv.addObject("canShare", canShare);
         mv.addObject("canGetLink", canGetLink);
+        mv.addObject("canClone", canClone);
 
 
         return mv;
@@ -191,7 +195,20 @@ public class ProfileController {
         String editedName = circuitName.replaceAll(" ", "+");
         System.out.println(baseURL + "workspace/" + circuitOwner + "+" + editedName);
 
-        return baseURL + "workspace/" + "owner=" + circuitOwner + "&" + "name=" + editedName;
+        return baseURL + "workspace/" + circuitOwner + "&"  + editedName;
+    }
+
+    @RequestMapping(value = "profile/cloneCircuit", method = RequestMethod.GET)
+    @ResponseBody
+    public String cloneCircuit(@RequestParam(required = true, value = "circuitName") String circuitName,
+                               @RequestParam(required = true, value = "circuitOwner") String circuitOwner){
+
+
+        Entity circuitToClone = datastore.queryCircuitName(circuitName,circuitOwner);
+        datastore.cloneCircuit(circuitToClone, circuitName, circuitOwner);
+
+
+        return "Successfuly cloned " + circuitName + " created by " + circuitOwner;
     }
 
 
@@ -215,6 +232,7 @@ public class ProfileController {
             List<String> canDelete = new ArrayList<>();
             List<String> canShare = new ArrayList<>();
             List<String> canGetLink = new ArrayList<>();
+            List<String> canClone = new ArrayList<>();
 
             for (Entity td : toDisplay) {
 
@@ -224,9 +242,11 @@ public class ProfileController {
                 if(currUser.getEmail().equals(td.getProperty("owner"))){
                     canDelete.add("true");
                     canShare.add("true");
+                    canClone.add("false");
                 }else{
                     canDelete.add("false");
                     canShare.add("false");
+                    canClone.add("true");
                 }
 
                 String currShared = (String)td.getProperty("shared");
@@ -242,9 +262,11 @@ public class ProfileController {
             mv.addObject("circuitNames", circuitNames);
             mv.addObject("circuitOwners", circuitOwners);
             mv.addObject("currUser", currUser);
+
             mv.addObject("canDelete", canDelete);
             mv.addObject("canShare", canShare);
             mv.addObject("canGetLink", canGetLink);
+            mv.addObject("canClone", canClone);
 
 
             return mv;

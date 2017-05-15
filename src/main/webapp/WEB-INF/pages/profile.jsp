@@ -24,6 +24,9 @@
   <spring:url value = "/resources/profile/script/get-link.js" var = "getLinkJS"/>
   <script src="${getLinkJS}"></script>
 
+  <spring:url value = "/resources/profile/script/clone.js" var = "cloneJS"/>
+  <script src="${cloneJS}"></script>
+
   <spring:url value = "/resources/profile/css/profile_style.css" var = "profileStyle" />
   <link href = "${profileStyle}" rel = "stylesheet" />
 
@@ -156,6 +159,15 @@
                           <a href= "#" class="delete-button" onclick="deleteProfileRow(this)">
                               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                           </a>
+                      </c:if>
+
+                      <c:if test="${canClone[status.index] eq 'true'}">
+
+                          <a href="#" class="clone-button" onclick="cloneCircuit(this)" >
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                          </a>
+
+
                       </c:if>
 
 
