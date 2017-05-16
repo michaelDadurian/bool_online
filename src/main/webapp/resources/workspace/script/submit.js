@@ -40,13 +40,14 @@ function createCircuitFileObject(){
 
 
 	var gridAsString = JSON.stringify(grid);
+	var quizletAsString = JSON.stringify(quizlet);
 
 	circuitFileObject = {
 		owner: "",
 		shared: circuitShared,
 		name: circuitName,
 		circuitContent: gridAsString,
-		quizletConstrains: "",
+		quizletConstraints: quizletAsString,
 		tags: circuitTags
 	};
 

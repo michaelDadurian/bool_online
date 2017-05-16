@@ -41,7 +41,7 @@ function loadFromDatastore(){
 				// load data
 				var toLoad = JSON.parse(data);
 				console.log(toLoad);
-                //toLoad.circuitContent = JSON.parse(toLoad.circuitContent);
+				//toLoad.circuitContent = JSON.parse(toLoad.circuitContent);
 				loadPacker(toLoad, false);
 			}
 			return false;
