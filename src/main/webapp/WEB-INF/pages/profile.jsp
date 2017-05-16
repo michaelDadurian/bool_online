@@ -247,36 +247,5 @@
 
 
 </body>
-<script>
-    $(document).ready(function(){
-        $(".table_all_circuits").show();
-        $(".table_owned").hide();
-        $(".table_public").hide();
-        $(".table_shared_circuits").hide();
 
-        $("#all_circuit_div").click(function(){
-            $(".table_owned").hide();
-            $(".table_shared_circuits").hide();
-            $(".table_public").hide();
-            $(".table_all_circuits").show();
-        });
-        $("#profile_circuit_div").click(function(){
-            $(".table_all_circuits").hide();
-            $(".table_shared_circuits").hide();
-            $(".table_owned").show();
-        });
-        $("#shared_circuit_div").click(function(){
-            $(".table_all_circuits").hide();
-            $(".table_owned").hide();
-            $(".table_public").hide();
-            $(".table_shared_circuits").show();
-        });
-        $("#public_circuit_div").click(function(){
-            $(".table_all_circuits").hide();
-            $(".table_owned").hide();
-            $(".table_shared_circuits").hide();
-            $(".table_public").show();
-        });
-    });
-</script>
 </html>

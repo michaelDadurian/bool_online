@@ -48,7 +48,8 @@ public class ProfileController {
     }
 
 
-    /*Receives search query from jsp, parses it, and displays the search results*/
+    /*Receives search query from jsp, parses it, and displays the search results
+    * Returns a new model and view with search results*/
     @RequestMapping(value = "profile/submitSearch", method = RequestMethod.GET)
     @ModelAttribute("searchParams")
     public ModelAndView submitSearch(Model model, HttpServletRequest request){
@@ -108,6 +109,7 @@ public class ProfileController {
             }
         }
 
+        /*Reload notifications*/
         List<Entity> notifications = notificationData.loadSharedNotification(currUser.getEmail());
         List<String> notificationNames = new ArrayList<>();
         List<String> notificationOwners = new ArrayList<>();
@@ -117,6 +119,8 @@ public class ProfileController {
             notificationOwners.add((String) notification.getProperty("owner"));
 
         }
+
+        /*Add all objects to model*/
         mv.addObject("notificationNames",notificationNames);
         mv.addObject("notificationOwners",notificationOwners);
 
@@ -137,16 +141,19 @@ public class ProfileController {
 
 
 
+    /*Receives current circuit from share.js and sends back the shared and tags property
+    * Return JSON String*/
     @RequestMapping(value = "profile/share", method = RequestMethod.GET)
     @ResponseBody
     public String shareCircuit(@RequestParam(required = true, value ="circuitName") String circuitName,
                              @RequestParam(required = true, value = "circuitOwner") String circuitOwner
                              ){
         UserService userService = UserServiceFactory.getUserService();
-        User currUser = userService.getCurrentUser();
 
+        /*Query for circuit*/
         Entity currCircuit = datastore.queryCircuitName(circuitName, circuitOwner);
 
+        /*Get circuit properties*/
         String currShared = (String)currCircuit.getProperty("shared");
         String currName = (String)currCircuit.getProperty("name");
         String currOwner = (String)currCircuit.getProperty("owner");
@@ -160,6 +167,9 @@ public class ProfileController {
 
     }
 
+    /*When shared edit is confirmed, update datastore
+    * Receives updated shared field, and adds/removes #public based on radio button selection
+    * Return SUCCESS if datastore was successfully updated. */
     @RequestMapping(value = "profile/submitEdit", method = RequestMethod.GET)
     @ResponseBody
     public String confirmEdit(@RequestParam(required = true, value = "circuitName") String circuitName,
@@ -172,7 +182,7 @@ public class ProfileController {
 
         if (circuitOwner.equals(currUser.getEmail())){
 
-
+            /*Query for circuit*/
             Entity circuit = datastore.queryCircuitName(circuitName,circuitOwner);
             String currTags = (String)circuit.getProperty("tags");
 
@@ -195,7 +205,7 @@ public class ProfileController {
 
             datastore.updateShared(circuitName, circuitOwner, circuitShared);
 
-
+            /*Create a notification with updated share*/
             Notification notification = new Notification(currUser.getEmail(), circuitShared, circuitName);
             notificationData.pushData(notification);
 
@@ -207,7 +217,9 @@ public class ProfileController {
     }
 
 
-
+    /*Deletes a circuit from the datastore
+    * Receives name, owner, and the row that was selected from delete.js
+    * Returns the current row*/
     @RequestMapping(value = "profile/delete", method = RequestMethod.GET)
     @ResponseBody
     public String deleteCircuit (@RequestParam(required = true, value ="circuitName") String circuitName,
@@ -221,6 +233,8 @@ public class ProfileController {
 
     }
 
+    /*Receives circuit name and owner from get-link.js and creates/sends a link to it
+    * Returns the link to be displayed in text area*/
     @RequestMapping(value = "profile/getLink", method = RequestMethod.GET)
     @ResponseBody
     public String getShareableLink (@RequestParam(required = true, value = "circuitName") String circuitName,
@@ -237,6 +251,8 @@ public class ProfileController {
         return baseURL + "workspace/" + circuitOwner + "&"  + editedName;
     }
 
+    /*Receives circuit name and owner from clone.js and calls Datastore.java to clone the circuit
+    * Returns success message to be displayed in alert box*/
     @RequestMapping(value = "profile/cloneCircuit", method = RequestMethod.GET)
     @ResponseBody
     public String cloneCircuit(@RequestParam(required = true, value = "circuitName") String circuitName,
@@ -250,6 +266,9 @@ public class ProfileController {
         return "Successfuly cloned " + circuitName + " created by " + circuitOwner;
     }
 
+    /*Receives circuit owner, shared, name, content, constraints and tags from file object in upload-local.js
+    * Creates circuit Entity and pushes to datastore.
+    * Returns SUCCESS upon completion*/
     @RequestMapping(value = "profile/uploadLocal", method = RequestMethod.GET)
     @ResponseBody
     public String upload(@RequestParam(required = false, value = "owner") String owner,
@@ -273,35 +292,40 @@ public class ProfileController {
 
 
 
+    /*Prompts user to log in if not already logged in, then displays all public, shared, and owned circuits, along with notifications for the user*/
     @RequestMapping("/profile")
     public ModelAndView profileLogin() {
 
         UserService userService = UserServiceFactory.getUserService();
         User currUser = userService.getCurrentUser();
 
-
-        if (userService.isUserLoggedIn()) { //signed in
+        /*If the user is logged in*/
+        if (userService.isUserLoggedIn()) {
             ModelAndView mv = new ModelAndView("pages/profile");
 
+            /*Retrieve all notifications and public/shared/owned circuits*/
             List<Entity> toDisplay = datastore.loadAllCircuits(currUser.getEmail());
             List<Entity> notifications = notificationData.loadSharedNotification(currUser.getEmail());
-            int numCircuits = toDisplay.size();
-            int circuitsPerPage = numCircuits / 5;
 
+            /*Declare lists to hold all circuit names and their owners, to be displayed in profile.jsp*/
             List<String> circuitNames = new ArrayList<>();
             List<String> circuitOwners = new ArrayList<>();
 
+            /*Declare lists to hold all notification names and owners*/
             List<String> notificationNames = new ArrayList<>();
             List<String> notificationOwners = new ArrayList<>();
 
+            /*Declare lists to store data to access in jsp*/
             List<String> canDelete = new ArrayList<>();
             List<String> canShare = new ArrayList<>();
             List<String> canGetLink = new ArrayList<>();
             List<String> canClone = new ArrayList<>();
             List<String> canOpen = new ArrayList<>();
 
+            /*For each circuit to be displayed*/
             for (Entity td : toDisplay) {
 
+                /*Add circuit name and owner to lists*/
                 circuitNames.add((String) td.getProperty("name"));
                 circuitOwners.add((String) td.getProperty("owner"));
 
@@ -311,13 +335,16 @@ public class ProfileController {
                     canDelete.add("true");
                     canShare.add("true");
                     canClone.add("false");
-                }else{
+                }
+                /*If circuit is not owned by the current user*/
+                else{
                     canOpen.add("false");
                     canDelete.add("false");
                     canShare.add("false");
                     canClone.add("true");
                 }
 
+                /*Get circuit shared and tags property to check if user can get the link */
                 String currShared = (String)td.getProperty("shared");
                 String currTags = (String)td.getProperty("tags");
 
@@ -328,12 +355,14 @@ public class ProfileController {
                 }
             }
 
+            /*Add each notification name and owner to list*/
             for (Entity notification : notifications){
                 notificationNames.add((String) notification.getProperty("name"));
                 notificationOwners.add((String) notification.getProperty("owner"));
             }
 
 
+            /*Add objects to model and view to access in profile.jsp*/
             mv.addObject("circuitNames", circuitNames);
             mv.addObject("circuitOwners", circuitOwners);
             mv.addObject("currUser", currUser);
@@ -349,16 +378,18 @@ public class ProfileController {
 
 
             return mv;
-        } else { //not signed in
+        }
+        /*If user is not logged in, redirect to login url*/
+        else {
             return new ModelAndView("redirect:" + userService.createLoginURL("/profile"));
         }
     }
 
+    /*Logs a user out from profile page*/
     @RequestMapping(value = "/profile/logout")
     public ModelAndView profileLogout(){
 
         UserService userService = UserServiceFactory.getUserService();
-
         ModelAndView mv;
 
         mv = new ModelAndView("redirect:" + userService.createLogoutURL("/"));
@@ -369,9 +400,7 @@ public class ProfileController {
 
 
 
-
-
-
+    /*When a notification is clicked, circuit name and owner is displayed*/
     @RequestMapping(value = "profile/loadCircuitFromNotification", method = RequestMethod.GET)
     @ModelAttribute("searchParams")
     public ModelAndView loadCircuitFromNotification(Model model, HttpServletRequest request) {
@@ -379,25 +408,31 @@ public class ProfileController {
         UserService userService = UserServiceFactory.getUserService();
         User currUser = userService.getCurrentUser();
 
-
+        /*Get previous search query*/
         Search searchParams = new Search(request.getParameter("searchParams"));
         model.addAttribute("searchParams", searchParams);
 
         ModelAndView mv = new ModelAndView("pages/profile");
         mv.addObject("searchParams", request.getParameter("searchParams"));
 
+        /*Get search results by parsing previous query*/
         List<Entity> searchResults = searchParams.parseQuery(searchParams.getQuery());
+
+        /*Declare lists to hold all circuit names and their owners, to be displayed in profile.jsp*/
         List<String> circuitNames = new ArrayList<>();
         List<String> circuitOwners = new ArrayList<>();
 
+        /*Declare lists to store data to access in jsp*/
         List<String> canDelete = new ArrayList<>();
         List<String> canShare = new ArrayList<>();
         List<String> canGetLink = new ArrayList<>();
         List<String> canClone = new ArrayList<>();
         List<String> canOpen = new ArrayList<>();
 
-
+        /*For each circuit in search result*/
         for (Entity searchResult : searchResults) {
+
+            /*Add circuit name and owner to lists*/
             circuitNames.add((String) searchResult.getProperty("name"));
             circuitOwners.add((String) searchResult.getProperty("owner"));
 
@@ -407,16 +442,21 @@ public class ProfileController {
                 canDelete.add("true");
                 canShare.add("true");
                 canClone.add("false");
-            }else{
+            }
+
+            /*If circuit is not owned by the current user*/
+            else{
                 canOpen.add("false");
                 canDelete.add("false");
                 canShare.add("false");
                 canClone.add("true");
             }
 
+            /*Get circuit shared and tags property*/
             String currShared = (String)searchResult.getProperty("shared");
             String currTags = (String)searchResult.getProperty("tags");
 
+            /*Check to see if current user can get a link to the circuit. Needs to be shared with the user OR public*/
             if (currShared.contains(currUser.getEmail()) || currTags.contains("#public")){
                 canGetLink.add("true");
             }else{
@@ -426,6 +466,7 @@ public class ProfileController {
         }
 
 
+        /*Get circuit owner from notification*/
         StringBuilder circuitBuild = new StringBuilder();
         for (String a : circuitNames) {
             circuitBuild.append(a);
@@ -444,14 +485,16 @@ public class ProfileController {
         ownerName = ownerName.substring(0, ownerName.length() - (" ").length());
 
 
-
+        /*Delete notification from datastore once circuit has been displayed*/
         deleteNotification(circuitName, ownerName);
 
 
+        /*Reload notifications*/
         List<Entity> notifications = notificationData.loadSharedNotification(currUser.getEmail());
         List<String> notificationNames = new ArrayList<>();
         List<String> notificationOwners = new ArrayList<>();
 
+        /*Get notification names and owners*/
         for (Entity notification : notifications) {
             notificationNames.add((String) notification.getProperty("name"));
             notificationOwners.add((String) notification.getProperty("owner"));
@@ -459,6 +502,7 @@ public class ProfileController {
 
         }
 
+        /*Add objects to model and view*/
         mv.addObject("notificationNames", notificationNames);
         mv.addObject("notificationOwners", notificationOwners);
 
@@ -477,6 +521,7 @@ public class ProfileController {
         return mv;
     }
 
+    /*Gets Notification Entity then sends to NotificationDatastore.java to delete the Entity*/
     public void deleteNotification (String notificationName, String notificationOwner){
 
         Entity notificationToDelete = notificationData.queryNotificationName(notificationName,notificationOwner);
@@ -484,6 +529,7 @@ public class ProfileController {
 
     }
 
+    /*Displays notification names and owners*/
     @RequestMapping("/profile/notifications")
     public ModelAndView profileNotifications() {
 
