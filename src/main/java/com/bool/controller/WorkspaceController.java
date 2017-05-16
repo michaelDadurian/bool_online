@@ -9,6 +9,7 @@ import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
+import com.google.appengine.api.datastore.Text;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -88,6 +89,56 @@ public class WorkspaceController {
         }
 
         return mv;
+    }
+
+    @RequestMapping(value = "workspace/{circuitOwner}/{circuitName}", method = RequestMethod.GET)
+    public ModelAndView workspaceDirectShareableLink(
+            @PathVariable("circuitOwner") String circuitOwner,
+            @PathVariable("circuitName") String circuitName
+    ){
+        ModelAndView mv = new ModelAndView("pages/workspace");
+
+        System.out.println(circuitOwner);
+        System.out.println(circuitName);
+        return mv;
+    }
+
+    @RequestMapping(value = "workspace/loadData", method = RequestMethod.GET)
+    @ResponseBody
+    public String workspaceLoad(
+            @RequestParam("circuitOwner") String circuitOwner,
+            @RequestParam("circuitName") String circuitName
+    ){
+        System.out.println(circuitOwner);
+        System.out.println(circuitName);
+
+        UserService userService = UserServiceFactory.getUserService();
+        User currUser = userService.getCurrentUser();
+
+        Entity circuitFile = datastore.queryCircuitName(circuitName, circuitOwner);
+
+        String datastoreOwner = (String)circuitFile.getProperty("owner");
+        String datastoreShared = (String)circuitFile.getProperty("shared");
+        String datastoreName = (String)circuitFile.getProperty("name");
+        String databaseCircuitContent = ((Text)circuitFile.getProperty("circuitContent")).getValue();
+        String datastoreQuizletConstraints = (String)circuitFile.getProperty("quizletConstraints");
+        String datastoreTags = (String)circuitFile.getProperty("tags");
+
+        String toSend = "{";
+
+        toSend += "\"owner\": \""+datastoreOwner+"\",";
+        toSend += "\"shared\": \""+datastoreShared+"\",";
+        toSend += "\"name\": \""+datastoreName+"\",";
+        toSend += "\"circuitContent\": "+databaseCircuitContent+",";
+        toSend += "\"quizletConstraints\": "+datastoreQuizletConstraints+",";
+        toSend += "\"tags\": \""+datastoreTags+"\"";
+        toSend += "}";
+
+        if(datastoreTags.contains("#public") || datastoreOwner.equals(currUser.getEmail())){
+            return toSend;
+        }
+
+        return "Circuit Unavailable";
     }
 
 }

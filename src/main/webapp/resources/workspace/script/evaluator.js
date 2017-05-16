@@ -11,10 +11,16 @@ function evaluate(){
 	var siggen = findAllSignalGenerating(grid);
 	allowCircuitEvaluation();
   	console.log(siggen);
-  	for(var i=0;i<siggen.length;i++){
-    	siggen[i].output();
-  	}
 
+  	evaluateComponents(siggen);
+
+  	updateGridInterface();
+}
+
+function removeDuplicatesInBftList(list){
+	uniqueArray = a.filter(function(item, pos) {
+    	return a.indexOf(item) == pos;
+	});
 }
 
 /* resets all components to original values */
@@ -191,8 +197,5 @@ function findAllIslands(grid){
 function findBeginnings(island){
 
 }
-
-console.log("Hello World");
-console.log(grid);
 
 

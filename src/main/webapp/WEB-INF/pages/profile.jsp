@@ -150,7 +150,7 @@
                     <td align="center">
 
                       <c:if test="${canOpen[status.index] eq 'true'}">
-                          <a href = "#" class="open-button">
+                          <a href = "/workspace/${circuitOwners[status.index]}/${circuitName}" class="open-button">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                           </a>
                       </c:if>

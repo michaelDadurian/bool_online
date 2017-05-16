@@ -47,6 +47,29 @@ public class ProfileController {
         return "pages/profile";
     }
 
+    @RequestMapping(value = "profile/openCircuit", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView openCircuit (@RequestParam(required = true, value = "circuitName") String circuitName,
+                               @RequestParam(required = true, value = "circuitOwner") String circuitOwner,
+                                    HttpServletRequest request){
+
+        ModelAndView mv;
+
+        String url = request.getRequestURL().toString();
+        String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
+
+        String editedName = circuitName.replaceAll(" ", "+");
+
+        String toRedirect = "redirect: /workspace/" + circuitOwner + "&"  + editedName;
+
+        mv = new ModelAndView(toRedirect);
+
+        System.out.println(circuitName);
+        System.out.println(circuitOwner);
+        System.out.println(toRedirect);
+
+        return mv;
+    }
 
     /*Receives search query from jsp, parses it, and displays the search results
     * Returns a new model and view with search results*/
@@ -247,7 +270,7 @@ public class ProfileController {
         String editedName = circuitName.replaceAll(" ", "+");
 
 
-        return baseURL + "workspace/" + circuitOwner + "&"  + editedName;
+        return baseURL + "workspace/" + circuitOwner + "/"  + editedName;
     }
 
     /*Receives circuit name and owner from clone.js and calls Datastore.java to clone the circuit

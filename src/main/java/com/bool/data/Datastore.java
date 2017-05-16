@@ -8,6 +8,7 @@ import com.google.appengine.api.datastore.*;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
+import com.google.appengine.api.datastore.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +83,7 @@ public class Datastore {
             toPush.setProperty("owner", circuit.getOwner());
             toPush.setProperty("shared", circuit.getShared());
             toPush.setProperty("name", circuit.getName());
-            toPush.setProperty("circuitContent", circuit.getCircuitContent());
+            toPush.setProperty("circuitContent", new Text(circuit.getCircuitContent()));
             toPush.setProperty("quizletConstraints", circuit.getQuizletConstraints());
             toPush.setProperty("tags", circuit.getTags());
 

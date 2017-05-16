@@ -2,11 +2,14 @@ var path = "/resources/workspace/img/c-icon/";
 
 var active_path = "/resources/workspace/img/c-icon-active/";
 
+var console_path = "/resources/workspace/img/console/";
+
 // Logic Gates
 var AND_IMAGE = loadImage(path + "and.png"); 
 var OR_IMAGE = loadImage(path + "or.png");
 var XOR_IMAGE = loadImage(path + "xor.png");
 var NOT_IMAGE = loadImage(path + "not.png");
+var BUFFER_IMAGE = loadImage(path + "buffer.png");
 
 //var NAND_IMAGE = loadImage(path + "nand.png");
 //var NOR_IMAGE = loadImage(path + "nor.png");
@@ -16,17 +19,22 @@ var L_IMAGE = loadImage(path + "l.png"); 		// L
 var I_IMAGE = loadImage(path + "minus.png"); 	// |
 var T_IMAGE = loadImage(path + "t.png"); 		// T
 var CROSS_IMAGE = loadImage(path + "cross.png"); 	// +
+var CROSSING_IMAGE = loadImage(path + "crossing.png"); 	// +
 
 // Blackboxes
 var PRINT_IMAGE = loadImage(path + "print.png");
 var ON_IMAGE = loadImage(path + "on.png");
-var VAR_IMAGE = loadImage(path + "var.png");
+//var VAR_IMAGE = loadImage(path + "var.png");
+var SWITCH_IMAGE = loadImage(path + "switch.png");
+var LIGHT_IMAGE = loadImage(path + "light.png");
+var EQ_IMAGE = loadImage(path + "eq.png");
 
 // Logic Gates
 var AND_ACTIVE_IMAGE = loadImage(active_path + "and.png"); 
 var OR_ACTIVE_IMAGE = loadImage(active_path + "or.png");
 var XOR_ACTIVE_IMAGE = loadImage(active_path + "xor.png");
 var NOT_ACTIVE_IMAGE = loadImage(active_path + "not.png");
+var BUFFER_ACTIVE_IMAGE = loadImage(active_path + "buffer.png");
 
 //var NAND_IMAGE = loadImage(path + "nand.png");
 //var NOR_IMAGE = loadImage(path + "nor.png");
@@ -36,11 +44,20 @@ var L_ACTIVE_IMAGE = loadImage(active_path + "l.png"); 		// L
 var I_ACTIVE_IMAGE = loadImage(active_path + "minus.png"); 	// |
 var T_ACTIVE_IMAGE = loadImage(active_path + "t.png"); 		// T
 var CROSS_ACTIVE_IMAGE = loadImage(active_path + "cross.png"); 	// +
+var CROSSING_ACTIVE_IMAGE = loadImage(active_path + "crossing.png"); 	// +
 
 // Blackboxes
 var PRINT_ACTIVE_IMAGE = loadImage(active_path + "print.png");
 var ON_ACTIVE_IMAGE = loadImage(active_path + "on.png");
-var VAR_ACTIVE_IMAGE = loadImage(active_path + "var.png");
+//var VAR_ACTIVE_IMAGE = loadImage(active_path + "var.png");
+var SWITCH_ACTIVE_IMAGE = loadImage(active_path + "switch.png");
+var LIGHT_ACTIVE_IMAGE = loadImage(active_path + "light.png");
+var EQ_ACTIVE_IMAGE = loadImage(active_path + "eq.png");
+
+
+// Console Images
+var CONSOLE_CHECK = loadImage(console_path + "check.png");
+var CONSOLE_X = loadImage(console_path + "xmark.png")
 
 function loadImage(path){
 	var imageObj = new Image();
@@ -52,7 +69,7 @@ function loadImage(path){
 function getImageByComponentType(component){
 	var image;
 	var comp = component.type;
-	if(component.active){
+	if(component.logic()){
 		if(comp === AND_GATE_COMPONENT){
 			image = AND_ACTIVE_IMAGE;
 		}
@@ -64,6 +81,9 @@ function getImageByComponentType(component){
 		}
 		else if(comp === NOT_GATE_COMPONENT){
 			image = NOT_ACTIVE_IMAGE;
+		}
+		else if(comp === BUFFER_GATE_COMPONENT){
+			image = BUFFER_ACTIVE_IMAGE;
 		}
 
 		//wires
@@ -79,6 +99,9 @@ function getImageByComponentType(component){
 		else if(comp === CROSS_WIRE_COMPONENT){
 			image = CROSS_ACTIVE_IMAGE;
 		}
+		else if(comp === CROSSING_WIRE_COMPONENT){
+			image = CROSSING_ACTIVE_IMAGE;
+		}
 
 		//boxes
 		else if(comp === PRINT_BOX_COMPONENT){
@@ -89,6 +112,15 @@ function getImageByComponentType(component){
 		}
 		else if(comp === VAR_BOX_COMPONENT){
 			image = VAR_ACTIVE_IMAGE;
+		}
+		else if(comp === SWITCH_BOX_COMPONENT){
+			image = SWITCH_ACTIVE_IMAGE;
+		}
+		else if(comp === LIGHT_BOX_COMPONENT){
+			image = LIGHT_ACTIVE_IMAGE;
+		}
+		else if(comp === EQ_BOX_COMPONENT){
+			image = EQ_ACTIVE_IMAGE;
 		}
 	}
 	else{
@@ -104,6 +136,9 @@ function getImageByComponentType(component){
 		else if(comp === NOT_GATE_COMPONENT){
 			image = NOT_IMAGE;
 		}
+		else if(comp === BUFFER_GATE_COMPONENT){
+			image = BUFFER_IMAGE;
+		}
 
 		//wires
 		else if(comp === L_WIRE_COMPONENT){
@@ -118,6 +153,9 @@ function getImageByComponentType(component){
 		else if(comp === CROSS_WIRE_COMPONENT){
 			image = CROSS_IMAGE;
 		}
+		else if(comp === CROSSING_WIRE_COMPONENT){
+			image = CROSSING_IMAGE;
+		}
 
 		//boxes
 		else if(comp === PRINT_BOX_COMPONENT){
@@ -128,6 +166,15 @@ function getImageByComponentType(component){
 		}
 		else if(comp === VAR_BOX_COMPONENT){
 			image = VAR_IMAGE;
+		}
+		else if(comp === SWITCH_BOX_COMPONENT){
+			image = SWITCH_IMAGE;
+		}
+		else if(comp === LIGHT_BOX_COMPONENT){
+			image = LIGHT_IMAGE;
+		}
+		else if(comp === EQ_BOX_COMPONENT){
+			image = EQ_IMAGE;
 		}
 	}
 
