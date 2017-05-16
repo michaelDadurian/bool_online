@@ -55,7 +55,7 @@
 <div class="container" style="background-color: #FDFFFF">
   <div class="row">
     <div class=" col-md-2 col-sm-2">
-            <a href="/"><img src= "/resources/profile/img/bool_logo.png" class="img-rounded" alt="bool_logo" height="75%" width="75%"></a>
+            <a href="/"><img src= "/resources/profile/img/bool-logo.png" id = "bool-logo" class="img-rounded" alt="bool-logo" height="75%" width="75%"></a>
     </div>
     <div class="col-md-8 col-sm-8">
         <form action="/profile/submitSearch" modelAttribute="searchParams" method="get" id="search_input">
@@ -80,7 +80,7 @@
         <!--###added span class here-->
       </span>
       <div class ="notifications_dropdown">
-        <img src="/resources/profile/img/bell1.png" class="dropdown-toggle" type="button" data-toggle="dropdown">
+        <img src="/resources/profile/img/bell1.png" class="dropdown-toggle notif" type="button" data-toggle="dropdown">
         <ul class="dropdown-menu">
           <li class="dropdown-header"><a href="/profile/notifications">Notifications</a></li>
             <c:forEach items="${notificationNames}" var="notificationName" varStatus="status">
@@ -89,18 +89,21 @@
         </ul>
       </div>
   </div>
-    <!--User dropdown -->
-    <div class="col-md-1 col-sm-1">
-      <span class="span_filler_1">
-          <!--###added span class here-->
-      </span>
-
-
-      <div class="profile_logout">
-        <a href="/profile/logout">Log Out</a>
+      <!--User dropdown -->
+      <div class="col-md-1 col-sm-1">
+        <span class="span_filler_1">
+            <!--###added span class here-->
+        </span>
+        <div class="user_logo_dropdown"> <!--###maybe change here?-->
+          <img class="user_logo dropdown-toggle" type="button" data-toggle="dropdown" src="/resources/profile/img/bool-icon-big.png">
+          <%--<span class="user_logo dropdown-toggle float-left" type="button" data-toggle="dropdown">Nel</span> <!--###added span class here-->--%>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">"${currUser}"</li>
+            <li class="dropdown_style"><a href="/profile/logout">Log Out</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
   <div class="row">
     <div class="col-xl-2 col-md-2 col-sm-3">
       <div id="sidebar-wrap">
@@ -150,13 +153,13 @@
                     <td align="center">
 
                       <c:if test="${canOpen[status.index] eq 'true'}">
-                          <a href = "/workspace/${circuitOwners[status.index]}/${circuitName}" class="open-button">
+                          <a href = "/workspace/${circuitOwners[status.index]}/${circuitName}" class="open-button sbut">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                           </a>
                       </c:if>
 
                       <c:if test="${canGetLink[status.index] eq 'true'}">
-                          <a href = "#" class="get-link-button" onclick="getLink(this)">
+                          <a href = "#" class="get-link-button sbut" onclick="getLink(this)">
                             <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
                           </a>
                       </c:if>
@@ -164,7 +167,7 @@
 
                       <c:if test="${canShare[status.index] eq 'true'}">
 
-                          <a href = "#" class="share-button" onclick="getCircuit(this)">
+                          <a href = "#" class="share-button sbut" onclick="getCircuit(this)">
                             <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
                           </a>
 
@@ -172,14 +175,14 @@
 
 
                       <c:if test="${canDelete[status.index] eq 'true'}">
-                          <a href= "#" class="delete-button" onclick="deleteProfileRow(this)">
+                          <a href= "#" class="delete-button sbut" onclick="deleteProfileRow(this)">
                               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                           </a>
                       </c:if>
 
                       <c:if test="${canClone[status.index] eq 'true'}">
 
-                          <a href="#" class="clone-button" onclick="cloneCircuit(this)" >
+                          <a href="#" class="clone-button sbut" onclick="cloneCircuit(this)" >
                             <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
                           </a>
 

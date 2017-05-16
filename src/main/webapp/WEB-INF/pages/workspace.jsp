@@ -74,7 +74,7 @@
 			<li class="dropdown">
 				<a href="#" class="dropbtn">Authenticate</a>
 				<div class="dropdown-content">
-		  			<a href="/workspace/toggleLoginLogout">Login/Logout</span>
+		  			<a href="/workspace/toggleLoginLogout">Login/Logout | ${currUser}</span>
 		  			<a href="/profile">Profile</a>
 		  			<a href="/">Exit</a>
 				</div>

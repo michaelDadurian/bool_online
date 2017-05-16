@@ -8,6 +8,16 @@ body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 
+@media(min-width: 767px)
+.navbar-default {
+    background-color: grey;
+}
+
+.btn-primary{
+    color: white;
+    background-color: grey;
+}
+
 #homeHeading{
   width: 20%;
   position: relative;

@@ -16,6 +16,14 @@ p, a, div, button{
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
+a{
+    font-size: 13px;
+}
+
+td{
+    font-size: 15px;
+}
+
 .workspace{ 
 	width: 100%;
 	height: 100%;

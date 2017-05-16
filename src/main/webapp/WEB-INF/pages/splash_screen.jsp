@@ -52,7 +52,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.html"><img src="resources/splash/img/bool-logo-sml.png"></a>
+                <a class="navbar-brand page-scroll" href="/"><img src="resources/splash/img/bool-logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -122,7 +122,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">What is <i>bool?</i></h2>
                     <hr class="light">
-                    <p class="text-faded"> <i>Bool</i> is an web-app that allows users to drag-and-drop circuit components. Allowing users to visual the flow and logic of a boolean circuit. <br><br>Currently, it is a supplementary learning tool for System Fundamentals I at Stony Brook University
+                    <p class="text-faded"> <i>Bool</i> is an web-app that allows users to drag-and-drop circuit components. Allowing users to visual the flow and logic of a boolean circuit. <br><br>Currently, it is a being developed by a group of undergraduate students at Stony Brook University
                     </p>
                 </div>
             </div>
@@ -275,7 +275,7 @@
                 <!--</div>-->
                 <div class="col-lg-12 text-center">
                     <i class="fa fa-envelope-o fa-3x sr-contact text-primary sr-icons"></i>
-                    <p style="color: #fff;"><a href="" style="color: #fff;">bool.team@gmail.com</a></p>
+                    <p style="color: #fff;"><a href="" style="color: #fff;">theboolapp@gmail.com</a></p>
                 </div>
             </div>
         </div>
