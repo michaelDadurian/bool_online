@@ -1,3 +1,7 @@
+/*AJAX call to send Circuit name, owner and row to be deleted to ProfileController
+    pCircuitName = name of Circuit
+    pCircuitOwner = owner of Circuit
+    pCurrRow = row that was selected*/
 function deleteProfileObject(pCircuitName, pCircuitOwner, pCurrRow){
 
     $.ajax({
@@ -5,9 +9,9 @@ function deleteProfileObject(pCircuitName, pCircuitOwner, pCurrRow){
             method: "GET",
             data: profileObject(pCircuitName, pCircuitOwner, pCurrRow),
             contentType: "application/json",
+            /*Upon success, receives the row to be deleted and calls updateTable*/
             success: function(data){
                 console.log(data);
-                console.log("hello");
                 updateTable(data)
                 return false;
             }
@@ -15,6 +19,8 @@ function deleteProfileObject(pCircuitName, pCircuitOwner, pCurrRow){
 
 
 }
+/*Deletes a row from table display
+    pCurrRow = row to be deleted*/
 function updateTable(pCurrRow){
     if (pCurrRow == null || pCurrRow == ""){
 
@@ -23,34 +29,24 @@ function updateTable(pCurrRow){
     }
 }
 
+/*Called when delete button is clicked on a row
+    currSelected = row containing Circuit name and owner that will be deleted*/
 function deleteProfileRow(currSelected){
 
-    console.log(currSelected);
-
-
-
+    /*Get the row containing Circuit name and owner*/
     var currRow = $(currSelected).closest("tr").attr("class");
     var currName = $("." + currRow).find(".circuitNames");
     var currOwner = $("." + currRow).find(".circuitOwners");
 
-    console.log(currName);
-    console.log(currOwner);
-    console.log(currRow);
-
-    console.log(currName.html());
-    console.log(currOwner.html());
-
+    /*If confirmed, sends Circuit name, owner, and row to deleteProfileObject*/
     if (confirm("Delete Circuit?")){
         deleteProfileObject(currName.html(), currOwner.html(), currRow);
     }
 
 
-
-
-
-
 }
 
+/*JSON object to send to ProfileController*/
 function profileObject(pCircuitName, pCircuitOwner, pCurrRow){
     return {circuitName:pCircuitName, circuitOwner:pCircuitOwner, currRow:pCurrRow}
 }

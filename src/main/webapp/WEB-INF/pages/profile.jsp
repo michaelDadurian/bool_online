@@ -210,6 +210,7 @@
         <p class="circuit-name"></p>
         <p class="circuit-owner"></p>
         <p class="circuit-tags"></p>
+        <p id = "circuitNameDisplay"  </p>
         <form>
             <span class = "desc">Public</span>
             <input type = "radio" class = "privacy" name = "privacy" id = "public">

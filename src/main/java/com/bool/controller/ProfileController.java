@@ -148,7 +148,6 @@ public class ProfileController {
     public String shareCircuit(@RequestParam(required = true, value ="circuitName") String circuitName,
                              @RequestParam(required = true, value = "circuitOwner") String circuitOwner
                              ){
-        UserService userService = UserServiceFactory.getUserService();
 
         /*Query for circuit*/
         Entity currCircuit = datastore.queryCircuitName(circuitName, circuitOwner);

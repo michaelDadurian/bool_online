@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="272b5aa0-756e-459c-b63e-b2968cfddfb3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/data/Datastore.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/data/Datastore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/data/NotificationDatastore.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/data/NotificationDatastore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/search/Search.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/search/Search.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/clone.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/clone.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/delete.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/delete.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/get-link.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/get-link.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/share.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/share.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +58,8 @@
       <file leaf-file-name="ProfileController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1096">
-              <caret line="407" column="70" lean-forward="false" selection-start-line="407" selection-start-column="70" selection-end-line="407" selection-end-column="70" />
+            <state relative-caret-position="340">
+              <caret line="149" column="31" lean-forward="false" selection-start-line="149" selection-start-column="31" selection-end-line="149" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -94,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Datastore.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Datastore.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/data/Datastore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="361" column="30" lean-forward="false" selection-start-line="361" selection-start-column="30" selection-end-line="361" selection-end-column="30" />
+            <state relative-caret-position="1040">
+              <caret line="347" column="0" lean-forward="true" selection-start-line="347" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,38 +110,48 @@
       <file leaf-file-name="profile.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="934">
-              <caret line="249" column="0" lean-forward="true" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+            <state relative-caret-position="290">
+              <caret line="212" column="10" lean-forward="false" selection-start-line="212" selection-start-column="10" selection-end-line="212" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload-local.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/upload-local.js">
+      <file leaf-file-name="delete.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/delete.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            <state relative-caret-position="960">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="share.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="share.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/share.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="78" />
+            <state relative-caret-position="520">
+              <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkspaceController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java">
+      <file leaf-file-name="get-link.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/get-link.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="66" column="91" lean-forward="true" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="91" />
+            <state relative-caret-position="670">
+              <caret line="52" column="44" lean-forward="false" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clone.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/clone.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="760">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -156,15 +169,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/profile</find>
-      <find>submitSearch</find>
-      <find>Search by tag</find>
-      <find>New</find>
-      <find>/workspace</find>
-      <find>script</find>
-      <find>jQuery</find>
-      <find>cloneCircuit</find>
-      <find>Load</find>
       <find>Upload</find>
       <find>submit</find>
       <find>checked</find>
@@ -180,12 +184,21 @@
       <find>share</find>
       <find>update</find>
       <find>/share</find>
-      <find>edit</find>
       <find>Notification notification</find>
       <find>Notification no</find>
       <find>System</find>
       <find>searchMult</find>
       <find>Nel</find>
+      <find>delete</find>
+      <find>deleteProfile</find>
+      <find>profile/delete</find>
+      <find>confirm</find>
+      <find>submitEdit</find>
+      <find>edit</find>
+      <find>editShare</find>
+      <find>profile/share</find>
+      <find>deleteProfileRow</find>
+      <find>getCircuit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -236,23 +249,23 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/profile.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/delete.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/share.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/get-link.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/css/get-link.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/clone.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/saving.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/css/upload.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/upload-local.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/css/share-menu.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bool/data/Notification.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bool/search/Search.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bool/data/NotificationDatastore.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bool/data/Datastore.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/clone.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/delete.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/get-link.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/share.js" />
       </list>
     </option>
   </component>
@@ -1224,13 +1237,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/css/get-link.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -1238,25 +1244,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/get-link.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="41" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/css/profile_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5160">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/clone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1383,14 +1374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/share.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1411,22 +1394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1096">
-          <caret line="407" column="70" lean-forward="false" selection-start-line="407" selection-start-column="70" selection-end-line="407" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="934">
-          <caret line="249" column="0" lean-forward="true" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1459,8 +1426,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/data/Datastore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="361" column="30" lean-forward="false" selection-start-line="361" selection-start-column="30" selection-end-line="361" selection-end-column="30" />
+        <state relative-caret-position="1040">
+          <caret line="347" column="0" lean-forward="true" selection-start-line="347" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/clone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/get-link.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="52" column="44" lean-forward="false" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="149" column="31" lean-forward="false" selection-start-line="149" selection-start-column="31" selection-end-line="149" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="212" column="10" lean-forward="false" selection-start-line="212" selection-start-column="10" selection-end-line="212" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/share.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
           <folding />
         </state>
       </provider>
