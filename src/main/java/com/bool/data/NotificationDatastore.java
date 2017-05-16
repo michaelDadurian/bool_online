@@ -21,7 +21,7 @@ public class NotificationDatastore {
         for(int i=0;i<10; i++){
             testNotification.add(new Notification(
                     "mdadurian@example.com",
-                    "nelson@example.com;reef@example.com",
+                    "nelson@example.com reef@example.com",
                     "Mike's Circuit "+i
             ));
         }
@@ -29,14 +29,14 @@ public class NotificationDatastore {
         for(int i=0;i<10; i++){
             testNotification.add(new Notification(
                     "nelson@example.com",
-                    "mdadurian@example.com;reef@example.com",
+                    "mdadurian@example.com reef@example.com",
                     "Nelson's Circuit "+i
             ));
         }
         for(int i=0;i<10; i++){
             testNotification.add(new Notification(
                     "reef@example.com",
-                    "mdadurian@example.com;kenny@example.com",
+                    "mdadurian@example.com kenny@example.com",
                     "Reef's Circuit "+i
             ));
         }
@@ -77,7 +77,7 @@ public class NotificationDatastore {
         for (Entity td:toLoad){
 
             String shared = (String)td.getProperty("shared");
-            String[] splitShared = shared.split(";");
+            String[] splitShared = shared.split(" ");
 
             for (String user: splitShared){
 

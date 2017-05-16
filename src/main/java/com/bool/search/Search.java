@@ -17,6 +17,8 @@ import java.util.List;
 *
 *
 * Search just filters the dataastore based on the parsed query*/
+
+/*Search class to parse search querys and retrieve Entites from the datastore*/
 public class Search{
 
     private String query;
@@ -26,57 +28,59 @@ public class Search{
     private List<String> owners = new ArrayList<String>();
     private List<String> sharedWith = new ArrayList<String>();
 
-    boolean searchMultipleOwners = false;
 
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     Datastore data = new Datastore();
 
-    public Search(){}
 
     public Search(String query){
         this.query = query;
     }
 
     public List<Entity> parseQuery(String query){
-        /*Default search: just circuit name
-          <name> #<tag> owner:<owner> shared:<shared>
-        * owner:john owner:mike
-        * Make 4 lists that hold each one of the fields (names, tags, ownres, shared)
-        * tokenize on space, if there is something unrecognizable then just filter on name
-        * "Nelson's Circuit" use contains filter to search for any name containing Nelson's and Circuit
-        * */
 
+        /*Get default set of circuits to search through
+        *   -circuits that are owned by you
+        *   -circuits that have been shared with you
+        *   -circuits that are public*/
         List<Entity> defaultFilter = getDefaultCircuits();
+
+        /*If search query is null just return the default filter*/
         if (query.length() == 0){
             return defaultFilter;
         }
+
+        /*Splits the query on space*/
         String[] splitQuery = query.split(" ");
 
 
 
         for (String term: splitQuery){
 
+            /*If term starts with a '#' then it is a tag*/
             if (term.charAt(0) == ('#')){
                 tags.add(term);
-                System.out.println("Found tag: " + term.substring(1));
             }
-            else if (term.contains("owner:")){
+
+            /*If term starts with 'owner' then they are searching for a specific owner*/
+            else if (term.length() >= 6 && term.substring(0,6).equals("owner:")){
                 owners.add(term.substring(6));
-                System.out.println("Found owner: " + term.substring(6));
             }
-            else if (term.contains("shared:")){
+
+            /*If term starts with 'shared' then we search by shared*/
+            else if (term.length() >= 7 && term.substring(0,7).equals("shared:")){
                 sharedWith.add(term.substring(7));
-                System.out.println("Found shared: " + term.substring(7));
             }
+
+            /*If term starts with none of the above, it is a circuit name*/
             else{
                 names.add(term);
-                System.out.println("Found name: " + term);
             }
 
         }
 
         List<Entity> searchResults = new ArrayList<>();
 
+        /*Check to see if searching by multiple owners*/
         if (owners.size() > 1){
             for (String owner: owners){
                 List<Entity> ownerSearch = multipleOwnersSearch(owner, defaultFilter, tags, sharedWith, names);
@@ -95,6 +99,7 @@ public class Search{
 
     }
 
+    /*Runs multiple queries to search for same tags, shared, and name but with different owners*/
     public List<Entity> multipleOwnersSearch(String owner, List<Entity> defaultFilter, List<String> tags, List<String> sharedWith, List<String> names){
         List<Entity> searchResult = new ArrayList<>();
 

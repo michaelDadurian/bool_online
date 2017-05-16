@@ -25,32 +25,32 @@ public class Datastore {
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "mdadurian@example.com",
-                        "nelson@example.com;reef@example.com",
+                        "nelson@example.com reef@example.com",
                         "Mike's Circuit "+i,
                         "",
                         "",
-                        "#public;#test;#sdfs"
+                        "#public #test #sdfs"
                 ));
             }
 
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "nelson@example.com",
-                        "mdadurian@example.com;reef@example.com",
+                        "mdadurian@example.com reef@example.com",
                         "Nelson's Circuit "+i,
                         "",
                         "",
-                        "#public;#test"
+                        "#public #test"
                 ));
             }
             for(int i=0;i<10; i++){
                 testCircuits.add(new Circuit(
                         "reef@example.com",
-                        "mdadurian@example.com;kenny@example.com",
+                        "mdadurian@example.com kenny@example.com",
                         "Reef's Circuit "+i,
                         "",
                         "",
-                        "#public"
+                        "public"
                 ));
             }
             for(int i=0;i<10; i++){
@@ -194,12 +194,7 @@ public class Datastore {
 
         public void addPublic(Entity circuit, String currTags){
             String editedTags;
-            if (currTags.equals("")) {
-                editedTags = "#public";
-            }
-            else {
-                editedTags = currTags.concat(";#public");
-            }
+            editedTags = "#public " + currTags;
 
             circuit.setProperty("tags", editedTags);
 
@@ -249,7 +244,7 @@ public class Datastore {
             for (Entity td:toLoad) {
 
                 String tags = (String)td.getProperty("tags");
-                String[] splitTags = tags.split(";");
+                String[] splitTags = tags.split(" ");
 
                 for (String tag: splitTags){
                     if (tag.equals("#public")){
@@ -276,7 +271,7 @@ public class Datastore {
             for (Entity td:toLoad){
 
                 String shared = (String)td.getProperty("shared");
-                String[] splitShared = shared.split(";");
+                String[] splitShared = shared.split(" ");
 
                 for (String user: splitShared){
                     if (user.equals(sharedWith)){

@@ -3,6 +3,12 @@ package com.bool.data;
 /**
  * Created by Refath Hossan on 5/9/17.
  */
+
+
+/*Notification Object used to store Notification Entities
+*   owner: the owner of the circuit to be shared
+*   shared: who the circuit will be shared with. Emails separated by a space
+*   name: name of the circuit */
 public class Notification {
     private String owner;
     private String shared;
