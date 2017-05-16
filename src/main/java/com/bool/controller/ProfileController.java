@@ -265,7 +265,7 @@ public class ProfileController {
         return "Successfuly cloned " + circuitName + " created by " + circuitOwner;
     }
 
-    /*Receives circuit owner, shared, name, content, constraints and tags from file object in upload-local.js
+    /*Receives circuit owner, shared, name, content, constraints and tags from file object send by upload-local.js
     * Creates circuit Entity and pushes to datastore.
     * Returns SUCCESS upon completion*/
     @RequestMapping(value = "profile/uploadLocal", method = RequestMethod.GET)

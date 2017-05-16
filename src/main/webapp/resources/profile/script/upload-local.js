@@ -1,21 +1,27 @@
+/*Called when user clicks on Upload button*/
 $(document).on('change', '#loader',function(){
-    console.log("sadas")
 	var fileToLoad = $("#loader")[0].files[0];
-    //var fileToLoad = document.getElementById("loader").files[0];
 
     var fileReader = new FileReader();
     fileReader.onload = function(fileLoadedEvent)
     {
 
+        /*Turn text file into JSON object*/
         obj = JSON.parse(fileLoadedEvent.target.result);
         obj.circuitContent = JSON.stringify(obj.circuitContent);
         obj.constraints = JSON.stringify(obj.constraints);
 
+        /*Get file name to set Circuit name*/
         var fileName = fileToLoad.name;
+        /*Remove file extension*/
         fileName = fileName.substring(0, fileName.length-4);
+
+        /*Set name of Circuit to name of File*/
         obj.name = fileName;
 
         console.log(obj);
+        /*AJAX call to send uploaded Circuit to profile
+            Upon success, receives "SUCCESS" and alerts the user*/
         $.ajax({
                     url: "/profile/uploadLocal",
                     method: "GET",
