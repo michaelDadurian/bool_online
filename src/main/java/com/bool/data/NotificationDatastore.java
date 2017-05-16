@@ -53,6 +53,7 @@ public class NotificationDatastore {
         }
     }
 
+    /*Takes in Notification object and creates an Entity to push to datastore*/
     public void pushData(Notification notification){
 
         Key notificationKey = KeyFactory.createKey("Notification", notification.getName());
@@ -65,15 +66,20 @@ public class NotificationDatastore {
         datastore.put(toPush);
     }
 
+    /*Loads all notifications to be displayed to the currently logged in user
+    * Returns List of Notification Entities*/
+
     public List<Entity> loadSharedNotification(String sharedWith){
 
         List<Entity> toLoad;
         List<Entity> sharedNotifications = new ArrayList<>();
 
+        /*Query datastore for all Notifications with a non empty shared property*/
         Query query = new Query("Notification");
         query.addFilter("shared", Query.FilterOperator.NOT_EQUAL, "");
         toLoad = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
 
+        /*For each Notification, check to see if it has been shared with the currently logged in user*/
         for (Entity td:toLoad){
 
             String shared = (String)td.getProperty("shared");
@@ -96,11 +102,13 @@ public class NotificationDatastore {
 
     }
 
+    /*Deletes a Notification Entity from the Datastore*/
     public void deleteNotification(Entity notification){
         Key notificationKey = notification.getKey();
         datastore.delete(notificationKey);
     }
 
+    /*Retrieves a Notification Entity based on name and owner*/
     public Entity queryNotificationName(String name, String owner){
         Query query = new Query("Notification");
         query.addFilter("name", Query.FilterOperator.EQUAL, name);

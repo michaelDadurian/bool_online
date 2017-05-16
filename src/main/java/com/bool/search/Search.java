@@ -334,6 +334,7 @@ public class Search{
 
     }
 
+    /*Returns default set of circuits to be searched through*/
     public List<Entity> getDefaultCircuits(){
 
         UserService userService = UserServiceFactory.getUserService();
@@ -356,13 +357,13 @@ public class Search{
         List<Entity> defaultFilter = new ArrayList<>();
         defaultFilter.addAll(ownedCircuits);
 
-            /*Check for duplicates*/
+        /*Check for duplicates*/
         for (Entity circuit: publicTags){
             if (!defaultFilter.contains(circuit))
                 defaultFilter.add(circuit);
         }
 
-            /*Check for duplicates*/
+        /*Check for duplicates*/
         for (Entity circuit: sharedCircuits){
             if (!defaultFilter.contains(circuit))
                 defaultFilter.add(circuit);
@@ -377,10 +378,7 @@ public class Search{
     public boolean checkProperty(String currProperty, List<String> searchTerms){
         int fullMatch = 1;
 
-        /*Check to see if the searched property is contained within the current Circuit
-        * searchTerms = ["#public", "#test", "#sdfs"]
-        * currProperty= "#public;#test;#sdfs"               */
-
+        /*Check to see if the searched property is contained within the current Circuit*/
 
         for(String term: searchTerms){
 
