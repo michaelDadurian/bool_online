@@ -8,6 +8,14 @@ body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 
+.custom-button{
+    background-color: #c7c7c7;
+}
+
+.container-fluid.img-color{
+    background-color:#dfdfdf;
+}
+
 @media(min-width: 767px)
 .navbar-default {
     background-color: grey;
@@ -42,7 +50,7 @@ body {
 
 }
 hr {
-  border-color: #F05F40;
+  border-color: #white;
   border-width: 3px;
   max-width: 50px;
 }
@@ -264,7 +272,7 @@ header .header-content .header-content-inner p {
   color: white;
   opacity: 0;
   display: block;
-  background: #cd5360;
+  background: #c7c7c7;
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -312,7 +320,7 @@ header .header-content .header-content-inner p {
   margin: 0 auto 20px;
 }
 .text-primary {
-  color: #cd5360;
+  color: #d9edf7;
 }
 .no-gutter > [class*='col-'] {
   padding-right: 0;
@@ -368,7 +376,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #222222;
-  background-color: #cd5360;
+  /*background-color: #cd5360;*/
   border-color: #9099A2;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;

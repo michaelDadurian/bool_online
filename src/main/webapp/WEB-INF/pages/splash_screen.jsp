@@ -85,8 +85,8 @@
                     <!--<img src="resources/splash/img/header.png" class="img-responsive" alt="">-->
                 <!--</h1>-->
                 <!--<div class="div-login">-->
-                    <!--<h2><a href="#about" class="btn btn-primary btn-block page-scroll">Login</a></h2>-->
-                    <!--<h3><a href="#about" class="btn btn-primary btn-block page-scroll">Continue as Guest</a></h3>-->
+                    <!--<h2><a href="#about" class="btn btn-primary btn-block page-scroll custom-button">Login</a></h2>-->
+                    <!--<h3><a href="#about" class="btn btn-primary btn-block page-scroll custom-button">Continue as Guest</a></h3>-->
                 <!--</div>-->
                 <div class="row">
                     <div class="col-sm-2">
@@ -98,8 +98,8 @@
                     <div class="col-md-4">
                         <img src="resources/splash/img/header.png" class="img-responsive" alt="">
                         <div class="span-login">
-                        <h2><a href="/login" class="btn btn-primary btn-block page-scroll">Login</a></h2>
-                        <h3><a href="/workspace" class="btn btn-primary btn-block page-scroll">Continue as Guest</a></h3>
+                        <h2><a href="/login" class="btn btn-primary btn-block page-scroll custom-button">Login</a></h2>
+                        <h3><a href="/workspace" class="btn btn-primary btn-block page-scroll custom-button">Continue as Guest</a></h3>
                         </div>
                     </div>
                     <div class="col-sm-2">
@@ -129,7 +129,7 @@
         </div>
     </section>
 
-    <section id="services"  style="background-color: #0b3c5d">
+    <section id="services"  style="background-color: #424242">
         <!--<div class="container">-->
             <!--<div class="row">-->
                 <!--<div class="col-lg-12 text-center">-->
@@ -174,7 +174,7 @@
 
 
     <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
+        <div class="container-fluid img-color">
             <div class="row no-gutter popup-gallery">
                 <div class="col-lg-4 col-sm-6">
                     <a href="resources/splash/img/portfolio/fullsize/1.png" class="portfolio-box">
@@ -182,7 +182,7 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    XOR Demo
+                                    DeMorgans Law
                                 </div>
                             </div>
                         </div>
@@ -194,7 +194,7 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    Print Box Demo
+                                    Half Adder
                                 </div>
                             </div>
                         </div>
@@ -206,12 +206,13 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    Demorgan's Law
+                                    Full Adder
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
+                <!--
                 <div class="col-lg-4 col-sm-6">
                     <a href="resources/splash/img/portfolio/fullsize/4.png" class="portfolio-box">
                         <img src="resources/splash/img/portfolio/thumbnails/4.png" class="img-responsive" alt="">
@@ -248,6 +249,7 @@
                         </div>
                     </a>
                 </div>
+                -->
 
             </div>
         </div>
