@@ -267,7 +267,7 @@ public class ProfileController {
         String url = request.getRequestURL().toString();
         String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
 
-        String editedName = circuitName.replaceAll(" ", "+");
+        String editedName = circuitName.replaceAll(" ", "%20");
 
 
         return baseURL + "workspace/" + circuitOwner + "/"  + editedName;
