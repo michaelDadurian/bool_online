@@ -167,7 +167,7 @@ public class WorkspaceController {
                 toSend += "\"tags\": \"" + datastoreTags + "\"";
                 toSend += "}";
 
-                if (datastoreTags.contains("#public") || currUser != null && datastoreOwner.equals(currUser.getEmail())) {
+                if (datastoreTags.contains("#public") || currUser != null && datastoreOwner.equals(currUser.getEmail()) || Circuit.isWithinShared(datastoreShared, currUser.getEmail())) {
                     return toSend;
                 }
                 else{

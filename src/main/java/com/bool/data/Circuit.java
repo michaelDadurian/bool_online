@@ -94,6 +94,18 @@ public class Circuit {
         return ret;
     }
 
+    public static boolean isWithinShared(String shared, String othername){
+        String[] sharedSplit = shared.split(" ");
+
+        for(int i=0;i<sharedSplit.length;i++){
+            if(othername.equals(sharedSplit[i])){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static Circuit jsonToObject(String everything){
         Circuit ret;
         ObjectMapper mapper = new ObjectMapper();
