@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="272b5aa0-756e-459c-b63e-b2968cfddfb3" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_6_0.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_3.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_6_4.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_6_4.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bool.iml" afterPath="$PROJECT_DIR$/bool.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bool/data/Circuit.java" afterPath="$PROJECT_DIR$/src/main/java/com/bool/data/Circuit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/upload-local.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/profile/script/upload-local.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/load.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/load.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/submit.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/submit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/selection.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/selection.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="412">
-              <caret line="157" column="30" lean-forward="true" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
+              <caret line="157" column="30" lean-forward="false" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -71,11 +64,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProfileController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="423">
               <caret line="269" column="60" lean-forward="false" selection-start-line="269" selection-start-column="60" selection-end-line="269" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -97,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/upload-local.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+              <caret line="28" column="10" lean-forward="false" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -117,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/workspace/script/load.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="646">
-              <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+              <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -135,7 +138,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>shareable</find>
       <find>logout</find>
       <find>img</find>
       <find>bool_logo</find>
@@ -157,7 +159,6 @@
       <find>btn-primary</find>
       <find>div class=&quot;container-fluid</find>
       <find>system.out.println</find>
-      <find>jackson</find>
       <find>bean</find>
       <find>com.faster</find>
       <find>clone</find>
@@ -165,6 +166,8 @@
       <find>shareableLink</find>
       <find>pushData</find>
       <find>upload</find>
+      <find>shareable</find>
+      <find>jackson</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -226,7 +229,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/splash_screen.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/splash/css/creative.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-config/application-context.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/load.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/WorkspaceController.java" />
@@ -234,6 +236,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resources/workspace/script/submit.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/profile/script/upload-local.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/bool/controller/ProfileController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -868,7 +871,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1154,14 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="84" column="21" lean-forward="true" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workspace.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1309">
@@ -1191,7 +1186,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/workspace/script/load.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
-          <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+          <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1217,7 +1212,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/profile/script/upload-local.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <caret line="28" column="10" lean-forward="false" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1243,7 +1238,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
-          <caret line="157" column="30" lean-forward="true" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
+          <caret line="157" column="30" lean-forward="false" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1252,6 +1247,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="269" column="60" lean-forward="false" selection-start-line="269" selection-start-column="60" selection-end-line="269" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding />
         </state>
       </provider>
