@@ -2,6 +2,7 @@ var attributeEditor = $(".attribute-editor");
 
 var currentGridComponent;
 
+// opens the attribute editor at x,y (starting at the bottom, top, left, or right of the mouse depending on screenX, screenY)
 function openAttributeEditor(x,y, screenX, screenY){
 	var curr = getAtGrid(x,y);
 	//console.log(curr);
@@ -59,10 +60,12 @@ function openAttributeEditor(x,y, screenX, screenY){
 	}
 }
 
+//closes the attribute editor
 function closeAttributeEditor(){
 	attributeEditor.removeClass("show");
 }
 
+// saves attributes from attribute editor to the corresponding component
 function saveAttributes(){
 	var tdelay = $(".attribute-editor #ae-delay-text").val();
 	var tmessage = $(".attribute-editor #ae-message-text").val();
@@ -83,6 +86,7 @@ $(".attribute-editor").contextmenu(function(){
 	return false;
 });
 
+// event handlers for attribute editor buttons: save, delete, rotate, flip
 $(".attribute-editor #save").click(function(e){
 	saveAttributes();
 	closeAttributeEditor();

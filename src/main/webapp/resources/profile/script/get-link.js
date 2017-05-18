@@ -5,6 +5,10 @@ function getLink(currSelected){
     /*Display link-menu containing the shareable link*/
     $(".get-link-menu").addClass("show");
 
+    var menu = $(".get-link-menu");
+
+    $(".get-link-menu").offset({top: window.height/2 - menu.height()/2, left: window.width/2 - menu.width()/2})
+
     /*Get Circuit name and Owner from the row*/
     var currRow = $(currSelected).closest("tr").attr("class");
     var currName = $("." + currRow).find(".circuitNames");

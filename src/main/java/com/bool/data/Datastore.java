@@ -177,7 +177,7 @@ public class Datastore {
             * Reset shared and tags field
             * Copy circuit name, content, and constraints*/
             Circuit circuit = new Circuit(currUser.getEmail(), "", circuitName,
-                    (String)circuitToClone.getProperty("circuitContent"),
+                    ((Text)circuitToClone.getProperty("circuitContent")).getValue(),
                     (String)circuitToClone.getProperty("quizletConstraints"), "");
 
             /*Check to see if new Circuit has a duplicate name*/
@@ -198,8 +198,7 @@ public class Datastore {
             clonedCircuit.setProperty("tags", circuit.getTags());
 
 
-
-            datastore.put(clonedCircuit);
+            pushData(circuit);
 
         }
 

@@ -98,6 +98,7 @@ var BE_RPAREN = ")";
 var BE_END = ";";
 var BE_EQ = "=";
 
+// gets the boolean equation from the textbox in Boolean Equation's console tab
 function getBooleanEquation(){
 	var booleq = $(".console #boolean #textbox #boolean-tb").val();
 
@@ -106,10 +107,12 @@ function getBooleanEquation(){
 	return booleq;
 }
 
+// sets the textbox in Boolean Equation's console tab
 function setBooleanEquation(boolEq){
 	var booleq = $(".console #boolean #textbox #boolean-tb").val(boolEq);
 }
 
+// gets the first boolean expression in a group of multi-lined boolean equations.
 function getFirstBooleanExp(){
 	var boolEq = getBooleanEquation();
 	var allBeq = splitBoolEqProg(boolEq);
@@ -119,6 +122,7 @@ function getFirstBooleanExp(){
 	return "";
 }
 
+// makes a circuit from boolean equation and copies to clipboard
 function makeCircuitFromBoolEq(){
 	var boolEq = getBooleanEquation();
 	var allBeq = splitBoolEqProg(boolEq);
@@ -127,6 +131,7 @@ function makeCircuitFromBoolEq(){
 	}
 }
 
+// finds all selected boolean equation blocks, converts them to boolean equations, then assembles them into a multi-lined boolean equation
 function makeBoolEqFromCircuit(){
 	setBooleanEquation(assembleAllBeqInSequence(findAllSelected()));
 	//traverseDownwardFromRoot();
@@ -134,6 +139,9 @@ function makeBoolEqFromCircuit(){
 
 /* Boolean Equation to Circuit */
 
+// breadth first traversal of a tree
+// list - initial roots
+// count - number of nodes beneath the starting point(root)
 function breadthTraversal(list, count){
 	var nextList = [];
 
@@ -162,13 +170,17 @@ function breadthTraversal(list, count){
 	return breadthTraversal(nextList, count);
 }
 
+// checks if a character is a letter
+// str - string containing the character to check
 function isLetter(str){
 	return str.length === 1 && str.match(/[a-z]/i);
 }
 
 /* Functions for parsing and tokenizing the boolean equations */
 
-//splits a multilined bool equation;
+// splits a multilined bool equation, into multiple smaller equations
+// boolEq - boolean equation to split on
+// return - list of multiple single lined boolean equations
 function splitBoolEqProg(boolEq){
 	boolEq = boolEq.replace(/\s/g, '');
 
@@ -203,6 +215,12 @@ function splitBoolEqProg(boolEq){
 	return ret;
 }
 
+// tokenizes a boolean equation into pieces
+// all adjacent characters are grouped together into a label
+// each operator is its own token
+// each parenthesis is its own token
+// boolEq - boolean expression to tokenize
+// return - tokenized list of labels, operators, and parenthesis
 function tokenizeBoolEq(boolEq){
 	boolEq = boolEq.replace(/\s/g, '');
 
@@ -241,6 +259,10 @@ function tokenizeBoolEq(boolEq){
 	return ret;
 }
 
+// splits on a particular character
+// tbe - boolean equation to split
+// charToSplit - character to split on
+// return - tree made by the boolean equation's splits
 function splitOnChar(tbe, charToSplit){
 	var parenOpen = false;
 
@@ -292,6 +314,9 @@ function splitOnChar(tbe, charToSplit){
 	return ret;
 }
 
+// converts boolean expression to a parseTree
+// boolEq - boolean expression to parse
+// return - root of the parse tree
 function parseBooleanEquation(boolEq){
 	var tbe = tokenizeBoolEq(boolEq);//tokenized boolean equation
 	var parseTree = parseBooleanEq(tbe);
@@ -301,6 +326,7 @@ function parseBooleanEquation(boolEq){
 	return parseTree;
 }
 
+// helper function of parseBooleanEquation
 function parseBooleanEq(tbe){
 
 	if(tbe.length == 0){
@@ -343,6 +369,9 @@ function parseBooleanEq(tbe){
 
 }
 
+// builds a circuit based on a given boolean expression
+// boolEq - boolean expression to build circuit on
+// return - list containing all components of the circuit
 function buildCircuit(boolEq){
 	var parseTree = parseBooleanEquation(boolEq);
 
@@ -351,6 +380,10 @@ function buildCircuit(boolEq){
 	return breadthTraverseParseTree([parseTree], tempClipboard, 0);
 }
 
+// breadth first traversal of parse tree, helper function for buildCircuit()
+// list - root node, placed inside a list. [root]
+// tempClipboard - list to place all circuit components into
+// count - how many layers away from the root
 function breadthTraverseParseTree(list, tempClipboard, count){
 	var nextList = [];
 
@@ -380,6 +413,11 @@ function breadthTraverseParseTree(list, tempClipboard, count){
 	return breadthTraverseParseTree(nextList, tempClipboard, count);
 }
 
+// puts all circuits onto list
+// tempClipboard - list to append circuit to
+// i - y coordinate to place on
+// count - how many layers down in the parse tree
+// curr - current node in tree
 function putCircuitsOnClipboard(tempClipboard, i, count, curr){
 	var placeY = i * 2;
 	var placeX = count * 3;

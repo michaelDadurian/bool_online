@@ -46,6 +46,10 @@ function editShare(circuitInfo){
     /*Display share-menu*/
     $(".share-menu").addClass("show");
 
+    var menu = $(".share-menu");
+
+    menu.offset({top: window.height/2 - menu.height()/2, left: window.width/2 - menu.width()/2});
+
 
     /*Display Circuit name*/
     $('#circuitNameDisplay').text(circuitInfoObject.pCircuitName);
