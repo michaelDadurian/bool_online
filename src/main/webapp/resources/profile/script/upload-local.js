@@ -19,13 +19,23 @@ $(document).on('change', '#loader',function(){
         /*Set name of Circuit to name of File*/
         obj.name = fileName;
 
-        console.log(obj);
+        var circuitFileObject = {
+            owner: obj.owner,
+            shared: obj.shared,
+            name: obj.name,
+            circuitContent: obj.circuitContent,
+            quizletConstraints: JSON.stringify(obj.quizletConstraints),
+            tags: obj.tags
+        };
+
+
+        console.log(circuitFileObject);
         /*AJAX call to send uploaded Circuit to profile
             Upon success, receives "SUCCESS" and alerts the user*/
         $.ajax({
                     url: "/profile/uploadLocal",
-                    method: "GET",
-                    data: obj,
+                    method: "POST",
+                    data: JSON.stringify(circuitFileObject),
                     contentType: "application/json",
                     success: function(data){
                         console.log(data);

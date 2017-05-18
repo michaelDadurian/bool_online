@@ -291,24 +291,33 @@ public class ProfileController {
     /*Receives circuit owner, shared, name, content, constraints and tags from file object send by upload-local.js
     * Creates circuit Entity and pushes to datastore.
     * Returns SUCCESS upon completion*/
-    @RequestMapping(value = "profile/uploadLocal", method = RequestMethod.GET)
+    @RequestMapping(value = "profile/uploadLocal", method = RequestMethod.POST)
     @ResponseBody
-    public String upload(@RequestParam(required = false, value = "owner") String owner,
+    public String upload(
+            /*@RequestParam(required = false, value = "owner") String owner,
                        @RequestParam(required = false, value = "shared") String shared,
                        @RequestParam(required = false, value = "name") String name,
                        @RequestParam(required = false, value = "circuitContent") String circuitContent,
                        @RequestParam(required = false, value = "quizletConstraints") String constraints,
                        @RequestParam(required = false, value = "tags") String tags
+             */
+            @RequestBody String circuitFile
                        ){
+        System.out.println(circuitFile);
+        Circuit jsonCircuitFile = Circuit.jsonToObject(circuitFile);
+        System.out.println("JSON CIRCUIT FILE!!!! "+jsonCircuitFile);
 
-        UserService userService = UserServiceFactory.getUserService();
-        User currUser = userService.getCurrentUser();
+        if(jsonCircuitFile != null) {
+            UserService userService = UserServiceFactory.getUserService();
+            User currUser = userService.getCurrentUser();
 
-
-        Circuit circuitToUpload = new Circuit(currUser.getEmail(), "", name, circuitContent, constraints, tags);
-        datastore.pushData(circuitToUpload);
-
-        return "SUCCESS";
+            Circuit circuitToUpload = new Circuit(currUser.getEmail(), "", jsonCircuitFile.getName(), jsonCircuitFile.getCircuitContent(), jsonCircuitFile.getQuizletConstraints(), jsonCircuitFile.getTags());
+            datastore.pushData(circuitToUpload);
+            return "SUCCESS";
+        }
+        else{
+            return "Invalid file upload";
+        }
 
     }
 

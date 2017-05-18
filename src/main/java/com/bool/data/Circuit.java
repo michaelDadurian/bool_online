@@ -1,5 +1,12 @@
 package com.bool.data;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+
 /**
  * Created by Nelson on 4/16/2017.
  */
@@ -11,6 +18,8 @@ public class Circuit {
     private String circuitContent;
     private String quizletConstraints;
     private String tags;
+
+    public Circuit(){}
 
 
     public Circuit(
@@ -84,4 +93,31 @@ public class Circuit {
 
         return ret;
     }
+
+    public static Circuit jsonToObject(String everything){
+        Circuit ret;
+        ObjectMapper mapper = new ObjectMapper();
+        try{
+            Circuit jsonCircuitFile = mapper.readValue(everything, Circuit.class);
+
+            System.out.println(jsonCircuitFile);
+            ret = jsonCircuitFile;
+        }
+        catch (JsonGenerationException e) {
+            //e.printStackTrace();
+            System.out.println("jsonToObject JsonGenerationException!");
+            ret = null;
+        } catch (JsonMappingException e) {
+            //e.printStackTrace();
+            System.out.println("jsonToObject JsonMappingException!");
+            ret = null;
+        } catch (IOException e) {
+            //e.printStackTrace();
+            System.out.println("jsonToObject IOException!");
+            ret = null;
+        }
+
+        return ret;
+    }
+
 }

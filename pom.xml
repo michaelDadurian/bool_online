@@ -12,6 +12,7 @@
         <app.id>bool-163515</app.id>
         <app.version>3</app.version>
         <appengine.version>1.9.50</appengine.version>
+        <jackson.version>2.6.3</jackson.version>
         <gcloud.plugin.version>2.0.9.74.v20150814</gcloud.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
@@ -75,14 +76,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.2.1</version>
-            <scope>test</scope>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.2.1</version>
-            <scope>test</scope>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -113,6 +112,11 @@
             <artifactId>spring-test</artifactId>
             <version>${spring.framework.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.6.4</version>
         </dependency>
     </dependencies>
 
